@@ -22,10 +22,9 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Layout />} />
           <Route index element={<App />} />
           <Route path="login" element={<Login />} />
-          </Route>
       </Routes>
     </BrowserRouter>
   </StrictMode>,
