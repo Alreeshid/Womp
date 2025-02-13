@@ -5,6 +5,19 @@ import './index.css'
 import App from './App.jsx'
 import Layout from './pages/Layout.jsx'
 import Login from './pages/Login.jsx'
+
+import { generateClient } from 'aws-amplify/data';
+
+/**
+ * @type {import('aws-amplify/data').Client<import('../amplify/data/resource').Schema>}
+ */
+const client = generateClient();
+
+// Now you should be able to make CRUDL operations with the
+// Data client
+const fetchTodos = async () => {
+  const { data: todos, errors } = await client.models.Todo.list();
+};
 //import * as Pages from './pages'
 //to reference a page, use <Pages.page> - I.E. <Pages.login>
 
