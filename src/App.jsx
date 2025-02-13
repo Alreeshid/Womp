@@ -17,6 +17,7 @@ import SpiderAttachment from "/images/SpiderAttachment.png"
 import Jeff from "/images/Jefftheshark.png"
 import Mrbeast from "/images/Mrbeast.png"
 import cat from "/images/cat.png"
+import Lego from "/images/Lego Flower.png"
 function App() {
   return (
     <View padding="medium">
@@ -104,9 +105,9 @@ function App() {
             image={cat}
           />
           <ProductCard
-          title="Spiderman Headphone Attachment"
+          title="Lego Flowers set"
           badges={['$35', 'Used-Good']}
-          image={SpiderAttachment}
+          image={Lego}
         />
 
 
