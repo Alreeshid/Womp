@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
 import Layout from './pages/Layout.jsx'
-import Login from './pages/login.jsx'
+import Login from './pages/Login.jsx'
 //import * as Pages from './pages'
 //to reference a page, use <Pages.page> - I.E. <Pages.login>
 
