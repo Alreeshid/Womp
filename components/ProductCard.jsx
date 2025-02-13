@@ -16,8 +16,10 @@ const ProductCard = ({ title, badges, image }) => {
       borderRadius="medium"
       maxWidth="15rem"
       variation="outlined"
+     
     >
       <Image
+      
         src={image}
         alt={`${title} image`}
       />
@@ -26,15 +28,16 @@ const ProductCard = ({ title, badges, image }) => {
           {badges.map((badge) => (
             <Badge
               key={badge}
-              backgroundColor="yellow.40"
+              backgroundColor="#DE7C5A"
+              color = "#FFFFFF"
             >
               {badge}
             </Badge>
           ))}
         </Flex>
-        <Divider padding="xs" />
+        <Divider padding="m" />
         <Heading padding="medium">{title}</Heading>
-        <Button variation="primary" isFullWidth>
+        <Button backgroundColor = "#B10F2E"variation="primary" isFullWidth>
           View Details
         </Button>
       </View>
