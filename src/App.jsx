@@ -17,11 +17,22 @@ import SpiderAttachment from "/images/SpiderAttachment.png"
 import Jeff from "/images/Jefftheshark.png"
 import Mrbeast from "/images/Mrbeast.png"
 import cat from "/images/cat.png"
-import Lego from "/images/Lego Flower.png"
+import Lego from "/images/Lego Flowers.png"
+import WinterBeanie from "/images/WinterBeanie.png"
+import WinterBreak from "/images/WinterBreak.png"
+import Shoes from "/images/Shoes.png"
+import Tanktop from "/images/Goldfish tanktop.png"
+import Jacket from "/images/Spidermanjacket.png"
+import Jeans from "/images/Jeans.png"
+
+
+
 function App() {
   return (
+
+    
     <View padding="medium">
-      <h1>Womper</h1>
+     <h1>Womper</h1>
       <NavigationBar />
       {/* First Row */}
       <View marginBottom="3rem">
@@ -124,34 +135,34 @@ function App() {
         </Heading>
         <View style={{ display: 'flex', gap: '20px' }}>
           <ProductCard
-            title="Gaming Mouse"
-            badges={['$25', 'New']}
-            image={GamingMouse}
+            title="Winter Gloves"
+            badges={['$5', 'Used']}
+            image={WinterBreak}
           />
           <ProductCard
-            title="Spiderman Headphone Attachment"
-            badges={['$35', 'Used-Good']}
-            image={SpiderAttachment}
+            title="Winter Beanie - Maroon"
+            badges={['$10', 'Used-Good']}
+            image={WinterBeanie}
           />
 
           <ProductCard
-            title="Spiderman Headphone Attachment"
+            title="Fish Tanktop"
             badges={['$35', 'Used-Good']}
-            image={SpiderAttachment}
+            image={Tanktop}
           />
           <ProductCard
-            title="Spiderman Headphone Attachment"
+            title="High heel sandals"
             badges={['$35', 'Used-Good']}
-            image={SpiderAttachment}
+            image={Shoes}
           />
           <ProductCard
-            title="Spiderman Headphone Attachment"
+            title="Spiderman Jacket"
             badges={['$35', 'Used-Good']}
-            image={SpiderAttachment}
+            image={Jacket}
           /><ProductCard
-          title="Spiderman Headphone Attachment"
+          title="Jeans women Medium"
           badges={['$35', 'Used-Good']}
-          image={SpiderAttachment}
+          image={Jeans}
         />
 
 
