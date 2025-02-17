@@ -51,6 +51,8 @@ export default function Login() {
     setNotes(notes);
   }
 
+
+  //need to alter this to fit our new 'Products' schema
   async function createNote(event) {
     event.preventDefault();
     const form = new FormData(event.target);
@@ -99,7 +101,7 @@ export default function Login() {
           width="70%"
           margin="0 auto"
         >
-          <Heading level={1}>My Notes App</Heading>
+          <Heading level={1}>Add Products</Heading>
           <View as="form" margin="3rem 0" onSubmit={createNote}>
             <Flex
               direction="column"
@@ -117,14 +119,14 @@ export default function Login() {
               />
               <TextField
                 name="description"
-                placeholder="Note Description"
+                placeholder="Description"
                 label="Note Description"
                 labelHidden
                 variation="quiet"
                 required
               />
               <View
-                name="image"
+                name="product image"
                 as="input"
                 type="file"
                 alignSelf={"end"}
@@ -132,12 +134,12 @@ export default function Login() {
               />
 
               <Button type="submit" variation="primary">
-                Create Note
+                Upload Product For Sale
               </Button>
             </Flex>
           </View>
           <Divider />
-          <Heading level={2}>Current Notes</Heading>
+          <Heading level={2}>Current Products</Heading>
           <Grid
             margin="3rem 0"
             autoFlow="column"

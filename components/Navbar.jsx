@@ -33,8 +33,7 @@ const NavigationBar = () => {
        
         <Button color = "#B10F2E"variation="link">Profile</Button>
         <Button color = "#B10F2E"variation="link">Support</Button>
-        <Button color = "#B10F2E"variation="link">Daily Deals</Button>
-        <Button color = "#B10F2E"variation="link">Review</Button>
+        <Button color = "#B10F2E"variation="link">Verified Sellers</Button>
         <Button color = "#B10F2E"variation="link"></Button>
         <SearchField
             label="Search"
@@ -46,11 +45,6 @@ const NavigationBar = () => {
             
           />
         <Button color = "#B10F2E"variation="link"></Button>
-        <Button color = "#B10F2E"variation="link">Clothing</Button>
-        <Button color = "#B10F2E"variation="link">Electronics</Button>
-        <Button color = "#B10F2E"variation="link">Jewelery</Button>
-        <Button color = "#B10F2E"variation="link">Refurbished</Button>
-        <Button color = "#B10F2E"variation="link">Daily Deals</Button>
       </Flex>
     </View>
   );
