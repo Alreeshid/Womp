@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button, Flex, View } from '@aws-amplify/ui-react';
 
 
-export default function Landing(){
+export default function DemoNav(){
     return (
         <View
           height="100vh"
