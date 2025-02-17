@@ -1,5 +1,6 @@
 // AdminPanel.jsx
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './AdminPanel.css';
 
 export default function AdminPanel(){
@@ -33,7 +34,7 @@ export default function AdminPanel(){
                 <h1>Admin Panel</h1>
                 <div className="user-info">
                     <span>Welcome, Admin</span>
-                    <button className="logout-btn">Logout</button>
+                    <Link to="/"><button className="logout-btn">Logout</button> </Link>
                 </div>
             </header>
             
