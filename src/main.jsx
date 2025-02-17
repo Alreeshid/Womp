@@ -5,6 +5,7 @@ import './index.css'
 import App from './App.jsx'
 import Layout from './pages/Layout.jsx'
 import Login from './pages/Login.jsx'
+import AdminPanel from './pages/adminPages/AdminLanding.jsx'
 
 import { generateClient } from 'aws-amplify/data';
 
@@ -38,6 +39,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/" element={<Layout />} />
           <Route index element={<App />} />
           <Route path="login" element={<Login />} />
+          <Route path="Admin/Landing" element = {<AdminPanel />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
