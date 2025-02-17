@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button, Flex, View } from '@aws-amplify/ui-react';
+import { Link } from "react-router-dom";
 
 
 export default function DemoNav(){
@@ -16,9 +17,9 @@ export default function DemoNav(){
             height="100%"
             gap="medium"
           >
-            <Button variation="primary">Login/Signup</Button>
-            <Button variation="primary">Ecommerce Landing Template</Button>
-            <Button variation="primary">Admin Landing Template</Button>
+            <Link to="Login"><Button variation="primary">Login/Signup</Button> </Link>
+            <Link to="Demo1"> <Button variation="primary">Ecommerce Landing Template</Button> </Link>
+            <Link to="Admin/Landing"> <Button variation="primary">Admin Landing Template</Button> </Link>
           </Flex>
         </View>
       );
