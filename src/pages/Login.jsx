@@ -58,7 +58,7 @@ export default function Login() {
     const form = new FormData(event.target);
     console.log(form.get("image").name);
 
-    const { data: newNote } = await client.models.Note.create({
+    const { data: newNote } = await client.models.Products.create({
       name: form.get("name"),
       description: form.get("description"),
       image: form.get("image").name,
