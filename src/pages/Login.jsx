@@ -111,8 +111,8 @@ export default function Login() {
             >
               <TextField
                 name="name"
-                placeholder="Note Name"
-                label="Note Name"
+                placeholder="Product Name"
+                label="Product Name"
                 labelHidden
                 variation="quiet"
                 required
@@ -120,7 +120,7 @@ export default function Login() {
               <TextField
                 name="description"
                 placeholder="Description"
-                label="Note Description"
+                label="Product Description"
                 labelHidden
                 variation="quiet"
                 required
