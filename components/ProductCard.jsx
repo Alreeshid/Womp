@@ -19,9 +19,14 @@ const ProductCard = ({ title, badges, image }) => {
      
     >
       <Image
-      
+        
         src={image}
         alt={`${title} image`}
+        style={{
+          width: '200px',     
+          height: '200px',    
+          objectFit: 'cover'  
+        }} 
       />
       <View padding="xs">
         <Flex>

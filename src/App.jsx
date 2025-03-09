@@ -128,6 +128,8 @@ const clothingProducts = [
 
 function App() {
   return (
+
+
     
     <View padding="medium">
       <h1>Womper</h1>
