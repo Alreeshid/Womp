@@ -9,14 +9,31 @@ and "delete" any "Todo" records.
 const schema = a.schema({
   Products: a
     .model({
-      name: a.string(),
-      description: a.string(),
-      image: a.string(),
+      productID: a.id(),
       sellerID: a.id(),
-      price: a.float(),
+      productName: a.string(),
+      productDescription: a.string(),
+      productImages: a.hasMany("image", "String"),
+      purchasedPrice: a.float(),
+      listPrice: a.float(),
       condition: a.string(),
+      tags: a.string(),
+      listedAt: a.datetime()
     })
     .authorization((allow) => [allow.owner(), allow.guest()]), //added the guest portion
+  Users: a
+  .model({
+    userID: a.id(),
+    userName: a.string(),
+    userEmail: a.email  (),
+    userProfits: a.float(),
+    userLocation: a.customType({
+      lat: a.float(),
+      long: a.float()
+    }),
+    userListings: a.string().array(),
+    userJoined: a.datetime()
+  })
 });
 
 export type Schema = ClientSchema<typeof schema>;
