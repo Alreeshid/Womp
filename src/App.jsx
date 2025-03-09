@@ -25,16 +25,117 @@ import Tanktop from "/images/Goldfish tanktop.png"
 import Jacket from "/images/Spidermanjacket.png"
 import Jeans from "/images/Jeans.png"
 
+const featuredProducts = [
+  { 
+    title: "Minecraft Water Bottle",
+    badges: ['$10', 'Used-Like new'],
+    image: minecraftBottle 
+  },
+  { 
+    title: "Vanilla Lip balm",
+    badges: ['$1.99', 'New'],
+    image: lipBalm 
+  },
+  { 
+    title: "FlowerShirt",
+    badges: ['$12.99', 'New'],
+    image: Flowershirt 
+  },
+  { 
+    title: "Couples'Keychain set",
+    badges: ['$6.99', 'New'],
+    image: MotorKeychain 
+  },
+  { 
+    title: "Flower Night Light",
+    badges: ['$16.99', 'New'],
+    image: Nightlight 
+  },
+  { 
+    title: "4k Sony Camera with neck strap",
+    badges: ['$100.99', 'Used'],
+    image: Camera 
+  }
+];
 
+
+const newArrivals = [
+  {
+    title: "Gaming Mouse",
+    badges: ['$25', 'New'],
+    image: GamingMouse
+  },
+  {
+    title: "Spiderman Headphone Attachment",
+    badges: ['$35', 'Used-Good'],
+    image: SpiderAttachment
+  },
+  {
+    title: "Jeff the Shark",
+    badges: ['$65', 'Used-Good'],
+    image: Jeff
+  },
+  {
+    title: "MrBeast Funko Pop - includes one free Feastables",
+    badges: ['$79.99', 'Used-Good'],
+    image: Mrbeast
+  },
+  {
+    title: "crochiet cats - 10 ct ",
+    badges: ['$35.99', 'Used'],
+    image: cat
+  },
+  {
+    title: "Lego Flowers set",
+    badges: ['$35', 'Used-Good'],
+    image: Lego
+  }
+];
+
+
+const clothingProducts = [
+  {
+    title: "Winter Gloves",
+    badges: ['$5', 'Used'],
+    image: WinterBreak
+  },
+  {
+    title: "Winter Beanie - Maroon",
+    badges: ['$10', 'Used-Good'],
+    image: WinterBeanie
+  },
+  {
+    title: "Fish Tanktop",
+    badges: ['$35', 'Used-Good'],
+    image: Tanktop
+  },
+  {
+    title: "High heel sandals",
+    badges: ['$35', 'Used-Good'],
+    image: Shoes
+  },
+  {
+    title: "Spiderman Jacket",
+    badges: ['$35', 'Used-Good'],
+    image: Jacket
+  },
+  {
+    title: "Jeans women Medium",
+    badges: ['$35', 'Used-Good'],
+    image: Jeans
+  }
+];
 
 function App() {
   return (
 
+
     
     <View padding="medium">
-     <h1>Womper</h1>
+      <h1>Womper</h1>
       <NavigationBar />
-      {/* First Row */}
+      
+      {/* First Row - Featured Products */}
       <View marginBottom="3rem">
         <Heading 
           level={2} 
@@ -42,43 +143,21 @@ function App() {
           padding="medium"
           color={'red.90'}
         >
-          Featured Products
+          <h1>Featured Products</h1>
         </Heading>
         <View style={{ display: 'flex', gap: '20px' }}>
-          <ProductCard
-            title="Minecraft Water Bottle"
-            badges={['$10', 'Used-Like new']}
-            image={minecraftBottle}
-          />
-          <ProductCard
-            title="Vanilla Lip balm"
-            badges={['$1.99', 'New']}
-            image={lipBalm}
-          />
-          <ProductCard
-            title="FlowerShirt"
-            badges={['$12.99', 'New']}
-            image={Flowershirt}
-          />
-          <ProductCard
-            title="Couples'Keychain set"
-            badges={['$6.99', 'New']}
-            image={MotorKeychain}
-          />
-          <ProductCard
-          title="Flower Night Light"
-          badges={['$16.99', 'New']}
-          image={Nightlight}
-          />  
-          <ProductCard
-          title="4k Sony Camera with neck strap"
-          badges={['$100.99', 'Used']}
-          image={Camera}
-          />  
+          {featuredProducts.map((product, index) => (
+            <ProductCard
+              key={`featured-${index}`}
+              title={product.title}
+              badges={product.badges}
+              image={product.image}
+            />
+          ))}
         </View>
       </View>
 
-      {/* Second Row */}
+      {/* Second Row - New Arrivals */}
       <View marginTop="3rem">
         <Heading 
           level={2} 
@@ -89,41 +168,18 @@ function App() {
           New Arrivals
         </Heading>
         <View style={{ display: 'flex', gap: '20px' }}>
-          <ProductCard
-            title="Gaming Mouse"
-            badges={['$25', 'New']}
-            image={GamingMouse}
-          />
-          <ProductCard
-            title="Spiderman Headphone Attachment"
-            badges={['$35', 'Used-Good']}
-            image={SpiderAttachment}
-          />
-
-          <ProductCard
-            title="Jeff the Shark"
-            badges={['$65', 'Used-Good']}
-            image={Jeff}
-          />
-          <ProductCard
-            title="MrBeast Funko Pop - includes one free Feastables"
-            badges={['$79.99', 'Used-Good']}
-            image={Mrbeast}
-          />
-          <ProductCard
-            title="crochiet cats - 10 ct "
-            badges={['$35.99', 'Used']}
-            image={cat}
-          />
-          <ProductCard
-          title="Lego Flowers set"
-          badges={['$35', 'Used-Good']}
-          image={Lego}
-        />
-
-
+          {newArrivals.map((product, index) => (
+            <ProductCard
+              key={`new-${index}`}
+              title={product.title}
+              badges={product.badges}
+              image={product.image}
+            />
+          ))}
         </View>
       </View>
+      
+      {/* Third Row - Clothing */}
       <View marginTop="3rem">
         <Heading 
           level={2} 
@@ -134,41 +190,16 @@ function App() {
           Clothing
         </Heading>
         <View style={{ display: 'flex', gap: '20px' }}>
-          <ProductCard
-            title="Winter Gloves"
-            badges={['$5', 'Used']}
-            image={WinterBreak}
-          />
-          <ProductCard
-            title="Winter Beanie - Maroon"
-            badges={['$10', 'Used-Good']}
-            image={WinterBeanie}
-          />
-
-          <ProductCard
-            title="Fish Tanktop"
-            badges={['$35', 'Used-Good']}
-            image={Tanktop}
-          />
-          <ProductCard
-            title="High heel sandals"
-            badges={['$35', 'Used-Good']}
-            image={Shoes}
-          />
-          <ProductCard
-            title="Spiderman Jacket"
-            badges={['$35', 'Used-Good']}
-            image={Jacket}
-          /><ProductCard
-          title="Jeans women Medium"
-          badges={['$35', 'Used-Good']}
-          image={Jeans}
-        />
-
-
+          {clothingProducts.map((product, index) => (
+            <ProductCard
+              key={`clothing-${index}`}
+              title={product.title}
+              badges={product.badges}
+              image={product.image}
+            />
+          ))}
         </View>
       </View>
-     
     </View>
   );
 }
