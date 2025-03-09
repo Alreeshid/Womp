@@ -1,4 +1,5 @@
 import { defineAuth } from '@aws-amplify/backend';
+import { listUsers } from '../data/list-users/resource';
 
 /**
  * Define and configure your auth resource
@@ -8,4 +9,9 @@ export const auth = defineAuth({
   loginWith: {
     email: true,
   },
-});
+  groups: ["ADMINS", "Users"],
+  access: (allow) => [
+    allow.resource(listUsers).to(["manageUsers"]),
+   ],
+  });
+
