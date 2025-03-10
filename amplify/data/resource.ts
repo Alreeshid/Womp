@@ -34,6 +34,7 @@ const schema = a.schema({
     userListings: a.string().array(),
     userJoined: a.datetime()
   })
+  .authorization((allow) => [allow.group("Admins")])
 });
 
 export type Schema = ClientSchema<typeof schema>;
