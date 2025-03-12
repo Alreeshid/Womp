@@ -30,13 +30,13 @@ export default function Login() {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    fetchNotes();
+    fetchProducts();
   }, []);
 
-  async function fetchNotes() {
-    const { data: notes } = await client.models.Note.list();
+  async function fetchProducts() {
+    const { data: Products } = await client.models.Products.list();
     await Promise.all(
-      notes.map(async (note) => {
+      Products.map(async (product) => {
         if (note.image) {
           const linkToStorageFile = await getUrl({
             path: ({ identityId }) => `media/${identityId}/${note.image}`,
@@ -44,7 +44,7 @@ export default function Login() {
           console.log(linkToStorageFile.url);
           note.image = linkToStorageFile.url;
         }
-        return note;
+        return product;
       })
     );
     console.log(notes);
