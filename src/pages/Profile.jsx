@@ -1,21 +1,28 @@
 import React from 'react';
-import { View, Heading } from '@aws-amplify/ui-react';
+import { View, Heading, Button } from '@aws-amplify/ui-react';
+import { useNavigate } from 'react-router-dom';
 import NavigationBar from '../components/Navbar';
-
+import '../index.css';
 function Profile() {
+  const navigate = useNavigate();
+  
+  const goToHome = () => {
+    navigate('/'); 
+  };
+
   return (
     <View>
-       <button variation = "link"
-      onClick={() => 
-        handleNavigation('/App')}
-      ><h1>Womper</h1></button>
+      <Button 
+        variation="link"
+        onClick={goToHome}
+      >
+        <h1>Womper</h1>
+      </Button>
       <NavigationBar />
       <View padding="medium">
-        <Heading level={1}>User Profile</Heading>
-        <button>Create a listing</button>
-        <button></button>
-        <button>Create a post</button>
-        
+        <Heading level={1}><strong>User Profile</strong></Heading>
+        <Button variation="primary" marginRight="medium">Create a listing</Button>
+        <Button variation="primary" marginRight="medium">Create a post</Button>
       </View>
     </View>
   );

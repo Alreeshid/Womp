@@ -9,13 +9,14 @@ import {
   Button 
 } from '@aws-amplify/ui-react';
 
-const ProductCard = ({ title, badges, image }) => {
+const ProductCard = ({ title, badges, image,onClick }) => {
   return (
 
     <Card
       borderRadius="medium"
       maxWidth="15rem"
       variation="outlined"
+      onClick={onClick}
      
     >
       <Image

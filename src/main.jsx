@@ -6,6 +6,11 @@ import App from './App.jsx'
 import Layout from './pages/Layout.jsx'
 import Login from './pages/Login.jsx'
 import Profile from './pages/profile.jsx'
+import Support from './pages/Support.jsx'
+import Review from './pages/Review.jsx'
+import Electronics from './pages/Electronics.jsx'
+import Jewelery from './pages/Jewelery.jsx'
+import Clothing from './pages/Clothing.jsx'
 //import * as Pages from './pages'
 //to reference a page, use <Pages.page> - I.E. <Pages.login>
 
@@ -27,7 +32,11 @@ createRoot(document.getElementById('root')).render(
           <Route index element={<App />} />
           <Route path="login" element={<Login />} />
           <Route path="Profile" element={<Profile />} />
-          
+          <Route path= "Support" element={<Support />} />
+          <Route path= "Review" element={<Review />} />
+          <Route path= "Clothing" element={<Clothing />} />
+          <Route path= "Electronics" element={<Electronics />} />
+          <Route path= "Jewelery" element={<Jewelery />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

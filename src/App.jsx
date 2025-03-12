@@ -25,6 +25,7 @@ import Tanktop from "./images/Goldfish tanktop.png"
 import Jacket from "./images/Spidermanjacket.png"
 import Jeans from "./images/Jeans.png"
 
+
 const featuredProducts = [
   { 
     title: "Minecraft Water Bottle",
@@ -127,13 +128,13 @@ const clothingProducts = [
 ];
 
 function App() {
+  
+ 
+  
 
   return (
     <View padding="medium">
-      <button variation = "link"
-      onClick={() => 
-        handleNavigation('/App')}
-      ><h1>Womper</h1></button>
+      <h1>Womper</h1>
       <NavigationBar />
       
       {/* First Row - Featured Products */}
