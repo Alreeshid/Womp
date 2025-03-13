@@ -11,6 +11,7 @@ import Review from './pages/Review.jsx'
 import Electronics from './pages/Electronics.jsx'
 import Jewelery from './pages/Jewelery.jsx'
 import Clothing from './pages/Clothing.jsx'
+import CreateListing from "./pages/CreateListing.jsx"
 //import * as Pages from './pages'
 //to reference a page, use <Pages.page> - I.E. <Pages.login>
 
@@ -37,6 +38,7 @@ createRoot(document.getElementById('root')).render(
           <Route path= "Clothing" element={<Clothing />} />
           <Route path= "Electronics" element={<Electronics />} />
           <Route path= "Jewelery" element={<Jewelery />} />
+          <Route path= "CreateListing" element={<CreateListing />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

@@ -10,6 +10,10 @@ function Profile() {
     navigate('/'); 
   };
 
+  const Create = () => {
+    navigate('/CreateListing'); 
+  };
+
   return (
     <View>
       <Button 
@@ -20,9 +24,11 @@ function Profile() {
       </Button>
       <NavigationBar />
       <View padding="medium">
-        <Heading level={1}><strong>User Profile</strong></Heading>
-        <Button variation="primary" marginRight="medium">Create a listing</Button>
-        <Button variation="primary" marginRight="medium">Create a post</Button>
+        <Heading level={1}><strong>Welcome Back!</strong></Heading>
+        <form></form>
+        <Button variation="link" marginRight="medium" onClick = {Create}>Create a listing</Button>
+        <Button variation="link" marginRight="medium" onClick = {Create}>Manage your listings</Button>
+        
       </View>
     </View>
   );
