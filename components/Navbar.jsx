@@ -6,7 +6,7 @@ import {
   SearchField,
   useBreakpointValue
 } from '@aws-amplify/ui-react';
-import {useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const NavigationBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -74,12 +74,13 @@ const NavigationBar = () => {
               >
                 Profile
               </Button>
-              <Button color="#B10F2E" variation="link"   onClick={() => handleNavigation('/support')}>Support</Button>
-              <Button color="#B10F2E" variation="link"   onClick={() => handleNavigation('/Review')}>Review</Button>
-              <Button color="#B10F2E" variation="link"   onClick={() => handleNavigation('/Clothing')}>Clothing</Button>
-              <Button color="#B10F2E" variation="link"   onClick={() => handleNavigation('/Electronics')}>Electronics</Button>
-              <Button color="#B10F2E" variation="link"   onClick={() => handleNavigation('/Jewelery')}>Jewelery</Button>
-              
+              <Button color="#B10F2E" variation="link">Support</Button>
+              <Button color="#B10F2E" variation="link">Daily Deals</Button>
+              <Button color="#B10F2E" variation="link">Review</Button>
+              <Button color="#B10F2E" variation="link">Clothing</Button>
+              <Button color="#B10F2E" variation="link">Electronics</Button>
+              <Button color="#B10F2E" variation="link">Jewelery</Button>
+              <Button color="#B10F2E" variation="link">Refurbished</Button>
             </Flex>
           )}
         </Flex>
@@ -91,7 +92,7 @@ const NavigationBar = () => {
           alignItems="center"
           wrap="wrap"
         >
-          <Flex gap="small">
+          <Flex gap="medium">
             <Button 
               color="#B10F2E" 
               variation="link"
@@ -99,12 +100,9 @@ const NavigationBar = () => {
             >
               Profile
             </Button>
-            <Button color="#B10F2E" 
-                    variation="link"
-                    
-              onClick={() => handleNavigation('/support')}
-            >Support</Button>
-            <Button color="#B10F2E" variation="link" onClick={() => handleNavigation('/Review')}>Review</Button>
+            <Button color="#B10F2E" variation="link">Support</Button>
+            <Button color="#B10F2E" variation="link">Daily Deals</Button>
+            <Button color="#B10F2E" variation="link">Review</Button>
           </Flex>
           
           <SearchField
@@ -117,10 +115,11 @@ const NavigationBar = () => {
             width="300px"
           />
           
-          <Flex gap="small">
-            <Button color="#B10F2E" variation="link" onClick={() => handleNavigation('/Clothing')}>Clothing</Button>
-            <Button color="#B10F2E" variation="link" onClick={() => handleNavigation('/Electronics')}>Electronics</Button>
-            <Button color="#B10F2E" variation="link"onClick={() => handleNavigation('/Jewelery')}>Jewelery</Button>
+          <Flex gap="medium">
+            <Button color="#B10F2E" variation="link">Clothing</Button>
+            <Button color="#B10F2E" variation="link">Electronics</Button>
+            <Button color="#B10F2E" variation="link">Jewelery</Button>
+            <Button color="#B10F2E" variation="link">Refurbished</Button>
           </Flex>
         </Flex>
       )}
