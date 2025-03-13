@@ -26,6 +26,12 @@ const client = generateClient({
   authMode: "userPool",
 });
 
+document.addEventListener("submit", handleSubmit)
+
+function handleSubmit(){
+  
+}
+
 export default function Login() {
   const [products, setProducts] = useState([]);
 
