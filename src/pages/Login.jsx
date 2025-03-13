@@ -27,19 +27,20 @@ const client = generateClient({
 });
 
 export default function Login() {
-  const [notes, setNotes] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     fetchProducts();
   }, []);
 
+
   async function fetchProducts() {
     const { data: Products } = await client.models.Products.list();
     await Promise.all(
       Products.map(async (product) => {
-        if (note.image) {
+        if (product.image) {
           const linkToStorageFile = await getUrl({
-            path: ({ identityId }) => `media/${identityId}/${note.image}`,
+            path: ({ identityId }) => `media/${identityId}/${product.image}`,
           });
           console.log(linkToStorageFile.url);
           note.image = linkToStorageFile.url;
@@ -47,33 +48,35 @@ export default function Login() {
         return product;
       })
     );
-    console.log(notes);
-    setNotes(notes);
+    console.log(Products);
+    setProducts(Products);
   }
 
 
   //need to alter this to fit our new 'Products' schema
-  async function createNote(event) {
+      //move this function to a new page later, for listing new products to the site.
+
+  async function createProduct(event) {
     event.preventDefault();
     const form = new FormData(event.target);
     console.log(form.get("image").name);
 
-    const { data: newNote } = await client.models.Products.create({
+    const { data: newProduct } = await client.models.Products.create({
       name: form.get("name"),
       description: form.get("description"),
       image: form.get("image").name,
     });
 
-    console.log(newNote);
-    if (newNote.image)
-      if (newNote.image)
+    console.log(newProduct);
+    if (newProduct.image)
+      if (newProduct.image)
         await uploadData({
-          path: ({ identityId }) => `media/${identityId}/${newNote.image}`,
+          path: ({ identityId }) => `media/${identityId}/${newProduct.image}`,
 
           data: form.get("image"),
         }).result;
 
-    fetchNotes();
+    fetchProducts();//resets use effect, shows the new product listed
     event.target.reset();
   }
 
@@ -91,7 +94,7 @@ export default function Login() {
   }
 
   return (
-    <Authenticator>
+    <Authenticator initialState="signUp" signUpAttributes={["address", "birthdate", "email", "locale"]}>
       {({ signOut }) => (
         <Flex
           className="App"

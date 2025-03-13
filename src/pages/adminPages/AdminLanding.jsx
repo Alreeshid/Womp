@@ -2,6 +2,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './AdminPanel.css';
+import { generateClient } from 'aws-amplify/data';
+
+const client = generateClient();
+const fetchProducts = async() =>{
+    const {data: Products, errors} = await client.models.Products.list();
+};
 
 export default function AdminPanel(){
     const [selectedMenu, setSelectedMenu] = useState('dashboard');
@@ -18,11 +24,11 @@ export default function AdminPanel(){
             case 'dashboard':
                 return <div className="content-section">Dashboard Content</div>;
             case 'users':
-                return <div className="content-section">Users Management</div>;
+                return <div className="content-section">User Management</div>;
             case 'settings':
-                return <div className="content-section">Settings Panel</div>;
+                return <div className="content-section">Product Management</div>;
             case 'reports':
-                return <div className="content-section">Reports and Analytics</div>;
+                return <div className="content-section">Sales and Analytics</div>;
             default:
                 return <div className="content-section">Select a menu item</div>;
         }
