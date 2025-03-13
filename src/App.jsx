@@ -4,26 +4,27 @@ import {
   View,
   Heading,
 } from '@aws-amplify/ui-react';
-import minecraftBottle from '/images/MinecraftWaterBottle.jpg';
-import lipBalm from '/images/VanillaLipBalm.png';
-import ProductCard from '/components/ProductCard.jsx';
-import NavigationBar from '../components/Navbar';
-import Flowershirt from "/images/Flowershirt.png"
-import MotorKeychain from "/images/Motorchain.jpg"
-import Nightlight from "/images/Nightlight.png"
-import Camera from "/images/Camera.png"
-import GamingMouse from "/images/Gaming Mouse.png"
-import SpiderAttachment from "/images/SpiderAttachment.png"
-import Jeff from "/images/Jefftheshark.png"
-import Mrbeast from "/images/Mrbeast.png"
-import cat from "/images/cat.png"
-import Lego from "/images/Lego Flowers.png"
-import WinterBeanie from "/images/WinterBeanie.png"
-import WinterBreak from "/images/WinterBreak.png"
-import Shoes from "/images/Shoes.png"
-import Tanktop from "/images/Goldfish tanktop.png"
-import Jacket from "/images/Spidermanjacket.png"
-import Jeans from "/images/Jeans.png"
+import minecraftBottle from './images/MinecraftWaterBottle.jpg';
+import lipBalm from './images/VanillaLipBalm.png';
+import ProductCard from './components/ProductCard.jsx';
+import NavigationBar from './components/Navbar';
+import Flowershirt from "./images/Flowershirt.png"
+import MotorKeychain from "./images/Motorchain.jpg"
+import Nightlight from "./images/Nightlight.png"
+import Camera from "./images/Camera.png"
+import GamingMouse from "./images/Gaming Mouse.png"
+import SpiderAttachment from "./images/SpiderAttachment.png"
+import Jeff from "./images/Jefftheshark.png"
+import Mrbeast from "./images/Mrbeast.png"
+import cat from "./images/cat.png"
+import Lego from "./images/Lego Flowers.png"
+import WinterBeanie from "./images/WinterBeanie.png"
+import WinterBreak from "./images/WinterBreak.png"
+import Shoes from "./images/Shoes.png"
+import Tanktop from "./images/Goldfish tanktop.png"
+import Jacket from "./images/Spidermanjacket.png"
+import Jeans from "./images/Jeans.png"
+
 
 const featuredProducts = [
   { 
@@ -127,10 +128,11 @@ const clothingProducts = [
 ];
 
 function App() {
+  
+ 
+  
+
   return (
-
-
-    
     <View padding="medium">
       <h1>Womper</h1>
       <NavigationBar />

@@ -5,21 +5,13 @@ import './index.css'
 import App from './App.jsx'
 import Layout from './pages/Layout.jsx'
 import Login from './pages/Login.jsx'
-import AdminPanel from './pages/adminPages/AdminLanding.jsx'
-import DemoNav from './pages/DemoNav.jsx'
-
-import { generateClient } from 'aws-amplify/data';
-
-/**
- * @type {import('aws-amplify/data').Client<import('../amplify/data/resource').Schema>}
- */
-const client = generateClient();
-
-// Now you should be able to make CRUDL operations with the
-// Data client
-const fetchTodos = async () => {
-  const { data: todos, errors } = await client.models.Todo.list();
-};
+import Profile from './pages/profile.jsx'
+import Support from './pages/Support.jsx'
+import Review from './pages/Review.jsx'
+import Electronics from './pages/Electronics.jsx'
+import Jewelery from './pages/Jewelery.jsx'
+import Clothing from './pages/Clothing.jsx'
+import CreateListing from "./pages/CreateListing.jsx"
 //import * as Pages from './pages'
 //to reference a page, use <Pages.page> - I.E. <Pages.login>
 
@@ -38,10 +30,15 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
           <Route path="/" element={<Layout />} />
-          <Route index element={<DemoNav />} />
+          <Route index element={<App />} />
           <Route path="login" element={<Login />} />
-          <Route path="Admin/Landing" element = {<AdminPanel />} />
-          <Route path="Demo1" element={<App />} />
+          <Route path="Profile" element={<Profile />} />
+          <Route path= "Support" element={<Support />} />
+          <Route path= "Review" element={<Review />} />
+          <Route path= "Clothing" element={<Clothing />} />
+          <Route path= "Electronics" element={<Electronics />} />
+          <Route path= "Jewelery" element={<Jewelery />} />
+          <Route path= "CreateListing" element={<CreateListing />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
