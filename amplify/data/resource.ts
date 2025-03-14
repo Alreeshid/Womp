@@ -45,7 +45,8 @@ const schema = a.schema({
 
   })
   .returns(a.string())
-  .handler(a.handler.function(listUsers)),
+  .handler(a.handler.function(listUsers))
+  .authorization((allow) => [allow.group("Admins")]),
 
   Purchase: a
   .mutation()
