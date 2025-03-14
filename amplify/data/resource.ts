@@ -45,7 +45,7 @@ const schema = a.schema({
 
   })
   .returns(a.string())
-  .handler(a.handler.function(listUsers))
+  .handler(a.handler.function(listUsers)),
 
   Purchase: a
   .mutation()
