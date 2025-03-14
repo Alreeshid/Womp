@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(196, 97, 97, 0.87);
-  background-color: #ffffff;
+  background-color: #280000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -32,4 +32,9 @@
 .box:nth-child(3n+3){
   grid-column: 3;
 }
-
+h1{
+  color: #ab5151
+}
+strong{
+  color:rgb(247, 247, 247)
+}

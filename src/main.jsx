@@ -7,6 +7,14 @@ import Layout from './pages/Layout.jsx'
 import Login from './pages/Login.jsx'
 import AdminPanel from './pages/adminPages/AdminLanding.jsx'
 import DemoNav from './pages/DemoNav.jsx'
+import Profile from './pages/profile.jsx'
+import Support from './pages/Support.jsx'
+import Review from './pages/Review.jsx'
+import Electronics from './pages/Electronics.jsx'
+import Jewelery from './pages/Jewelery.jsx'
+import Clothing from './pages/Clothing.jsx'
+import CreateListing from "./pages/CreateListing.jsx"
+
 
 import { generateClient } from 'aws-amplify/data';
 
@@ -37,11 +45,19 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-          <Route path="/" element={<Layout />} />
+        <Route path="/" element={<Layout />} />
+          <Route index element={<App />} />
+          <Route path="Profile" element={<Profile />} />
           <Route index element={<DemoNav />} />
           <Route path="login" element={<Login />} />
           <Route path="Admin/Landing" element = {<AdminPanel />} />
           <Route path="Demo1" element={<App />} />
+          <Route path= "Support" element={<Support />} />
+          <Route path= "Review" element={<Review />} />
+          <Route path= "Clothing" element={<Clothing />} />
+          <Route path= "Electronics" element={<Electronics />} />
+          <Route path= "Jewelery" element={<Jewelery />} />
+          <Route path= "CreateListing" element={<CreateListing />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
