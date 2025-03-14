@@ -47,7 +47,7 @@ const schema = a.schema({
   .returns(a.string())
   .handler(a.handler.function(listUsers))
   .authorization((allow) => [allow.group("Admins")]),
-
+/*
   Purchase: a
   .mutation()
   .arguments({
@@ -57,6 +57,7 @@ const schema = a.schema({
   .returns(a.ref("Post")
   .authorization(allow => [allow.authenticated()])
 )
+  */
 });
 
 export type Schema = ClientSchema<typeof schema>;
