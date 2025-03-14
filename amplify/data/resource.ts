@@ -1,5 +1,8 @@
 import { type ClientSchema, a, defineData } from '@aws-amplify/backend';
 
+import { listUsers } from '../functions/list-users/resource';
+import { list } from 'aws-amplify/storage';
+
 /*== STEP 1 ===============================================================
 The section below creates a Todo database table with a "content" field. Try
 adding a new "isDone" field as a boolean. The authorization rule below
@@ -36,10 +39,19 @@ const schema = a.schema({
   })
   .authorization((allow) => [allow.group("Admins")]),
 
+  listAllUsers: a
+  .query()
+  .arguments({
+
+  })
+  .returns(a.string())
+  .handler(a.handler.function(listUsers))
+
   Purchase: a
   .mutation()
   .arguments({
-    productID: a.string()
+    productID: a.string(),
+    userID: a.string()
   })
   .returns(a.ref("Post")
   .authorization(allow => [allow.authenticated()])

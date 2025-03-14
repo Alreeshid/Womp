@@ -4,9 +4,28 @@ import { Link } from 'react-router-dom';
 import './AdminPanel.css';
 import { generateClient } from 'aws-amplify/data';
 
+/**
+ * @type {import('aws-amplify/data').Client<import('../amplify/data/resource').Schema>}
+ */
+
 const client = generateClient();
+
+const fetchUsers = async () => {
+    const {data: users, errors} = await client.queries.listAllUsers()
+}
+
+if(errors){
+    console.error(errors)
+}
+else if(data){
+    console.log(data)
+}
+else{
+    alert("No errors/data found")
+}
+
 const fetchProducts = async() =>{
-    const {data: Products, errors} = await client.models.Products.list();
+    const {data2: Products, errors2} = await client.models.Products.list();
 };
 
 export default function AdminPanel(){
