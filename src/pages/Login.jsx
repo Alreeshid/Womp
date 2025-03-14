@@ -29,7 +29,7 @@ const client = generateClient({
 document.addEventListener("submit", handleSubmit)
 
 function handleSubmit(){
-  
+  //figure a way to make this trigger on first time sign in
 }
 
 export default function Login() {

@@ -34,7 +34,16 @@ const schema = a.schema({
     userListings: a.string().array(),
     userJoined: a.datetime()
   })
-  .authorization((allow) => [allow.group("Admins")])
+  .authorization((allow) => [allow.group("Admins")]),
+
+  Purchase: a
+  .mutation()
+  .arguments({
+    productID: a.string()
+  })
+  .returns(a.ref("Post")
+  .authorization(allow => [allow.authenticated()])
+)
 });
 
 export type Schema = ClientSchema<typeof schema>;
