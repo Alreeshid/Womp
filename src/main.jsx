@@ -25,9 +25,7 @@ const client = generateClient();
 
 // Now you should be able to make CRUDL operations with the
 // Data client
-const fetchTodos = async () => {
-  const { data: todos, errors } = await client.models.Todo.list();
-};
+
 //import * as Pages from './pages'
 //to reference a page, use <Pages.page> - I.E. <Pages.login>
 

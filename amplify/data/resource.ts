@@ -41,9 +41,6 @@ const schema = a.schema({
 
   listAllUsers: a
   .query()
-  .arguments({
-
-  })
   .returns(a.string())
   .handler(a.handler.function(listUsers))
   .authorization((allow) => [allow.group("Admins")]),
