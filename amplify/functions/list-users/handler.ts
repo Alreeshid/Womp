@@ -18,5 +18,5 @@ export const handler: Handler = async (event, context) => {
     const command = new ListUsersCommand(input);
     const response = await client.send(command);
 
-    return response; //should be an object with all users
+    return response.Users; //should be an object with all users
 }

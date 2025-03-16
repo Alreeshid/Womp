@@ -11,7 +11,9 @@ import { generateClient } from 'aws-amplify/data';
 const client = generateClient();
 
 const fetchUsers = async () => {
-    const {data: users, errors} = await client.queries.listAllUsers()
+    const {data: users, errors} = await client.queries.listAllUsers({
+        authMode: 'userPool'
+    })
 }
 try {
 console.log(fetchUsers())
