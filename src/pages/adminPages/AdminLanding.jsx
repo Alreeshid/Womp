@@ -16,7 +16,7 @@ const fetchUsers = async () => {
     })
 }
 try {
-console.log(fetchUsers())
+console.log(fetchUsers().list())
 if(errors){
     console.error(errors)
 }
@@ -29,7 +29,7 @@ else{
 }
 catch{
     console.log("cannot list users?")
-    console.log(users)
+    //console.log(users)
 }
 
 const fetchProducts = async() =>{
