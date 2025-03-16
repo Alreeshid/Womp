@@ -13,7 +13,7 @@ const client = generateClient();
 const fetchUsers = async () => {
     const {data: users, errors} = await client.queries.listAllUsers()
 }
-
+console.log(fetchUsers())
 if(errors){
     console.error(errors)
 }
