@@ -29,6 +29,7 @@ else{
 }
 catch{
     console.log("cannot list users?")
+    console.log(users)
 }
 
 const fetchProducts = async() =>{
