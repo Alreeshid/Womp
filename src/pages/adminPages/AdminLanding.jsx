@@ -13,6 +13,7 @@ const client = generateClient();
 const fetchUsers = async () => {
     const {data: users, errors} = await client.queries.listAllUsers()
 }
+try {
 console.log(fetchUsers())
 if(errors){
     console.error(errors)
@@ -22,6 +23,10 @@ else if(data){
 }
 else{
     alert("No errors/data found")
+}
+}
+catch{
+    console.log("cannot list users?")
 }
 
 const fetchProducts = async() =>{
