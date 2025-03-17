@@ -10,6 +10,7 @@
     width: 250px;
     background-color: #052e16;
     color: white;
+    
     height: 100vh;
     padding: 20px 0;
     display: flex;
@@ -41,6 +42,7 @@
     cursor: pointer;
     border-left: 3px solid transparent;
     transition: all 0.2s;
+    color: whitesmoke;
   }
   
   .nav-item.active {
