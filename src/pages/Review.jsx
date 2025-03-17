@@ -22,7 +22,7 @@ function Review() {
              <h1>Womper</h1>
            </Button>
       <NavigationBar />
-      <h1>SUPERMAN</h1>
+      <h1>Did you enjoy your experience?</h1>
 </View>
     );
    

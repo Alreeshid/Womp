@@ -12,13 +12,13 @@ const NavigationBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   
-  // Use breakpoint to determine layout
+ 
   const isMobile = useBreakpointValue({
     base: true,
     medium: false
   });
   
-  // Navigation handler function
+
   const handleNavigation = (path) => {
     navigate(path);
     if (isMenuOpen) {
@@ -36,7 +36,6 @@ const NavigationBar = () => {
       }}
     >
       {isMobile ? (
-        // Mobile layout
         <Flex direction="row" justifyContent="space-between" alignItems="center">
           <Button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -84,7 +83,9 @@ const NavigationBar = () => {
           )}
         </Flex>
       ) : (
-        // Desktop layout
+
+
+
         <Flex
           direction="row"
           justifyContent="space-between"

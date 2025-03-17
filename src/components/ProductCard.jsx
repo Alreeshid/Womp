@@ -22,7 +22,7 @@ const ProductCard = ({ title, badges, image, onClick }) => {
         src={image}
         alt={`${title} image`}
         style={{
-          width: '100%',     
+          width: '300px',     
           height: '200px',    
           objectFit: 'cover'  
         }} 
