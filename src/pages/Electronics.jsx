@@ -7,11 +7,10 @@ import {
 import NavigationBar from '../components/Navbar';
 import { useNavigate } from 'react-router-dom';
 import '../index.css';
-import Adidas from "../images/Adidas.png";
+import Camera from "../images/Camera.png";
 import lipBalm from '../images/Socks.png';
 import ProductCard from '../components/ProductCard.jsx';
 import WinterBeanie from "../images/WinterBeanie.png";
-import WinterBreak from "../images/Nike.png";
 import Shoes from "../images/Shoes.png";
 import Tanktop from "../images/Goldfish tanktop.png";
 import Jacket from "../images/Spidermanjacket.png";
@@ -27,77 +26,11 @@ function Electronics() {
     
   const clothingProducts = [
     {
-      title: "Winter Gloves",
-      badges: ['$5', 'Used'],
-      image: WinterBreak
+      title: "Sony 4k Camera",
+      badges: ['$100.99', 'Used'],
+      image: Camera
     },
-    { 
-      title: "Adidas men Athletic Cushioned Crew Socks 6 Pairs",
-      badges: ['$1.99', 'New'],
-      image: lipBalm 
-    },
-    {
-      title: "Winter Beanie - Maroon",
-      badges: ['$10', 'Used-Good'],
-      image: WinterBeanie
-    },
-    {
-      title: "Fish Tanktop",
-      badges: ['$35', 'Used-Good'],
-      image: Tanktop
-    },
-    {
-      title: "High heel sandals",
-      badges: ['$35', 'Used-Good'],
-      image: Shoes
-    },
-    {
-      title: "Spiderman Jacket",
-      badges: ['$35', 'Used-Good'],
-      image: Jacket
-    },
-  
-    { 
-      title: "Adidas men Tiro 23 League Pants",
-      badges: ['$10', 'Used-Like new'],
-      image: Adidas 
-    },
- 
-    {
-          title: "Jeans women Medium",
-          badges: ['$35', 'Used-Good'],
-          image: Jeans
-        },
-        {
-          title: "Spiderman Jacket",
-          badges: ['$35', 'Used-Good'],
-          image: Jacket
-        },
-        {
-          title: "Spiderman Jacket",
-          badges: ['$35', 'Used-Good'],
-          image: Jacket
-        },
-        {
-          title: "Spiderman Jacket",
-          badges: ['$35', 'Used-Good'],
-          image: Jacket
-        },
-        {
-          title: "Spiderman Jacket",
-          badges: ['$35', 'Used-Good'],
-          image: Jacket
-        },
-        {
-          title: "Spiderman Jacket",
-          badges: ['$35', 'Used-Good'],
-          image: Jacket
-        },
-        {
-          title: "Spiderman Jacket",
-          badges: ['$35', 'Used-Good'],
-          image: Jacket
-        },
+    
       
   ];
 
