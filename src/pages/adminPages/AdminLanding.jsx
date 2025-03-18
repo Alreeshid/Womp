@@ -12,10 +12,24 @@ import '@aws-amplify/ui-react/styles.css';
  */
 
 const client = generateClient();
+let jwtToken;
+jwtToken = event.requestContext.authorizer?.jwt?.claims?.['id_token']
+
+if (!jwtToken) {
+    const authHeader = event.headers['Authorization'];
+    jwtToken = authHeader;
+}
+if (jwtToken) {
+    console.log('jwtToken found:', jwtToken);
+    // Use the jwtToken as needed
+} else {
+    console.log('jwtToken not found in the request');
+}
 
 const fetchUsers = async () => {
     const {data: users, errors} = await client.queries.listAllUsers({
-        authMode: 'userPool'
+        authMode: 'userPool',
+        authToken: jwtToken
     })
 }
 try {
@@ -34,6 +48,9 @@ catch{
     console.log("cannot list users?")
     //console.log(users)
 }
+/*
+Thsi query seems to go through, but the console errors prompted seme inconsistent
+*/
 
 const fetchProducts = async() =>{
     const {data2: Products, errors2} = await client.models.Products.list();
