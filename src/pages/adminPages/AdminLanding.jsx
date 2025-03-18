@@ -12,24 +12,11 @@ import '@aws-amplify/ui-react/styles.css';
  */
 
 const client = generateClient();
-let jwtToken;
-jwtToken = event.requestContext.authorizer?.jwt?.claims?.['id_token']
 
-if (!jwtToken) {
-    const authHeader = event.headers['Authorization'];
-    jwtToken = authHeader;
-}
-if (jwtToken) {
-    console.log('jwtToken found:', jwtToken);
-    // Use the jwtToken as needed
-} else {
-    console.log('jwtToken not found in the request');
-}
 
 const fetchUsers = async () => {
     const {data: users, errors} = await client.queries.listAllUsers({
         authMode: 'userPool',
-        authToken: jwtToken
     })
 }
 try {
