@@ -11,6 +11,7 @@ export const auth = defineAuth({
   },
   groups: ["Admins", "Users"],
   access: (allow) =>[
-    allow.resource(listUsers).to(["manageUsers"])
+    allow.resource(listUsers).to(["manageUsers"]),
+    allow.resource(listUsers).to(["listUsers"])
   ]
 });

@@ -22,7 +22,7 @@ lambdaFunction.role?.attachInlinePolicy(
     statements: [
       new iam.PolicyStatement({
         actions: ["cognito-idp:ListUsers"],
-        resources: [backend.auth.resources.userPool.userPoolArn],
+        resources: ["*"],
       }),
     ],
   })

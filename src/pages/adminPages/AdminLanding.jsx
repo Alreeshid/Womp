@@ -229,8 +229,8 @@ const AdminPanel = () => {
           <Heading level={4}>{title}</Heading>
           <SearchField
             className="search-bar"
-            label={`Search ${title.toLowerCase()}`}
-            placeholder={`Search ${title.toLowerCase()}`}
+            label={`Search ${title.toUpperCase()}`}
+            placeholder={`Search ${title.toUpperCase()}`}
             hasSearchButton={true}
             hasSearchIcon={true}
             onChange={(e) => setSearchQuery(e.target.value)}
