@@ -6,13 +6,13 @@ export const handler: Handler = async (event, context) => {
     const client = new CognitoIdentityProviderClient()
     const input = { //params for lisitng a user
         "UserPoolId": "us-east-1_Gwm05DQ2D",
-        "AttributesToGet": [
+        /*"AttributesToGet": [
             "email",
             "sub", //sub seems to be ther User ID
             "userProfits",
             "userLat",
             "userLong"
-        ],//array of params to be fetched from the user Identity
+        ],  */ //array of params to be fetched from the user Identity
     }
 
     const command = new ListUsersCommand(input);
