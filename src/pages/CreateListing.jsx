@@ -22,7 +22,7 @@ const client = generateClient({
 })
 
 const user = getCurrentUser();
-console.log(user)
+console.log(user + "This is you!")
 
 async function addProduct(){
   //event.preventDefault();
@@ -33,6 +33,7 @@ async function addProduct(){
   
   const {data: newProduct} = await client.models.Products.create({
     productName: form.productName,
+    sellerID: (await user).userId,
     productDescription: form.productDescription,
     productImages: "Test for now",
     purchasedPrice: form.purchasedForPrice,
