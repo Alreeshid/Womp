@@ -13,6 +13,50 @@ import {
 } from '@aws-amplify/ui-react';
 import { useNavigate } from 'react-router-dom';
 import NavigationBar from '../components/Navbar';
+import { generateClient } from 'aws-amplify/data';
+import { uploadData } from 'aws-amplify/storage';
+import { getCurrentUser } from 'aws-amplify/auth';
+
+const client = generateClient({
+  authMode: "userPool"
+})
+
+const user = getCurrentUser();
+console.log(user)
+
+async function addProduct(){
+  //event.preventDefault();
+
+  const formSubmitted = new FormData(form);
+  console.log(form.get("image").name);
+  //const user = getCurrentUser();
+  
+  const {data: newProduct} = await client.models.Products.create({
+    productName: form.productName,
+    productDescription: form.productDescription,
+    productImages: "Test for now",
+    purchasedPrice: form.purchasedForPrice,
+    listPrice: form.listPrice,
+    condition: form.condition,
+    tags: "Test for now",
+    listedAt: new Date()
+  })
+  
+  /* 
+  .model({
+      productID: a.id(),
+      sellerID: a.id(),
+      productName: a.string(),
+      productDescription: a.string(),
+      productImages: a.hasMany("image", "String"),
+      purchasedPrice: a.float(),
+      listPrice: a.float(),
+      condition: a.string(),
+      tags: a.string(),
+      listedAt: a.datetime()
+    })
+  */
+}
 
 function CreateListing() {
   const navigate = useNavigate();
@@ -60,6 +104,7 @@ function CreateListing() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', form);
+    addProduct(e);
     navigate('/profile');
   };
   
