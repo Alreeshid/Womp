@@ -105,7 +105,8 @@ function CreateListing() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', form);
-    addProduct(form);
+    const form2 = new FormData(form)
+    addProduct(form2);
     navigate('/profile');
   };
   
