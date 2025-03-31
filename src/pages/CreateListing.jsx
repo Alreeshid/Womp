@@ -27,7 +27,7 @@ console.log(user + "This is you!")
 async function addProduct(){
   //event.preventDefault();
 
-  const formSubmitted = new FormData(form);
+  //const formSubmitted = new FormData(form);
   console.log(form.get("image").name);
   //const user = getCurrentUser();
   
