@@ -32,13 +32,13 @@ async function addProduct(form){
   //const user = getCurrentUser();
   
   const {data: newProduct} = await client.models.Products.create({
-    productName: form.productName,
+    productName: form.productName.value,
     sellerID: (await user).userId,
-    productDescription: form.productDescription,
+    productDescription: form.productDescription.value,
     productImages: "Test for now",
-    purchasedPrice: form.purchasedForPrice,
-    listPrice: form.listPrice,
-    condition: form.condition,
+    purchasedPrice: form.purchasedForPrice.value,
+    listPrice: form.listPrice.value,
+    condition: form.condition.value,
     tags: "Test for now",
     listedAt: new Date()
   })
@@ -106,8 +106,8 @@ function CreateListing() {
     e.preventDefault();
     console.log('Form submitted:', form);
     console.log(form.listPrice)
-    const form2 = new FormData(form)
-    addProduct(form2);
+    //const form2 = new FormData(form)
+    addProduct(form);
     //navigate('/profile');
   };
   
