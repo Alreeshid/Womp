@@ -24,7 +24,7 @@ const client = generateClient({
 const user = getCurrentUser();
 console.log(user + "This is you!")
 
-async function addProduct(){
+async function addProduct(form){
   //event.preventDefault();
 
   //const formSubmitted = new FormData(form);
@@ -105,7 +105,7 @@ function CreateListing() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', form);
-    addProduct(e);
+    addProduct(form);
     navigate('/profile');
   };
   
