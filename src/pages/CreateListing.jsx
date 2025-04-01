@@ -31,17 +31,17 @@ async function addProduct(){
   //console.log(form.get("image").name); //this seems to be a breaker
   //const user = getCurrentUser();
   try{
-  await client.models.products.create({
+  await client.models.Products.create({
     productName: "Test1",//form.productName.value,
     sellerID: "Test1",//(await user).userId,
     productDescription: "Test1",//form.productDescription.value,
-    productImages: "Test for now",
+    //productImages: "Test for now",
     purchasedPrice: 9.01,//form.purchasedForPrice.value,
     listPrice: 500.0,//form.listPrice.value,
     condition: "Test1",//form.condition.value,
     tags: "Test for now",
     listedAt: new Date()
-  })
+  }).
   console.log("Form submitted, but did it parse?")
 }
 catch(error){
