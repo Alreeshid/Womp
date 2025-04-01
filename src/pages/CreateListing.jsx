@@ -24,7 +24,7 @@ const client = generateClient({
 const user = getCurrentUser();
 console.log(user + "This is you!")
 
-async function addProduct(form){
+async function addProduct(){
   //event.preventDefault();
 
   //const formSubmitted = new FormData(form);
@@ -42,7 +42,7 @@ async function addProduct(form){
     tags: "Test for now",
     listedAt: new Date()
   })
-  
+  console.log("Form submitted, but did it parse?")
   
   /* 
   .model({
@@ -106,9 +106,10 @@ function CreateListing() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', form);
-    console.log(form.listPrice)
+    //console.log(form.listPrice)
+    
     //const form2 = new FormData(form)
-    addProduct(form);
+    //addProduct(form);
     //navigate('/profile');
   };
   
@@ -126,7 +127,7 @@ function CreateListing() {
       </Button>
       <NavigationBar />
       <Card padding="large" marginTop="medium">
-        <Heading level={1} marginBottom="medium">Create a Listing</Heading>
+        <Heading level={1} marginBottom="medium" onClick={addProduct}>Create a Listing</Heading>
         
         <form onSubmit={handleSubmit}>
           <Flex direction="column" gap="medium">
