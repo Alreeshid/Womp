@@ -5,7 +5,6 @@ import {
   View,
   Flex,
   Badge,
-  Divider,
   Button,
   useBreakpointValue
 } from '@aws-amplify/ui-react';
@@ -23,77 +22,85 @@ const ProductCard = ({ title, badges, image, onClick }) => {
 
   return (
     <Card
-      borderRadius="medium"
-      variation="outlined"
+      borderRadius="large"
+      variation="elevated"
       onClick={onClick}
       style={{ 
         display: 'flex', 
         flexDirection: 'column',
         height: '100%',
         width: '100%',
-        minWidth: isMobile ? '100%' : '150px',
+        minWidth: isMobile ? '100%' : '200px',
+        maxWidth: '300px',
+        padding: '0',
+        overflow: 'hidden',
+        backgroundColor: 'white'
       }}
     >
       <Image
         src={image}
         alt={`${title} image`}
         style={{
-          width: '200px',     
+          width: '100%',     
           height: '200px',
-          aspectRatio: '3/2',
-          objectFit: 'cover'  
+          objectFit: 'cover',
+          borderRadius: '0'
         }} 
       />
       <View 
-        padding={{ base: 'xs', large: 'sm' }} 
+        padding="medium"
         style={{ 
           display: 'flex', 
-          flexDirection: 'column', 
-          flexGrow: 1,
-          gap: '0.5rem'
+          flexDirection: 'column',
+          gap: '1rem'
         }}
       >
-        <Flex gap="0.25rem" wrap="wrap">
+        <Flex gap="0.5rem" wrap="wrap">
           {badges.map((badge) => (
             <Badge
               key={badge}
-              backgroundColor="#DE7C5A"
+              backgroundColor={
+                badge.toLowerCase().includes('used') ? '#E08D5F' : '#DE7C5A'
+              }
               color="#FFFFFF"
               style={{ 
-                padding: '0.2rem 0.5rem',
-                margin: '0.1rem',
-                fontSize: 'clamp(0.6rem, 2vw, 0.8rem)'
+                padding: '0.25rem 0.5rem',
+                borderRadius: '1rem',
+                fontSize: '0.8rem',
+                fontWeight: '500'
               }}
             >
               {badge}
             </Badge>
           ))}
         </Flex>
-        <Divider style={{ margin: '0.5rem 0' }} />
+        
         <Heading 
           level={5}
           style={{ 
-            minHeight: '2.5em',
             overflow: 'hidden',
             textOverflow: 'ellipsis',
             display: '-webkit-box',
             WebkitLineClamp: 2,
             WebkitBoxOrient: 'vertical',
-            fontSize: 'clamp(0.9rem, 3vw, 1.1rem)',
-            marginBottom: 'auto'
+            fontSize: '1rem',
+            fontWeight: '600',
+            margin: '0',
+            minHeight: '2.5em'
           }}
         >
           {title}
         </Heading>
+        
         <Button 
           backgroundColor="#B10F2E" 
           variation="primary" 
           isFullWidth
-          size={isMobile ? "medium" : "small"}
-          fontSize="clamp(0.8rem, 2.5vw, 1rem)"
           style={{ 
             marginTop: 'auto',
-            padding: isMobile ? '0.5rem 1rem' : 'clamp(0.3rem, 2vw, 0.75rem) clamp(0.5rem, 3vw, 1rem)'
+            borderRadius: '0.25rem',
+            fontWeight: '600',
+            padding: '0.75rem 1rem'
           }}
         >
           View Details
