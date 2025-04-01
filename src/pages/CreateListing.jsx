@@ -32,13 +32,13 @@ async function addProduct(form){
   //const user = getCurrentUser();
   
   const {data: newProduct} = await client.models.Products.create({
-    productName: form.productName.value,
-    sellerID: (await user).userId,
-    productDescription: form.productDescription.value,
+    productName: "Test1",//form.productName.value,
+    sellerID: "Test1",//(await user).userId,
+    productDescription: "Test1",//form.productDescription.value,
     productImages: "Test for now",
-    purchasedPrice: form.purchasedForPrice.value,
-    listPrice: form.listPrice.value,
-    condition: form.condition.value,
+    purchasedPrice: "Test1",//form.purchasedForPrice.value,
+    listPrice: "Test1",//form.listPrice.value,
+    condition: "Test1",//form.condition.value,
     tags: "Test for now",
     listedAt: new Date()
   })
