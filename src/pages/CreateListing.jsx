@@ -41,7 +41,7 @@ async function addProduct(){
     condition: "Test1",//form.condition.value,
     tags: "Test for now",
     listedAt: new Date()
-  }).
+  })
   console.log("Form submitted, but did it parse?")
 }
 catch(error){
