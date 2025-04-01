@@ -45,7 +45,7 @@ async function addProduct(){
   console.log("Form submitted, but did it parse?")
 }
 catch(error){
-  console.log(error)
+  console.log(error.error)
 }
   
   /* 
