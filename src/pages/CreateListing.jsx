@@ -31,7 +31,7 @@ async function addProduct(){
   //console.log(form.get("image").name); //this seems to be a breaker
   //const user = getCurrentUser();
   try{
-  await client.models.Products.create({
+  await client.models.products.create({
     productName: "Test1",//form.productName.value,
     sellerID: "Test1",//(await user).userId,
     productDescription: "Test1",//form.productDescription.value,
