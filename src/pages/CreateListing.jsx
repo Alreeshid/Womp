@@ -28,7 +28,7 @@ async function addProduct(form){
   //event.preventDefault();
 
   //const formSubmitted = new FormData(form);
-  console.log(form.get("image").name);
+  //console.log(form.get("image").name); //this seems to be a breaker
   //const user = getCurrentUser();
   
   const {data: newProduct} = await client.models.Products.create({
