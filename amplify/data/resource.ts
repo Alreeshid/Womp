@@ -16,7 +16,7 @@ const schema = a.schema({
       sellerID: a.id(),
       productName: a.string(),
       productDescription: a.string(),
-      productImages: a.hasMany("image", "String"),
+      //productImages: a.hasMany("image", "String"),
       purchasedPrice: a.float(),
       listPrice: a.float(),
       condition: a.string(),
