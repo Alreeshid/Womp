@@ -30,7 +30,7 @@ async function addProduct(){
   //const formSubmitted = new FormData(form);
   //console.log(form.get("image").name); //this seems to be a breaker
   //const user = getCurrentUser();
-  
+  try{
   await client.models.Products.create({
     productName: "Test1",//form.productName.value,
     sellerID: "Test1",//(await user).userId,
@@ -43,6 +43,10 @@ async function addProduct(){
     listedAt: new Date()
   })
   console.log("Form submitted, but did it parse?")
+}
+catch(error){
+  console.log(error)
+}
   
   /* 
   .model({
@@ -107,7 +111,7 @@ function CreateListing() {
     e.preventDefault();
     console.log('Form submitted:', form);
     //console.log(form.listPrice)
-    
+
     //const form2 = new FormData(form)
     //addProduct(form);
     //navigate('/profile');
