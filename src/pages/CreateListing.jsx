@@ -36,8 +36,8 @@ async function addProduct(form){
     sellerID: "Test1",//(await user).userId,
     productDescription: "Test1",//form.productDescription.value,
     productImages: "Test for now",
-    purchasedPrice: "Test1",//form.purchasedForPrice.value,
-    listPrice: "Test1",//form.listPrice.value,
+    purchasedPrice: 9.01,//form.purchasedForPrice.value,
+    listPrice: 500.0,//form.listPrice.value,
     condition: "Test1",//form.condition.value,
     tags: "Test for now",
     listedAt: new Date()
