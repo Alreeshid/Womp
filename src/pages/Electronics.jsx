@@ -8,13 +8,9 @@ import NavigationBar from '../components/Navbar';
 import { useNavigate } from 'react-router-dom';
 import '../index.css';
 import Camera from "../images/Camera.png";
-import lipBalm from '../images/Socks.png';
+
 import ProductCard from '../components/ProductCard.jsx';
-import WinterBeanie from "../images/WinterBeanie.png";
-import Shoes from "../images/Shoes.png";
-import Tanktop from "../images/Goldfish tanktop.png";
-import Jacket from "../images/Spidermanjacket.png";
-import Jeans from "../images/Jeans.png";
+
 
 function Electronics() {
   const navigate = useNavigate();
