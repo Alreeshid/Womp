@@ -24,7 +24,7 @@ const client = generateClient({
 const user = getCurrentUser();
 console.log(user + "This is you!")
 
-async function addProduct(){
+async function addProduct(form){
   //event.preventDefault();
 
   //const formSubmitted = new FormData(form);
@@ -32,13 +32,13 @@ async function addProduct(){
   //const user = getCurrentUser();
   try{
   await client.models.Products.create({
-    productName: "Test1",//form.productName.value,
-    sellerID: "Test1",//(await user).userId,
-    productDescription: "Test1",//form.productDescription.value,
+    productName: form.productName.value,//form.productName.value,
+    sellerID: (await user).userId.toString(),
+    productDescription: form.productDescription.value,
     //productImages: "Test for now",
-    purchasedPrice: 9.01,//form.purchasedForPrice.value,
-    listPrice: 500.0,//form.listPrice.value,
-    condition: "Test1",//form.condition.value,
+    purchasedPrice: form.purchasedForPrice.value,
+    listPrice: form.listPrice.value,
+    condition: form.condition.value,
     tags: "Test for now",
     listedAt: new Date()
   })
@@ -113,7 +113,7 @@ function CreateListing() {
     //console.log(form.listPrice)
 
     //const form2 = new FormData(form)
-    //addProduct(form);
+    addProduct(form);
     //navigate('/profile');
   };
   
