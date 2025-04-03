@@ -30,6 +30,7 @@ async function addProduct(form){
   //const formSubmitted = new FormData(form);
   //console.log(form.get("image").name); //this seems to be a breaker
   //const user = getCurrentUser();
+  console.log("Well we got to hear")
   try{
   await client.models.Products.create({
     productName: form.productName.value,//form.productName.value,
