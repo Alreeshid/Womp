@@ -24,7 +24,8 @@ const client = generateClient({
 })
 
 const user = getCurrentUser();
-console.log(user + "This is you!")
+console.log("Current User Information:")
+console.log(user)
 
 async function addProduct(form){
   //event.preventDefault();
@@ -34,7 +35,7 @@ async function addProduct(form){
   //const formSubmitted = new FormData(form);
   //console.log(form.get("image").name); //this seems to be a breaker
   //const user = getCurrentUser();
-  console.log("Well we got to hear")
+  console.log("Function initiated, parsing request")
   try{
   await client.models.Products.create({
     productName: form.productName,//form.productName.value,
