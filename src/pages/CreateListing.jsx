@@ -26,7 +26,9 @@ console.log(user + "This is you!")
 
 async function addProduct(form){
   //event.preventDefault();
-
+  console.log("This is the form the function gets:")
+  console.log(form)
+  console.log(form.productName)
   //const formSubmitted = new FormData(form);
   //console.log(form.get("image").name); //this seems to be a breaker
   //const user = getCurrentUser();
