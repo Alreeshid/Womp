@@ -9,8 +9,10 @@ import {
   Flex,
   Divider,
   Card,
-  Text
+  Text,
+  
 } from '@aws-amplify/ui-react';
+import { FileUploader } from '@aws-amplify/ui-react-storage'; //used for images
 import { useNavigate } from 'react-router-dom';
 import NavigationBar from '../components/Navbar';
 import { generateClient } from 'aws-amplify/data';
