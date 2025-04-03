@@ -28,20 +28,20 @@ async function addProduct(form){
   //event.preventDefault();
   console.log("This is the form the function gets:")
   //console.log(form)
-  console.log(form.productName.value)
+  console.log(form.productName)
   //const formSubmitted = new FormData(form);
   //console.log(form.get("image").name); //this seems to be a breaker
   //const user = getCurrentUser();
   console.log("Well we got to hear")
   try{
   await client.models.Products.create({
-    productName: form.productName.value,//form.productName.value,
-    sellerID: (await user).userId.toString(),
-    productDescription: form.productDescription.value,
+    productName: form.productName,//form.productName.value,
+    sellerID: user.userId,
+    productDescription: form.productDescription,
     //productImages: "Test for now",
-    purchasedPrice: form.purchasedForPrice.value,
-    listPrice: form.listPrice.value,
-    condition: form.condition.value,
+    purchasedPrice: form.purchasedForPrice,
+    listPrice: form.listPrice,
+    condition: form.condition,
     tags: "Test for now",
     listedAt: new Date()
   })
