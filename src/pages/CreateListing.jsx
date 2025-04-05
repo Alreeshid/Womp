@@ -25,6 +25,7 @@ const client = generateClient({
 })
 
 const user = getCurrentUser();
+const userIdLogged = user.userId;
 console.log("Current User Information:")
 console.log(user)
 
@@ -37,11 +38,11 @@ async function addProduct(form){
   //console.log(form.get("image").name); //this seems to be a breaker
   //const user = getCurrentUser();
   console.log("Function initiated, parsing request for:")
-  console.log((await user).userId)
+  console.log(userIdLogged)
   try{
   await client.models.Products.create({
     productName: form.productName,//form.productName.value,
-    sellerID: user.userId,
+    sellerID: userIdLogged,
     productDescription: form.productDescription,
     //productImages: "Test for now",
     purchasedPrice: form.purchasedForPrice,
