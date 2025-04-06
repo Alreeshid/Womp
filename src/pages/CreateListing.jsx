@@ -24,10 +24,11 @@ const client = generateClient({
   authMode: "userPool"
 })
 
-const user = getCurrentUser();
-const userIdLogged = getCurrentUser().userId;
-console.log("Current User ID:")
-console.log(userIdLogged)
+const { username, userId, signInDetails } = await getCurrentUser();
+
+console.log("username", username);
+console.log("user id", userId);
+console.log("sign-in details", signInDetails);
 
 async function addProduct(form){
   //event.preventDefault();
@@ -42,7 +43,7 @@ async function addProduct(form){
   try{
   await client.models.Products.create({
     productName: form.productName,//form.productName.value,
-    sellerID: userIdLogged,
+    sellerID: userId,
     productDescription: form.productDescription,
     //productImages: "Test for now",
     purchasedPrice: form.purchasedForPrice,
@@ -141,7 +142,7 @@ function CreateListing() {
       <NavigationBar />
       <Authenticator>
       <Card padding="large" marginTop="medium">
-        <Heading level={1} marginBottom="medium" onClick={addProduct}>Create a Listing</Heading>
+        <Heading level={1} marginBottom="medium"/* onClick={addProduct}*/>Create a Listing</Heading>
         
         <form onSubmit={handleSubmit}>
           <Flex direction="column" gap="medium">
