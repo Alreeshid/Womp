@@ -24,11 +24,18 @@ const client = generateClient({
   authMode: "userPool"
 })
 
-const userId = await getCurrentUser().userId;
+async function currentAuthenticatedUser() {
+  try {
+    const { username, userId, signInDetails } = await getCurrentUser();
+    console.log(`The username: ${username}`);
+    console.log(`The userId: ${userId}`);
+    console.log(`The signInDetails: ${signInDetails}`);
+  } catch (err) {
+    console.log(err);
+  }
+}
 
-//console.log("username", username);
-//console.log("user id", userId);
-//console.log("sign-in details", signInDetails);
+currentAuthenticatedUser();
 
 async function addProduct(form){
   //event.preventDefault();
