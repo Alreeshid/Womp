@@ -24,7 +24,7 @@ const client = generateClient({
   authMode: "userPool"
 })
 
-const { username, userId, signInDetails } = getCurrentUser();
+const { username, userId, signInDetails } = await getCurrentUser();
 
 console.log("username", username);
 console.log("user id", userId);
@@ -39,7 +39,7 @@ async function addProduct(form){
   //console.log(form.get("image").name); //this seems to be a breaker
   //const user = getCurrentUser();
   console.log("Function initiated, parsing request for:")
-  console.log(userIdLogged)
+  console.log(userId)
   try{
   await client.models.Products.create({
     productName: form.productName,//form.productName.value,
