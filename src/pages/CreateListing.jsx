@@ -26,9 +26,9 @@ const client = generateClient({
 
 const { username, userId, signInDetails } = await getCurrentUser();
 
-console.log("username", username);
-console.log("user id", userId);
-console.log("sign-in details", signInDetails);
+//console.log("username", username);
+//console.log("user id", userId);
+//console.log("sign-in details", signInDetails);
 
 async function addProduct(form){
   //event.preventDefault();
