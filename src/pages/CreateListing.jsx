@@ -24,7 +24,7 @@ const client = generateClient({
   authMode: "userPool"
 })
 
-const { username, userId, signInDetails } = await getCurrentUser();
+const { username, userId, signInDetails } = getCurrentUser();
 
 console.log("username", username);
 console.log("user id", userId);
