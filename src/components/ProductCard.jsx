@@ -1,3 +1,4 @@
+import React from 'react';
 import { 
   Card, 
   Heading, 
@@ -8,9 +9,11 @@ import {
   Button,
   useBreakpointValue
 } from '@aws-amplify/ui-react';
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const ProductCard = ({ title, badges, image, onClick }) => {
+const ProductCard = ({ title, badges, image }) => {
+  const navigate = useNavigate();
+  
   // Use Amplify UI's responsive hook to detect screen size
   const isMobile = useBreakpointValue({
     base: true,
@@ -20,11 +23,22 @@ const ProductCard = ({ title, badges, image, onClick }) => {
     xl: false
   });
 
+  // Convert the title to a URL-friendly format for product ID
+  const getProductId = (productTitle) => {
+    return productTitle.toLowerCase().replace(/\s+/g, '-');
+  };
+
+  // Navigate to product details page when card is clicked
+  const handleCardClick = () => {
+    const productId = getProductId(title);
+    navigate(`/product/${productId}`);
+  };
+
   return (
     <Card
       borderRadius="large"
       variation="elevated"
-      onClick={onClick}
+      onClick={handleCardClick}
       style={{ 
         display: 'flex', 
         flexDirection: 'column',
@@ -34,7 +48,13 @@ const ProductCard = ({ title, badges, image, onClick }) => {
         maxWidth: '300px',
         padding: '0',
         overflow: 'hidden',
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        cursor: 'pointer',
+        transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
+      }}
+      hoverStyle={{
+        transform: 'translateY(-8px)',
+        boxShadow: '0 12px 20px rgba(0, 0, 0, 0.15)'
       }}
     >
       <Image
@@ -56,11 +76,12 @@ const ProductCard = ({ title, badges, image, onClick }) => {
         }}
       >
         <Flex gap="0.5rem" wrap="wrap">
-          {badges.map((badge) => (
+          {badges.map((badge, index) => (
             <Badge
-              key={badge}
+              key={`${badge}-${index}`}
               backgroundColor={
-                badge.toLowerCase().includes('used') ? '#E08D5F' : '#DE7C5A'
+                badge.toLowerCase().includes('used') ? '#E08D5F' : 
+                badge.toLowerCase().includes('$') ? '#B10F2E' : '#DE7C5A'
               }
               color="#FFFFFF"
               style={{ 
@@ -101,6 +122,10 @@ const ProductCard = ({ title, badges, image, onClick }) => {
             borderRadius: '0.25rem',
             fontWeight: '600',
             padding: '0.75rem 1rem'
+          }}
+          onClick={(e) => {
+            e.stopPropagation(); // Prevent double navigation
+            handleCardClick();
           }}
         >
           View Details

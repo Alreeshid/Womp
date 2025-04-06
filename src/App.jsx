@@ -19,7 +19,7 @@ import ProductCard from './components/ProductCard.jsx';
 function Electronics() {
   const navigate = useNavigate();
   
-  // Use Amplify UI's responsive hook to detect screen size
+ 
   const isMobile = useBreakpointValue({
     base: true,
     small: true,
