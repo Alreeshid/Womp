@@ -36,6 +36,7 @@ async function currentAuthenticatedUser() {
 }
 
 currentAuthenticatedUser();
+console.log("A user named: " + userId);
 
 async function addProduct(form){
   //event.preventDefault();
