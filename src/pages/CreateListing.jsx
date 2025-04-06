@@ -25,7 +25,7 @@ const client = generateClient({
 })
 
 const user = getCurrentUser();
-const userIdLogged = user.userId;
+const userIdLogged = getCurrentUser().userId;
 console.log("Current User ID:")
 console.log(userIdLogged)
 
