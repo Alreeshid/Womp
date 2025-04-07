@@ -26,6 +26,12 @@ const client = generateClient({
 
 const user = getCurrentUser();
 
+const userListings = client.models.Products.get({
+  sellerId: user.userId,
+})
+
+console.log(userListings)
+
 function Profile() {
   const navigate = useNavigate();
   const isMobile = useBreakpointValue({
@@ -38,7 +44,7 @@ function Profile() {
   // Mock user data - replace with actual user data from your auth system
   const userData = {
     name: user.userName,
-    email: "alex.johnson@example.com",
+    email: user.loginId,
     joinDate: "March 2023",
     profileImage: Alex,
     listings: 8,
