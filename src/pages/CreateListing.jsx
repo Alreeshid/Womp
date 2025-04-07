@@ -42,10 +42,10 @@ async function currentAuthenticatedUser() {
 
 async function addProduct(form){
   //event.preventDefault();
-  console.log("This is the form the function gets:")
-  const sellerIDHere = (await getCurrentUser()).userId;
+  //console.log("This is the form the function gets:")
+  
   //console.log(form)
-  console.log(form.productName)
+  //console.log(form.productName)
   //const formSubmitted = new FormData(form);
   //console.log(form.get("image").name); //this seems to be a breaker
   //const user = getCurrentUser();
@@ -54,7 +54,7 @@ async function addProduct(form){
   try{
   await client.models.Products.create({
     productName: form.productName,//form.productName.value,
-    sellerID: sellerIDHere,
+    sellerID: getCurrentUser.userId,
     productDescription: form.productDescription,
     //productImages: "Test for now",
     purchasedPrice: form.purchasedForPrice,
