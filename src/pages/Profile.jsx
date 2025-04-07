@@ -33,7 +33,7 @@ async function getUserDetails(){
     //name = attributes;
     console.log(attributes.email)
     //console.log("Line 39 Result:" + attributes)
-    return attributes.email.toString();
+    return attributes.email;
   } catch (err) {
     console.error(err);
     // ... handle error ...
@@ -66,7 +66,7 @@ function Profile() {
   const userData = {
     name:  "UserNameErr",
     email: getUserDetails().toString(),
-    joinDate: "March 2023",
+    joinDate: "April 2025",
     profileImage: Alex,
     listings: 8,
     sold: 12,
