@@ -33,7 +33,7 @@ const userListings = client.models.Products.get({
 })
 
 console.log("User Attributes: ")
-console.log(userInfo)
+console.log(userInfo.email)
 //console.log(user.userId)
 
 function Profile() {
