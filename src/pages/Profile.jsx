@@ -275,13 +275,7 @@ try {
           >
             Payment Methods
           </Button>
-          <Button 
-            variation="primary" 
-            backgroundColor="#DE7C5A"
-            borderRadius="medium"
-          >
-            Notification Settings
-          </Button>
+          
         </Flex>
       </View>
     </View>
