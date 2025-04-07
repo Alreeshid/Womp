@@ -50,7 +50,7 @@ async function getSpecificUserListings(){
 function Profile() {
 
   let name, listingCount;
-  getUserDetails();
+  //getUserDetails();
 
 
 
