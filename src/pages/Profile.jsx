@@ -32,7 +32,8 @@ async function getUserDetails(){
     let attributes = await fetchUserAttributes();
     //name = attributes;
     console.log(attributes.email)
-    console.log("Line 39 Result:" + attributes)
+    //console.log("Line 39 Result:" + attributes)
+    return attributes.email;
   } catch (err) {
     console.error(err);
     // ... handle error ...
@@ -59,7 +60,7 @@ function Profile() {
   // Mock user data - replace with actual user data from your auth system
   const userData = {
     name:  "UserNameErr",
-    email: user.loginId,
+    email: getUserDetails(),
     joinDate: "March 2023",
     profileImage: Alex,
     listings: 8,
