@@ -31,7 +31,7 @@ const userListings = client.models.Products.get({
 })
 
 console.log("Listings: ")
-console.log(userListings)
+console.log(user.userId)
 
 function Profile() {
   const navigate = useNavigate();
