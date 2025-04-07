@@ -23,26 +23,38 @@ import { getCurrentUser } from 'aws-amplify/auth';
 const client = generateClient({
   authMode: "userPool"
 })
+let userIdLogged = "";
+async function currentAuthenticatedUser() {
+  try {
+    const { username, userId, signInDetails } = await getCurrentUser();
+    console.log(`The username: ${username}`);
+    console.log(`The userId: ${userId}`);
+    console.log(`The signInDetails: ${signInDetails}`);
+    //userIdLogged = userId;
+  } catch (err) {
+    console.log(err);
+  }
+  //return(`${userId}`);
+}
 
-const user = getCurrentUser();
-const userIdLogged = user.userId;
-console.log("Current User Information:")
-console.log(user)
+//currentAuthenticatedUser();
+
 
 async function addProduct(form){
   //event.preventDefault();
   console.log("This is the form the function gets:")
+  const sellerIDHere = (await getCurrentUser()).userId;
   //console.log(form)
   console.log(form.productName)
   //const formSubmitted = new FormData(form);
   //console.log(form.get("image").name); //this seems to be a breaker
   //const user = getCurrentUser();
   console.log("Function initiated, parsing request for:")
-  console.log(userIdLogged)
+  console.log(userId)
   try{
   await client.models.Products.create({
     productName: form.productName,//form.productName.value,
-    sellerID: userIdLogged,
+    sellerID: sellerIDHere,
     productDescription: form.productDescription,
     //productImages: "Test for now",
     purchasedPrice: form.purchasedForPrice,
@@ -72,6 +84,8 @@ catch(error){
     })
   */
 }
+
+console.log("A user named: " + userIdLogged);
 
 function CreateListing() {
   const navigate = useNavigate();
@@ -141,7 +155,7 @@ function CreateListing() {
       <NavigationBar />
       <Authenticator>
       <Card padding="large" marginTop="medium">
-        <Heading level={1} marginBottom="medium" onClick={addProduct}>Create a Listing</Heading>
+        <Heading level={1} marginBottom="medium"/* onClick={addProduct}*/>Create a Listing</Heading>
         
         <form onSubmit={handleSubmit}>
           <Flex direction="column" gap="medium">
