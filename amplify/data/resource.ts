@@ -24,20 +24,15 @@ const schema = a.schema({
       listedAt: a.datetime()
     })
     .authorization((allow) => [allow.owner(), allow.guest()]), //added the guest portion
-  Users: a
+  Tickets: a
   .model({
     userID: a.id(),
     userName: a.string(),
-    userEmail: a.email  (),
-    userProfits: a.float(),
-    userLocation: a.customType({
-      lat: a.float(),
-      long: a.float()
-    }),
-    userListings: a.string().array(),
-    userJoined: a.datetime()
+    ticketRating: a.integer(),
+    ticketContent: a.string(),
+    timestamp: a.datetime()
   })
-  .authorization((allow) => [allow.group("Admins")]),
+  .authorization((allow) => [allow.authenticated()]),
 
   listAllUsers: a
   .query()
