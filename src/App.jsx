@@ -49,7 +49,7 @@ function Electronics() {
       image: Flowershirt 
     },
     { 
-      title: "Couples'Keychain set",
+      title: "Couples Keychain set",
       badges: ['$6.99', 'New'],
       image: MotorKeychain 
     },

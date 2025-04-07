@@ -20,6 +20,25 @@ import lipBalm from '../images/VanillaLipBalm.png';
 import Flowershirt from "../images/Flowershirt.png";
 import MotorKeychain from "../images/Motorchain.jpg";
 import Nightlight from "../images/Nightlight.png";
+import Adidas from "../images/Adidas.png";
+import Socks from '../images/Socks.png';
+import WinterBeanie from "../images/WinterBeanie.png";
+import WinterBreak from "../images/Nike.png";
+import Shoes from "../images/Shoes.png";
+import Tanktop from "../images/Goldfish tanktop.png";
+import Jacket from "../images/Spidermanjacket.png";
+import Jeans from "../images/Jeans.png";
+import Cookie from "../images/PokemonCookie.png";
+import LongCoat from "../images/LongCoat.png";
+import GreyCoat from "../images/GreyCoat.png";
+import Puma from "../images/TealPuma.png";
+import SasShirt from "../images/SasShirt.png";
+import WomenSocks from "../images/WomenSocks.png";
+import Phenix from "../images/Pheinox.png";
+import Cherries from "../images/Cherries.jpg";
+import Little from "../images/LittleThings.jpg";
+import DD from "../images/DD.png";
+import Chain from "../images/Chain.jpg";
 
 const ProductDetails = () => {
   const { productId } = useParams();
@@ -33,10 +52,20 @@ const ProductDetails = () => {
     large: false,
     xl: false
   });
-  
-  // This would typically come from an API or database
-  // Using static data for this example
+
+  // Product database
   const allProducts = [
+
+    {
+      id: 'jewelery-women-necklace',
+      title: "14kWomen Necklace",
+      badges: ['$100.99', 'New'],
+      image: Chain,
+      description: "Beautiful 14k gold necklace for women. Perfect for special occasions and everyday wear.",
+      category: "Jewelry",
+      seller: "LuxuryJewels",
+      condition: "New"
+    },
     { 
       id: 'minecraft-water-bottle',
       title: "Minecraft Water Bottle",
@@ -96,32 +125,218 @@ const ProductDetails = () => {
       category: "Electronics",
       seller: "PhotoPro",
       condition: "Used"
-    }
+    },
+    
+    // New products
+    {
+      id: 'winter-gloves',
+      title: "Nike shoes",
+      badges: ['$5', 'Used'],
+      image: WinterBreak,
+      description: "Shoes. Used but still in good condition.",
+      category: "Clothing",
+      seller: "WinterGear",
+      condition: "Used"
+    },
+    { 
+      id: 'adidas-men-athletic-cushioned-crew-socks-6-pairs',
+      title: "Adidas men Athletic Cushioned Crew Socks 6 Pairs",
+      badges: ['$1.99', 'New'],
+      image: Socks,
+      description: "New pack of 6 pairs of Adidas men's athletic cushioned crew socks. Perfect for sports and everyday wear.",
+      category: "Clothing",
+      seller: "SportsGear",
+      condition: "New"
+    },
+    {
+      id: 'winter-beanie---maroon',
+      title: "Winter Beanie - Maroon",
+      badges: ['$10', 'Used-Good'],
+      image: WinterBeanie,
+      description: "Warm maroon winter beanie. Used but in good condition, perfect for cold weather.",
+      category: "Clothing",
+      seller: "WinterGear",
+      condition: "Used - Good"
+    },
+    {
+      id: 'fish-tanktop',
+      title: "Fish Tanktop",
+      badges: ['$35', 'Used-Good'],
+      image: Tanktop,
+      description: "Stylish fish-pattern tanktop. Used but in good condition, perfect for summer.",
+      category: "Clothing",
+      seller: "SummerWear",
+      condition: "Used - Good"
+    },
+    {
+      id: 'high-heel-sandals',
+      title: "High heel sandals",
+      badges: ['$35', 'Used-Good'],
+      image: Shoes,
+      description: "Elegant high heel sandals. Used but in good condition, perfect for special occasions.",
+      category: "Footwear",
+      seller: "FashionFootwear",
+      condition: "Used - Good"
+    },
+    {
+      id: 'spiderman-jacket',
+      title: "Spiderman Jacket",
+      badges: ['$35', 'Used-Good'],
+      image: Jacket,
+      description: "Cool Spiderman themed jacket. Used but in good condition, perfect for fans.",
+      category: "Clothing",
+      seller: "SuperheroFashion",
+      condition: "Used - Good"
+    },
+    { 
+      id: 'adidas-men-tiro-23-league-pants',
+      title: "Adidas men Tiro 23 League Pants",
+      badges: ['$10', 'Used-Like new'],
+      image: Adidas,
+      description: "Adidas men's Tiro 23, athletic pants perfect for sports and casual wear. Used but like new.",
+      category: "Clothing",
+      seller: "SportsGear",
+      condition: "Used - Like New"
+    },
+    {
+      id: 'jeans-women-medium',
+      title: "Jeans women Medium",
+      badges: ['$35', 'Used-Good'],
+      image: Jeans,
+      description: "Women's medium size jeans. Used but in good condition, perfect for casual wear.",
+      category: "Clothing",
+      seller: "CasualWear",
+      condition: "Used - Good"
+    },
+    {
+      id: 'sasquatch-shirt',
+      title: "Sasquatch Shirt",
+      badges: ['$15', 'Used-Good'],
+      image: SasShirt,
+      description: "Fun Sasquatch themed shirt. Used but in good condition, perfect for casual wear.",
+      category: "Clothing",
+      seller: "NoveltyWear",
+      condition: "Used - Good"
+    },
+    {
+      id: 'cookie-pokemon-tshirt',
+      title: "Cookie Pokemon Tshirt",
+      badges: ['$35', 'Used-Good'],
+      image: Cookie,
+      description: "Pokemon themed t-shirt with cookie design. Used but in good condition, perfect for fans.",
+      category: "Clothing",
+      seller: "PokemonFashion",
+      condition: "Used - Good"
+    },
+    {
+      id: 'long-coat-men',
+      title: "Long Coat Men",
+      badges: ['$35', 'Used-Good'],
+      image: LongCoat,
+      description: "Men's long coat, perfect for cold weather. Used but in good condition, stylish and warm.",
+      category: "Clothing",
+      seller: "WinterStyle",
+      condition: "Used - Good"
+    },
+    {
+      id: 'teal-puma-shoes',
+      title: "Teal Puma Shoes",
+      badges: ['$35', 'Used-Good'],
+      image: Puma,
+      description: "Teal colored Puma athletic shoes. Used but in good condition, comfortable and stylish.",
+      category: "Footwear",
+      seller: "SportyShoes",
+      condition: "Used - Good"
+    },
+    {
+      id: 'knee-socks',
+      title: "Knee Socks",
+      badges: ['$45', 'Used-Good'],
+      image: WomenSocks,
+      description: "Women's knee-high socks. Used but in good condition, comfortable and stylish.",
+      category: "Clothing",
+      seller: "SocksAndMore",
+      condition: "Used - Good"
+    },
+    {
+      id: 'little-things-shirt',
+      title: "Little Things Shirt",
+      badges: ['$35', 'Used-Good'],
+      image: Little,
+      description: "'Little Things' graphic t-shirt. Used but in good condition, casual and comfortable.",
+      category: "Clothing",
+      seller: "GraphicTees",
+      condition: "Used - Good"
+    },
+    {
+      id: 'dunkin-donuts-shirt',
+      title: "Dunkin Donuts Shirt",
+      badges: ['$35', 'Used-Good'],
+      image: DD,
+      description: "Dunkin Donuts themed t-shirt. Used but in good condition, perfect for fans.",
+      category: "Clothing",
+      seller: "BrandedWear",
+      condition: "Used - Good"
+    },
+    {
+      id: 'grey-long-coat',
+      title: "Grey Long Coat",
+      badges: ['$35', 'Used-Good'],
+      image: GreyCoat,
+      description: "Grey long coat, elegant and warm. Used but in good condition, perfect for formal occasions.",
+      category: "Clothing",
+      seller: "FormalWear",
+      condition: "Used - Good"
+    },
+    {
+      id: 'pheniox-tshirt',
+      title: "Pheniox Tshirt",
+      badges: ['$35', 'Used'],
+      image: Phenix,
+      description: "Phoenix themed t-shirt. Used but still in decent condition, casual and unique.",
+      category: "Clothing",
+      seller: "GraphicTees",
+      condition: "Used"
+    },
+    {
+      id: 'cherries-tshirt',
+      title: "Cherries Tshirt",
+      badges: ['$35', 'New'],
+      image: Cherries,
+      description: "Cherry pattern t-shirt. Brand new, never worn. Cute and playful design.",
+      category: "Clothing",
+      seller: "FruitFashion",
+      condition: "New"
+    },
+    
+    
+            
+            
+            
   ];
   
-  // Find the product from our "database" based on the productId
+  
   useEffect(() => {
+    console.log("Looking for product with ID:", productId);
+    
     const foundProduct = allProducts.find(p => p.id === productId);
     
     if (foundProduct) {
+      console.log("Found product:", foundProduct);
       setProduct(foundProduct);
-      // Could set document title here
       document.title = `Womper - ${foundProduct.title}`;
     } else {
-      // Handle product not found
       console.error(`Product with ID ${productId} not found`);
-      // Could navigate to a 404 page here
     }
   }, [productId]);
   
-  // Handle go back button
+  
   const goBack = () => {
     navigate(-1);
   };
   
-  // Handle add to cart
+  
   const addToCart = () => {
-    // This would typically add the product to a cart in state or localStorage
     alert(`${product.title} added to cart!`);
   };
   
@@ -152,7 +367,7 @@ const ProductDetails = () => {
   
   return (
     <View padding="medium">
-      {/* Logo/Home Button */}
+      
       <Button 
         variation="link"
         onClick={() => navigate('/')}
@@ -160,10 +375,10 @@ const ProductDetails = () => {
         <h1>Womper</h1>
       </Button>
       
-      {/* Navigation */}
+      
       <NavigationBar />
       
-      {/* Back Button */}
+      
       <Button 
         onClick={goBack}
         variation="link"
@@ -173,13 +388,13 @@ const ProductDetails = () => {
         ← Back
       </Button>
       
-      {/* Product Details */}
+     
       <Flex 
         direction={isMobile ? "column" : "row"}
         padding="large"
         gap="large"
       >
-        {/* Product Image */}
+        
         <View 
           width={isMobile ? "100%" : "40%"}
           backgroundColor="#f8f8f8"
@@ -199,11 +414,11 @@ const ProductDetails = () => {
           />
         </View>
         
-        {/* Product Info */}
+        
         <View width={isMobile ? "100%" : "60%"}>
-          <Heading level={2}>{product.title}</Heading>
+          <Heading color="#e84441" level={2}>{product.title}</Heading>
           
-          {/* Badges */}
+          
           <Flex gap="0.5rem" wrap="wrap" marginTop="small">
             {product.badges.map((badge, index) => (
               <Badge
@@ -212,7 +427,7 @@ const ProductDetails = () => {
                   badge.toLowerCase().includes('used') ? '#E08D5F' : 
                   badge.toLowerCase().includes('$') ? '#B10F2E' : '#DE7C5A'
                 }
-                color="#FFFFFF"
+                color="#e84441"
                 style={{ 
                   padding: '0.25rem 0.5rem',
                   borderRadius: '1rem',
@@ -225,30 +440,30 @@ const ProductDetails = () => {
             ))}
           </Flex>
           
-          {/* Description */}
-          <Text marginTop="medium" fontSize="large">
+          
+          <Text marginTop="medium" fontSize="large" color="#e84441">
             {product.description}
           </Text>
           
-          {/* Additional Details */}
+         
           <Divider marginTop="large" marginBottom="large" />
           
           <Flex direction="column" gap="small">
             <Flex>
-              <Text fontWeight="bold" width="120px">Category:</Text>
-              <Text>{product.category}</Text>
+              <Text fontWeight="bold" width="120px" color="#e84441">Category:</Text>
+              <Text color="#e84441">{product.category}</Text>
             </Flex>
             <Flex>
-              <Text fontWeight="bold" width="120px">Condition:</Text>
-              <Text>{product.condition}</Text>
+              <Text fontWeight="bold" color="#e84441" width="120px">Condition:</Text>
+              <Text color="#e84441">{product.condition}</Text>
             </Flex>
             <Flex>
-              <Text fontWeight="bold" width="120px">Seller:</Text>
-              <Text>{product.seller}</Text>
+              <Text color="#e84441" fontWeight="bold" width="120px">Seller:</Text>
+              <Text color="#e84441">{product.seller}</Text>
             </Flex>
           </Flex>
           
-          {/* Add to Cart */}
+          
           <Button 
             onClick={addToCart}
             variation="primary"

@@ -2,32 +2,46 @@ import React from 'react';
 import { 
   View,
   Button,
-  Heading
+  Heading,
+  useBreakpointValue
 } from '@aws-amplify/ui-react';
 import NavigationBar from '../components/Navbar';
 import { useNavigate } from 'react-router-dom';
 import '../index.css';
 import ProductCard from '../components/ProductCard.jsx';
-import WinterBreak from "../images/Nike.png";
-
+import Chain from "../images/Chain.jpg";
 
 function Jewelery() {
   const navigate = useNavigate();
+  
+  const isMobile = useBreakpointValue({
+    base: true,
+    small: true,
+    medium: false,
+    large: false,
+    xl: false
+  });
     
   const goHome = () => {
     navigate('/'); 
   };
 
-    
-  const clothingProducts = [
+  // Jewelry products with proper ID
+  const jewelryProducts = [
     {
-      title: "Winter Gloves",
-      badges: ['$5', 'Used'],
-      image: WinterBreak
-    },
-   
-      
+      id: 'jewelry-women-necklace', // This ID matches what's in ProductDetails
+      title: "14k Women Necklace",
+      badges: ['$100.99', 'New'],
+      image: Chain
+    }
   ];
+
+  const gridContainerStyle = {
+    display: 'grid',
+    gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fill, minmax(200px, 1fr))',
+    gap: '20px',
+    width: '100%'
+  };
 
   return (
     <View padding="medium">
@@ -38,7 +52,7 @@ function Jewelery() {
         <h1>Womper</h1>
       </Button>
       <NavigationBar />
-      {/* Clothing Products Section */}
+      {/* Jewelry Products Section */}
       <View marginBottom="3rem">
         <Heading 
           level={2} 
@@ -46,12 +60,13 @@ function Jewelery() {
           padding="medium"
           color={'red.90'}
         >
-          <h3>Jewelery</h3>
+          <h3>Jewelry</h3>
         </Heading>
-        <View style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-          {clothingProducts.map((product, index) => (
+        <View style={gridContainerStyle}>
+          {jewelryProducts.map((product, index) => (
             <ProductCard
-              key={`clothing-${index}`}
+              key={`jewelry-${index}`}
+              id={product.id}
               title={product.title}
               badges={product.badges}
               image={product.image}

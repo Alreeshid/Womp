@@ -23,12 +23,12 @@ const ProductCard = ({ title, badges, image }) => {
     xl: false
   });
 
-  // Convert the title to a URL-friendly format for product ID
+ 
   const getProductId = (productTitle) => {
     return productTitle.toLowerCase().replace(/\s+/g, '-');
   };
 
-  // Navigate to product details page when card is clicked
+  
   const handleCardClick = () => {
     const productId = getProductId(title);
     navigate(`/product/${productId}`);

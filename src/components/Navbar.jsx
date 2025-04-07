@@ -76,8 +76,7 @@ const NavigationBar = () => {
               <Button color="#B10F2E" variation="link"   onClick={() => handleNavigation('/support')}>Support</Button>
               <Button color="#B10F2E" variation="link"   onClick={() => handleNavigation('/Review')}>Review</Button>
               <Button color="#B10F2E" variation="link"   onClick={() => handleNavigation('/Clothing')}>Clothing</Button>
-              <Button color="#B10F2E" variation="link"   onClick={() => handleNavigation('/Electronics')}>Electronics</Button>
-              <Button color="#B10F2E" variation="link"   onClick={() => handleNavigation('/Jewelery')}>Jewelery</Button>
+           
               
             </Flex>
           )}
@@ -120,8 +119,7 @@ const NavigationBar = () => {
           
           <Flex gap="small">
             <Button color="#B10F2E" variation="link" onClick={() => handleNavigation('/Clothing')}>Clothing</Button>
-            <Button color="#B10F2E" variation="link" onClick={() => handleNavigation('/Electronics')}>Electronics</Button>
-            <Button color="#B10F2E" variation="link"onClick={() => handleNavigation('/Jewelery')}>Jewelery</Button>
+            
           </Flex>
         </Flex>
       )}
