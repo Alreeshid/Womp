@@ -30,11 +30,11 @@ async function currentAuthenticatedUser() {
     console.log(`The username: ${username}`);
     console.log(`The userId: ${userId}`);
     console.log(`The signInDetails: ${signInDetails}`);
-    userIdLogged = userId;
+    //userIdLogged = userId;
   } catch (err) {
     console.log(err);
   }
-  return(`${userId}`);
+  //return(`${userId}`);
 }
 
 currentAuthenticatedUser();
