@@ -30,6 +30,7 @@ const userListings = client.models.Products.get({
   sellerId: user.userId,
 })
 
+console.log("Listings: ")
 console.log(userListings)
 
 function Profile() {
