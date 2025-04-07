@@ -34,7 +34,7 @@ async function currentAuthenticatedUser() {
   } catch (err) {
     console.log(err);
   }
-  return(userId);
+  return(`${userId}`);
 }
 
 currentAuthenticatedUser();
