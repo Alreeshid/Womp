@@ -15,6 +15,8 @@ import { useNavigate } from 'react-router-dom';
 import NavigationBar from '../components/Navbar';
 import Alex from "../images/AlexJohnson.jpg";
 import '../index.css';
+import { getCurrentUser } from 'aws-amplify/auth';
+import { generateClient } from 'aws-amplify/data';
 
 import { Authenticator } from '@aws-amplify/ui-react';
 
