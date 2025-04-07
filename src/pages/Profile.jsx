@@ -35,7 +35,7 @@ function Profile() {
 
 try {
   let attributes = fetchUserAttributes();
-  name = attributes.name;
+  name = attributes.email;
   console.log(attributes)
   console.log("That's the result")
 } catch (err) {
@@ -117,7 +117,7 @@ try {
             />
             <Authenticator>
             <View>
-              <Heading level={2} marginBottom="xs" color="#460000"><strong>Welcome Back, {user.userId}!</strong></Heading>
+              <Heading level={2} marginBottom="xs" color="#460000"><strong>Welcome Back, {name}!</strong></Heading>
               <Text fontSize="medium" color="gray">{userData.email}</Text>
               <Text fontSize="small" color="red.80">Member since {userData.joinDate}</Text>
               
