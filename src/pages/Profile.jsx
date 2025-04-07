@@ -26,7 +26,7 @@ const client = generateClient({
 })
 
 const user = getCurrentUser();
-let name, lstingCount;
+let name, listingCount;
 
 try {
   attributes = await fetchUserAttributes();
@@ -48,7 +48,7 @@ function Profile() {
   
   // Mock user data - replace with actual user data from your auth system
   const userData = {
-    name:  userData.userId,
+    name:  name,
     email: user.loginId,
     joinDate: "March 2023",
     profileImage: Alex,
