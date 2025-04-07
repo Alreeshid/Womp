@@ -29,7 +29,7 @@ const user = getCurrentUser();
 
 async function getUserDetails(){
   try {
-    let attributes = fetchUserAttributes();
+    let attributes = await fetchUserAttributes();
     //name = attributes;
     console.log(attributes.email)
     console.log("Line 39 Result:" + attributes)
