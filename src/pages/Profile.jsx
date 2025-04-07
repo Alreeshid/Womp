@@ -36,8 +36,8 @@ function Profile() {
 try {
   let attributes = fetchUserAttributes();
   name = attributes.email;
-  console.log(attributes.user.email)
-  console.log("That's the result")
+  console.log(attributes.attributes)
+  console.log("Line 39 Result:")
 } catch (err) {
   console.error(err);
   // ... handle error ...

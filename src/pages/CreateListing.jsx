@@ -131,7 +131,7 @@ function CreateListing() {
 
     //const form2 = new FormData(form)
     addProduct(form);
-    //navigate('/profile');
+    navigate('/profile');
   };
   
   const goHome = () => {
