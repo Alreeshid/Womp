@@ -132,7 +132,7 @@ try {
                 </View>
                 <View textAlign="center">
                   <Text fontSize="xx-large" fontWeight="bold" color="#B10F2E">{userData.saved}</Text>
-                  <Text color="red">Saved Items</Text>
+                  <Text color="red">Total Profits</Text>
                 </View>
               </Flex>
             </View>
@@ -182,7 +182,7 @@ try {
             padding="medium" 
             backgroundColor="#232624"
             borderRadius="large"
-            style={{ flex: 1, cursor: 'pointer' }}
+            style={{ flex: 1, cursor: 'pointer', display: 'none'}}
             onClick={goToSavedItems}
           >
             <Flex direction="column" alignItems="center" textAlign="center" gap="small">
