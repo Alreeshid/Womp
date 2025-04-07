@@ -108,7 +108,7 @@ function Profile() {
             />
             <Authenticator>
             <View>
-              <Heading level={2} marginBottom="xs" color="#460000"><strong>Welcome Back, {userData.name}!</strong></Heading>
+              <Heading level={2} marginBottom="xs" color="#460000"><strong>Welcome Back, {user.userId}!</strong></Heading>
               <Text fontSize="medium" color="gray">{userData.email}</Text>
               <Text fontSize="small" color="red.80">Member since {userData.joinDate}</Text>
               
