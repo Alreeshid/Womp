@@ -33,11 +33,16 @@ async function getUserDetails(){
     //name = attributes;
     console.log(attributes.email)
     //console.log("Line 39 Result:" + attributes)
-    return attributes.email;
+    return attributes.email.toString();
   } catch (err) {
     console.error(err);
     // ... handle error ...
   }
+}
+
+async function getSpecificUserListings(){
+  //WIP
+  //let listings = client
 }
 
 
