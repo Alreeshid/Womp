@@ -44,6 +44,7 @@ async function getUserDetails(){
 function Profile() {
 
   let name, listingCount;
+  getUserDetails();
 
 
 
