@@ -26,16 +26,16 @@ const client = generateClient({
 })
 
 const user = getCurrentUser();
-const userInfo = await fetchUserAttributes();
+let name, lstingCount;
 
-const userListings = await client.models.Products.get({
-  sellerId: user.userId,
-})
-console.log(userListings)
+try {
+  attributes = await fetchUserAttributes();
+  name = attributes.name;
+} catch (err) {
+  // console.error(err);
+  // ... handle error ...
+}
 
-console.log("User Attributes: ")
-console.log(userInfo.email)
-//console.log(user.userId)
 
 function Profile() {
   const navigate = useNavigate();
