@@ -34,7 +34,7 @@ async function currentAuthenticatedUser() {
   } catch (err) {
     console.log(err);
   }
-  //return(userId);
+  return(userId);
 }
 
 currentAuthenticatedUser();
@@ -43,6 +43,7 @@ currentAuthenticatedUser();
 async function addProduct(form){
   //event.preventDefault();
   console.log("This is the form the function gets:")
+  const sellerIDHere = currentAuthenticatedUser;
   //console.log(form)
   console.log(form.productName)
   //const formSubmitted = new FormData(form);
@@ -53,7 +54,7 @@ async function addProduct(form){
   try{
   await client.models.Products.create({
     productName: form.productName,//form.productName.value,
-    sellerID: userId,
+    sellerID: sellerIDHere,
     productDescription: form.productDescription,
     //productImages: "Test for now",
     purchasedPrice: form.purchasedForPrice,
