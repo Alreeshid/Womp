@@ -31,6 +31,8 @@ let name, listingCount;
 try {
   attributes = fetchUserAttributes();
   name = attributes.name;
+  console.log(name)
+  console.log("That's the result")
 } catch (err) {
   // console.error(err);
   // ... handle error ...
