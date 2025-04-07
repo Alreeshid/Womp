@@ -31,8 +31,9 @@ async function getUserDetails(){
   try {
     let attributes = await fetchUserAttributes();
     //name = attributes;
-    console.log(attributes.email)
+    //console.log(attributes.email)
     //console.log("Line 39 Result:" + attributes)
+    //Doesn't actually return the email oddly, need to fix
     return attributes.email;
   } catch (err) {
     console.error(err);
@@ -42,7 +43,8 @@ async function getUserDetails(){
 
 async function getSpecificUserListings(){
   //WIP
-  //let listings = client
+  let listings = await client.models.Products.list();
+  console.log(listings)
 }
 
 
@@ -51,7 +53,7 @@ function Profile() {
 
   let name, listingCount;
   //getUserDetails();
-
+  getSpecificUserListings()
 
 
   const navigate = useNavigate();
