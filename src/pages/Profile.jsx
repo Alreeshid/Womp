@@ -16,6 +16,7 @@ import NavigationBar from '../components/Navbar';
 import Alex from "../images/AlexJohnson.jpg";
 import '../index.css';
 import { getCurrentUser } from 'aws-amplify/auth';
+import { fetchUserAttributes } from 'aws-amplify/auth';
 import { generateClient } from 'aws-amplify/data';
 
 import { Authenticator } from '@aws-amplify/ui-react';
@@ -25,13 +26,15 @@ const client = generateClient({
 })
 
 const user = getCurrentUser();
+const userInfo = fetchUserAttributes();
 
 const userListings = client.models.Products.get({
   sellerId: user.userId,
 })
 
-console.log("Listings: ")
-console.log(user.userId)
+console.log("User Attributes: ")
+console.log(userInfo)
+//console.log(user.userId)
 
 function Profile() {
   const navigate = useNavigate();
