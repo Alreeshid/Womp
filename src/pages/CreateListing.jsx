@@ -37,13 +37,13 @@ async function currentAuthenticatedUser() {
   //return(`${userId}`);
 }
 
-currentAuthenticatedUser();
+//currentAuthenticatedUser();
 
 
 async function addProduct(form){
   //event.preventDefault();
   console.log("This is the form the function gets:")
-  const sellerIDHere = currentAuthenticatedUser();
+  const sellerIDHere = (await getCurrentUser()).userId;
   //console.log(form)
   console.log(form.productName)
   //const formSubmitted = new FormData(form);
