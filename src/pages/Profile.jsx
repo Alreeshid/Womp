@@ -26,7 +26,12 @@ const client = generateClient({
 })
 
 const user = getCurrentUser();
-let name, listingCount;
+
+
+
+function Profile() {
+
+  let name, listingCount;
 
 try {
   let attributes = fetchUserAttributes();
@@ -38,8 +43,6 @@ try {
   // ... handle error ...
 }
 
-
-function Profile() {
   const navigate = useNavigate();
   const isMobile = useBreakpointValue({
     base: true,
