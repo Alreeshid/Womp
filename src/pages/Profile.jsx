@@ -13,6 +13,7 @@ import {
 } from '@aws-amplify/ui-react';
 import { useNavigate } from 'react-router-dom';
 import NavigationBar from '../components/Navbar';
+import Alex from "../images/AlexJohnson.jpg";
 import '../index.css';
 
 function Profile() {
@@ -29,7 +30,7 @@ function Profile() {
     name: "Alex Johnson",
     email: "alex.johnson@example.com",
     joinDate: "March 2023",
-    profileImage: "/api/placeholder/150/150",
+    profileImage: Alex,
     listings: 8,
     sold: 12,
     saved: 15
@@ -78,7 +79,7 @@ function Profile() {
           padding="large" 
           marginBottom="large"
           borderRadius="large"
-          backgroundColor="white"
+          backgroundColor="#232624"
         >
           <Flex direction={isMobile ? "column" : "row"} alignItems="center" gap="large">
             <Image
@@ -91,20 +92,20 @@ function Profile() {
             <View>
               <Heading level={2} marginBottom="xs" color="#460000"><strong>Welcome Back, {userData.name}!</strong></Heading>
               <Text fontSize="medium" color="gray">{userData.email}</Text>
-              <Text fontSize="small" color="gray.60">Member since {userData.joinDate}</Text>
+              <Text fontSize="small" color="red.80">Member since {userData.joinDate}</Text>
               
               <Flex marginTop="medium" gap="large">
                 <View textAlign="center">
                   <Text fontSize="xx-large" fontWeight="bold" color="#B10F2E">{userData.listings}</Text>
-                  <Text color="gray.80">Active Listings</Text>
+                  <Text color="red">Active Listings</Text>
                 </View>
                 <View textAlign="center">
                   <Text fontSize="xx-large" fontWeight="bold" color="#B10F2E">{userData.sold}</Text>
-                  <Text color="gray.80">Items Sold</Text>
+                  <Text color="red">Items Sold</Text>
                 </View>
                 <View textAlign="center">
                   <Text fontSize="xx-large" fontWeight="bold" color="#B10F2E">{userData.saved}</Text>
-                  <Text color="gray.80">Saved Items</Text>
+                  <Text color="red">Saved Items</Text>
                 </View>
               </Flex>
             </View>
@@ -121,60 +122,60 @@ function Profile() {
           <Card 
             variation="elevated" 
             padding="medium" 
-            backgroundColor="white"
+            backgroundColor="#232624"
             borderRadius="large"
             style={{ flex: 1, cursor: 'pointer' }}
             onClick={goToCreateListing}
           >
             <Flex direction="column" alignItems="center" textAlign="center" gap="small">
               <Text fontSize="x-large" fontWeight="bold" color="#B10F2E">📝</Text>
-              <Text fontWeight="bold" color="#460000">Create New Listing</Text>
-              <Text fontSize="small" color="gray.80">List your items for sale</Text>
+              <Text fontWeight="bold" color="#e84441">Create New Listing</Text>
+              <Text fontSize="small" color="#574c4b">List your items for sale</Text>
             </Flex>
           </Card>
           
           <Card 
             variation="elevated" 
             padding="medium" 
-            backgroundColor="white"
+            backgroundColor="#232624"
             borderRadius="large"
             style={{ flex: 1, cursor: 'pointer' }}
             onClick={goToManageListings}
           >
             <Flex direction="column" alignItems="center" textAlign="center" gap="small">
               <Text fontSize="x-large" fontWeight="bold" color="#B10F2E">🗂️</Text>
-              <Text fontWeight="bold" color="#460000">Manage Listings</Text>
-              <Text fontSize="small" color="gray.80">Edit or remove your listings</Text>
+              <Text fontWeight="bold" color="#e84441">Manage Listings</Text>
+              <Text fontSize="small" color="#574c4b">Edit or remove your listings</Text>
             </Flex>
           </Card>
           
           <Card 
             variation="elevated" 
             padding="medium" 
-            backgroundColor="white"
+            backgroundColor="#232624"
             borderRadius="large"
             style={{ flex: 1, cursor: 'pointer' }}
             onClick={goToSavedItems}
           >
             <Flex direction="column" alignItems="center" textAlign="center" gap="small">
               <Text fontSize="x-large" fontWeight="bold" color="#B10F2E">❤️</Text>
-              <Text fontWeight="bold" color="#460000">Saved Items</Text>
-              <Text fontSize="small" color="gray.80">View your wishlist</Text>
+              <Text fontWeight="bold" color="#e84441">Saved Items</Text>
+              <Text fontSize="small" color="#574c4b">View your wishlist</Text>
             </Flex>
           </Card>
           
           <Card 
             variation="elevated" 
             padding="medium" 
-            backgroundColor="white"
+            backgroundColor="#232624"
             borderRadius="large"
             style={{ flex: 1, cursor: 'pointer' }}
             onClick={goToTransactions}
           >
             <Flex direction="column" alignItems="center" textAlign="center" gap="small">
               <Text fontSize="x-large" fontWeight="bold" color="#B10F2E">💰</Text>
-              <Text fontWeight="bold" color="#460000">Transactions</Text>
-              <Text fontSize="small" color="gray.80">View purchase history</Text>
+              <Text fontWeight="bold" color="#e84441">Transactions</Text>
+              <Text fontSize="small" color="#574c4b">View purchase history</Text>
             </Flex>
           </Card>
         </Flex>
@@ -186,7 +187,7 @@ function Profile() {
           padding="medium" 
           marginBottom="large"
           borderRadius="large"
-          backgroundColor="white"
+          backgroundColor="#232624"
         >
           {recentActivityData.length > 0 ? (
             recentActivityData.map((activity, index) => (
@@ -206,8 +207,8 @@ function Profile() {
                        activity.type === "purchase" ? "Bought" : "Listed"}
                     </Badge>
                     <View>
-                      <Text fontWeight="bold" color="#460000">{activity.item}</Text>
-                      <Text fontSize="small" color="gray.80">{activity.date}</Text>
+                      <Text fontWeight="bold" color="#e84441">{activity.item}</Text>
+                      <Text fontSize="small" color="#574c4b">{activity.date}</Text>
                     </View>
                   </Flex>
                   <Text fontWeight="bold" color="#B10F2E">{activity.price}</Text>
