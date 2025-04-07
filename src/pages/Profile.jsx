@@ -53,8 +53,8 @@ function Profile() {
 
   let name, listingCount;
   //getUserDetails();
-  getSpecificUserListings()
-
+  let userProdList = getSpecificUserListings();
+  console.log(userProdList);
 
   const navigate = useNavigate();
   const isMobile = useBreakpointValue({
@@ -76,8 +76,8 @@ function Profile() {
   };
 
   const recentActivityData = [
-    { id: 1, type: "sale", item: "Leather Jacket", date: "2 days ago", price: "$45.00" },
-    { id: 2, type: "purchase", item: "Wireless Headphones", date: "1 week ago", price: "$29.99" },
+    //{ id: 1, type: "sale", item: "Leather Jacket", date: "2 days ago", price: "$45.00" },
+    //{ id: 2, type: "purchase", item: "Wireless Headphones", date: "1 week ago", price: "$29.99" },
     { id: 3, type: "listing", item: "Vintage Camera", date: "2 weeks ago", price: "$85.50" }
   ];
   
