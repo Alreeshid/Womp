@@ -16,6 +16,8 @@ import NavigationBar from '../components/Navbar';
 import Alex from "../images/AlexJohnson.jpg";
 import '../index.css';
 
+import { Authenticator } from '@aws-amplify/ui-react';
+
 function Profile() {
   const navigate = useNavigate();
   const isMobile = useBreakpointValue({
@@ -89,6 +91,7 @@ function Profile() {
               width="150px"
               height="150px"
             />
+            <Authenticator>
             <View>
               <Heading level={2} marginBottom="xs" color="#460000"><strong>Welcome Back, {userData.name}!</strong></Heading>
               <Text fontSize="medium" color="gray">{userData.email}</Text>
@@ -109,6 +112,7 @@ function Profile() {
                 </View>
               </Flex>
             </View>
+            </Authenticator>
           </Flex>
         </Card>
         
