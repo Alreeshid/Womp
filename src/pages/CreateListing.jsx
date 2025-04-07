@@ -46,7 +46,7 @@ async function addProduct(form){
   try{
   await client.models.Products.create({
     productName: form.productName,//form.productName.value,
-    sellerID: getCurrentUser.userId,
+    sellerID: (await user).userId,
     productDescription: form.productDescription,
     //productImages: "Test for now",
     purchasedPrice: form.purchasedForPrice,
