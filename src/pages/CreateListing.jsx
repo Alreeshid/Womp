@@ -17,6 +17,8 @@ import { Authenticator } from '@aws-amplify/ui-react'; //this will prevent the f
 import { useNavigate } from 'react-router-dom';
 import NavigationBar from '../components/Navbar';
 import { generateClient } from 'aws-amplify/data';
+import { FileUploader } from '@aws-amplify/ui-react-storage';
+import '@aws-amplify/ui-react/styles.css';
 import { uploadData } from 'aws-amplify/storage';
 import { getCurrentUser } from 'aws-amplify/auth';
 
@@ -220,6 +222,7 @@ function CreateListing() {
                 autoUpload={false}
                 maxFileCount={1}
                 isResumable
+                
               />
             </View>
             
