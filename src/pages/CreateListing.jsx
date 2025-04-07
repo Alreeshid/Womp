@@ -24,18 +24,10 @@ const client = generateClient({
   authMode: "userPool"
 })
 let userIdLogged = "";
-async function currentAuthenticatedUser() {
-  try {
-    const { username, userId, signInDetails } = await getCurrentUser();
-    console.log(`The username: ${username}`);
-    console.log(`The userId: ${userId}`);
-    console.log(`The signInDetails: ${signInDetails}`);
-    //userIdLogged = userId;
-  } catch (err) {
-    console.log(err);
-  }
-  //return(`${userId}`);
-}
+
+const user = getCurrentUser();
+
+console.log(user);
 
 //currentAuthenticatedUser();
 
@@ -85,7 +77,7 @@ catch(error){
   */
 }
 
-console.log("A user named: " + userIdLogged);
+//console.log("A user named: " + userIdLogged);
 
 function CreateListing() {
   const navigate = useNavigate();
