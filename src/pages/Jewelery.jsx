@@ -29,7 +29,7 @@ function Jewelery() {
   // Jewelry products with proper ID
   const jewelryProducts = [
     {
-      id: 'jewelry-women-necklace', // This ID matches what's in ProductDetails
+      id: 'jewelery-women-necklace', // This ID matches what's in ProductDetails
       title: "14k Women Necklace",
       badges: ['$100.99', 'New'],
       image: Chain

@@ -52,7 +52,7 @@ function Clothing() {
   // Add IDs to all clothing products
   const clothingProducts = [
     {
-      id: 'winter-gloves',
+      id: 'Nike',
       title: "Winter Gloves",
       badges: ['$5', 'Used'],
       image: WinterBreak

@@ -2,46 +2,33 @@ import React from 'react';
 import { 
   View,
   Button,
-  Heading,
-  useBreakpointValue
+  Heading
 } from '@aws-amplify/ui-react';
 import NavigationBar from '../components/Navbar';
 import { useNavigate } from 'react-router-dom';
 import '../index.css';
-import ProductCard from '../components/ProductCard.jsx';
-import Chain from "../images/Chain.jpg";
+import Camera from "../images/Camera.png";
 
-function Jewelery() {
+import ProductCard from '../components/ProductCard.jsx';
+
+
+function Electronics() {
   const navigate = useNavigate();
-  
-  const isMobile = useBreakpointValue({
-    base: true,
-    small: true,
-    medium: false,
-    large: false,
-    xl: false
-  });
     
   const goHome = () => {
     navigate('/'); 
   };
 
-  // Jewelry products with proper ID
-  const jewelryProducts = [
+    
+  const clothingProducts = [
     {
-      id: 'jewelery-women-necklace', // This ID matches what's in ProductDetails
-      title: "14k Women Necklace",
-      badges: ['$100.99', 'New'],
-      image: Chain
-    }
+      title: "Sony 4k Camera",
+      badges: ['$100.99', 'Used'],
+      image: Camera
+    },
+    
+      
   ];
-
-  const gridContainerStyle = {
-    display: 'grid',
-    gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fill, minmax(200px, 1fr))',
-    gap: '20px',
-    width: '100%'
-  };
 
   return (
     <View padding="medium">
@@ -52,7 +39,7 @@ function Jewelery() {
         <h1>Womper</h1>
       </Button>
       <NavigationBar />
-      {/* Jewelry Products Section */}
+      {/* Clothing Products Section */}
       <View marginBottom="3rem">
         <Heading 
           level={2} 
@@ -60,13 +47,12 @@ function Jewelery() {
           padding="medium"
           color={'red.90'}
         >
-          <h3>Jewelry</h3>
+          <h3>Electronics</h3>
         </Heading>
-        <View style={gridContainerStyle}>
-          {jewelryProducts.map((product, index) => (
+        <View style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+          {clothingProducts.map((product, index) => (
             <ProductCard
-              key={`jewelry-${index}`}
-              id={product.id}
+              key={`clothing-${index}`}
               title={product.title}
               badges={product.badges}
               image={product.image}
@@ -78,4 +64,4 @@ function Jewelery() {
   );
 }
 
-export default Jewelery;
+export default Electronics;
