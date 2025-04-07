@@ -29,7 +29,7 @@ const user = getCurrentUser();
 let name, listingCount;
 
 try {
-  attributes = await fetchUserAttributes();
+  attributes = fetchUserAttributes();
   name = attributes.name;
 } catch (err) {
   // console.error(err);
