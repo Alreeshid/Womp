@@ -21,7 +21,7 @@ import { FileUploader } from '@aws-amplify/ui-react-storage';
 import '@aws-amplify/ui-react/styles.css';
 import { uploadData } from 'aws-amplify/storage';
 import { getCurrentUser } from 'aws-amplify/auth';
-import awsExports from './aws-exports';
+//import awsExports from './aws-exports';
 
 const client = generateClient({
   authMode: "userPool"
