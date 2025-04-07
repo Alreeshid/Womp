@@ -29,7 +29,7 @@ const user = getCurrentUser();
 let name, listingCount;
 
 try {
-  attributes = fetchUserAttributes();
+  let attributes = fetchUserAttributes();
   name = attributes.name;
   console.log(name)
   console.log("That's the result")
