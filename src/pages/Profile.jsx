@@ -26,11 +26,12 @@ const client = generateClient({
 })
 
 const user = getCurrentUser();
-const userInfo = fetchUserAttributes();
+const userInfo = await fetchUserAttributes();
 
-const userListings = client.models.Products.get({
+const userListings = await client.models.Products.get({
   sellerId: user.userId,
 })
+console.log(userListings)
 
 console.log("User Attributes: ")
 console.log(userInfo.email)
@@ -47,7 +48,7 @@ function Profile() {
   
   // Mock user data - replace with actual user data from your auth system
   const userData = {
-    name: user.userName,
+    name:  userData.userId,
     email: user.loginId,
     joinDate: "March 2023",
     profileImage: Alex,
