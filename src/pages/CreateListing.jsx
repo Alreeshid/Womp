@@ -38,7 +38,7 @@ async function currentAuthenticatedUser() {
 }
 
 currentAuthenticatedUser();
-console.log("A user named: " + userIdLogged);
+
 
 async function addProduct(form){
   //event.preventDefault();
@@ -83,6 +83,8 @@ catch(error){
     })
   */
 }
+
+console.log("A user named: " + userIdLogged);
 
 function CreateListing() {
   const navigate = useNavigate();
