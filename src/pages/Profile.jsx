@@ -18,6 +18,12 @@ import '../index.css';
 
 import { Authenticator } from '@aws-amplify/ui-react';
 
+const client = generateClient({
+  authMode: "userPool"
+})
+
+const user = getCurrentUser();
+
 function Profile() {
   const navigate = useNavigate();
   const isMobile = useBreakpointValue({
@@ -29,7 +35,7 @@ function Profile() {
   
   // Mock user data - replace with actual user data from your auth system
   const userData = {
-    name: "Alex Johnson",
+    name: user.userName,
     email: "alex.johnson@example.com",
     joinDate: "March 2023",
     profileImage: Alex,
