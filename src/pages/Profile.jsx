@@ -34,7 +34,7 @@ try {
   console.log(name)
   console.log("That's the result")
 } catch (err) {
-  // console.error(err);
+  console.error(err);
   // ... handle error ...
 }
 
