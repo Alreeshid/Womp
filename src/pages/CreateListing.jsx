@@ -214,7 +214,13 @@ function CreateListing() {
             <View>
               <Text fontWeight="bold" marginBottom="xs">Product Images</Text>
               <Button variation="primary" marginBottom="medium">Upload Images</Button>
-              
+              <FileUploader
+                acceptedFileTypes={['image/*']}
+                path="public/"
+                autoUpload={false}
+                maxFileCount={1}
+                isResumable
+              />
             </View>
             
             <Divider />
