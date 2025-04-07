@@ -27,21 +27,25 @@ const client = generateClient({
 
 const user = getCurrentUser();
 
+async function getUserDetails(){
+  try {
+    let attributes = fetchUserAttributes();
+    //name = attributes;
+    console.log(attributes.email)
+    console.log("Line 39 Result:" + attributes)
+  } catch (err) {
+    console.error(err);
+    // ... handle error ...
+  }
+}
+
 
 
 function Profile() {
 
   let name, listingCount;
 
-try {
-  let attributes = await fetchUserAttributes();
-  //name = attributes;
-  console.log(attributes.email)
-  console.log("Line 39 Result:" + attributes)
-} catch (err) {
-  console.error(err);
-  // ... handle error ...
-}
+
 
   const navigate = useNavigate();
   const isMobile = useBreakpointValue({
