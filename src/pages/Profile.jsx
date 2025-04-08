@@ -34,7 +34,7 @@ async function getUserDetails(){
     console.log(attributes.email)
     console.log("Line 39 Result^")
     //Doesn't actually return the email oddly, need to fix - currently returns [object Promise]
-    return attributes.email.toString();
+    return attributes.email;
   } catch (err) {
     console.error(err);
     // ... handle error ...
