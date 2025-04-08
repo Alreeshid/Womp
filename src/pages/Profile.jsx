@@ -54,7 +54,7 @@ function Profile() {
   let name, listingCount;
   //getUserDetails();
   let userProdList = getSpecificUserListings();
-  console.log(userProdList.data);
+  console.log(userProdList[0]);
 
   const navigate = useNavigate();
   const isMobile = useBreakpointValue({
@@ -70,9 +70,8 @@ function Profile() {
     email: getUserDetails().toString(),
     joinDate: "April 2025",
     profileImage: Alex,
-    listings: 8,
-    sold: 12,
-    saved: 15
+    listings: "Err",
+    sold: "0",
   };
 
   const recentActivityData = [
@@ -144,7 +143,7 @@ function Profile() {
                   <Text color="red">Items Sold</Text>
                 </View>
                 <View textAlign="center">
-                  <Text fontSize="xx-large" fontWeight="bold" color="#B10F2E">{userData.saved}</Text>
+                  <Text fontSize="xx-large" fontWeight="bold" color="#B10F2E">{"Err"}</Text>
                   <Text color="red">Total Profits</Text>
                 </View>
               </Flex>
