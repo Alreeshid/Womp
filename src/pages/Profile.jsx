@@ -45,6 +45,7 @@ async function getSpecificUserListings(){
   //WIP
   let listings = await client.models.Products.list();
   //console.log(listings)
+  return listings;
 }
 
 
@@ -54,7 +55,9 @@ function Profile() {
   let name, listingCount;
   //getUserDetails();
   let userProdList = getSpecificUserListings();
+  console.log("userProdList");
   console.log(userProdList);
+
 
   const navigate = useNavigate();
   const isMobile = useBreakpointValue({
