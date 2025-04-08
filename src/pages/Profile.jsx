@@ -55,8 +55,8 @@ function Profile() {
   let name, listingCount;
   //getUserDetails();
   let userProdList = getSpecificUserListings();
-  console.log("userProdList");
-  console.log(userProdList);
+  console.log("userProdList[0]");
+  console.log(userProdList[0]);
 
 
   const navigate = useNavigate();
