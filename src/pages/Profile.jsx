@@ -54,7 +54,7 @@ function Profile() {
   let name, listingCount;
   //getUserDetails();
   let userProdList = getSpecificUserListings();
-  console.log(userProdList[0]);
+  console.log(userProdList);
 
   const navigate = useNavigate();
   const isMobile = useBreakpointValue({
