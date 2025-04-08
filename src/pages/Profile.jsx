@@ -33,7 +33,7 @@ async function getUserDetails(){
     //name = attributes;
     //console.log(attributes.email)
     //console.log("Line 39 Result:" + attributes)
-    //Doesn't actually return the email oddly, need to fix
+    //Doesn't actually return the email oddly, need to fix - currently returns [object Promise]
     return attributes.email;
   } catch (err) {
     console.error(err);
@@ -44,7 +44,7 @@ async function getUserDetails(){
 async function getSpecificUserListings(){
   //WIP
   let listings = await client.models.Products.list();
-  console.log(listings)
+  //console.log(listings)
 }
 
 
@@ -54,7 +54,7 @@ function Profile() {
   let name, listingCount;
   //getUserDetails();
   let userProdList = getSpecificUserListings();
-  console.log(userProdList);
+  console.log(userProdList.data);
 
   const navigate = useNavigate();
   const isMobile = useBreakpointValue({
