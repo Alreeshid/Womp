@@ -31,10 +31,11 @@ async function getUserDetails(){
   try {
     let attributes = await fetchUserAttributes();
     //name = attributes;
-    console.log(attributes.email)
+    var email = attributes.email;
+    console.log(email)
     console.log("Line 39 Result^")
     //Doesn't actually return the email oddly, need to fix - currently returns [object Promise]
-    return attributes.email;
+    return email;
   } catch (err) {
     console.error(err);
     // ... handle error ...
