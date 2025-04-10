@@ -33,7 +33,7 @@ async function getUserDetails(){
     //name = attributes;
     var email = attributes.email;
     console.log(email)
-    console.log("Line 39 Result^")
+    console.log("User Email ^")
     //Doesn't actually return the email oddly, need to fix - currently returns [object Promise]
     return email;
   } catch (err) {
@@ -71,7 +71,7 @@ function Profile() {
   // Mock user data - replace with actual user data from your auth system
   const userData = {
     name:  "UserNameErr",
-    email: await getUserDetails().toString(),
+    email: getUserDetails().toString(),
     joinDate: "April 2025",
     profileImage: Alex,
     listings: "Err",
