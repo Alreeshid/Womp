@@ -32,7 +32,7 @@ async function getUserDetails(){
     let attributes = await fetchUserAttributes();
     //name = attributes;
     var email = attributes.email;
-    console.log(email)
+    //console.log(email)
     console.log("User Email: ", email)
     //Doesn't actually return the email oddly, need to fix - currently returns [object Promise]
     return email;
@@ -77,6 +77,8 @@ function Profile() {
     listings: "Err",
     sold: "0",
   };
+
+  console.log("Userdata: ", userData.email)
 
   const recentActivityData = [
     //{ id: 1, type: "sale", item: "Leather Jacket", date: "2 days ago", price: "$45.00" },
