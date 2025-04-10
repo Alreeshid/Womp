@@ -33,7 +33,7 @@ async function getUserDetails(){
     //name = attributes;
     var email = attributes.email;
     console.log(email)
-    console.log("User Email ^")
+    console.log("User Email: ", email)
     //Doesn't actually return the email oddly, need to fix - currently returns [object Promise]
     return email;
   } catch (err) {
@@ -56,8 +56,8 @@ function Profile() {
   let name, listingCount;
   //getUserDetails();
   let userProdList = getSpecificUserListings();
-  console.log("userProdList[0]");
-  console.log(userProdList[0]);
+  console.log("userProdList[0] - ", userProdList[0]);
+  //console.log(userProdList[0]);
 
 
   const navigate = useNavigate();
