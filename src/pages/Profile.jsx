@@ -71,7 +71,7 @@ function Profile() {
   // Mock user data - replace with actual user data from your auth system
   const userData = {
     name:  "UserNameErr",
-    email: getUserDetails().toString(),
+    email: await getUserDetails().toString(),
     joinDate: "April 2025",
     profileImage: Alex,
     listings: "Err",
