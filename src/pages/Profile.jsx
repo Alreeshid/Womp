@@ -32,7 +32,7 @@ let userEmail;
 
 async function getUserDetails(){
   try {
-    let attributes = fetchUserAttributes();
+    let attributes = await fetchUserAttributes();
     //name = attributes;
     var email = attributes.email;
     //console.log(email)
@@ -61,8 +61,8 @@ function Profile() {
   let name, listingCount;
   //getUserDetails();
   let userProdList = getSpecificUserListings();
-  console.log("userProdList[0] - ", userProdList[0]);
-  //console.log(userProdList[0]);
+  //console.log("userProdList[0] - ", userProdList[0]);
+  console.log("This is the email pushed by the time function profile pushes: ", userEmail)
 
 
   const navigate = useNavigate();
