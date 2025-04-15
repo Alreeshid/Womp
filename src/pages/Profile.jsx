@@ -40,8 +40,8 @@ async function getSpecificUserListings(){
 
 
 function Profile() {
-
-  let userEmail;
+/*
+let userEmail;
 
 async function getUserDetails(){
   try {
@@ -59,6 +59,31 @@ async function getUserDetails(){
   }
 }
 getUserDetails();
+*/
+const [userEmail, setUserEmail] = useState(null);
+const [loading, setLoading] = useState(true);
+const [error, setError] = useState(null);
+
+useEffect(() => {
+  async function fetchUserData() {
+    try {
+      setLoading(true);
+
+const userAttributes = await Auth.currentAuthenticatedUser()
+.then(user => Auth.fetchUserAttributes(user));
+
+// Now we can safely access the email
+setUserEmail(userAttributes.email);
+} catch (err) {
+console.error('Error fetching user attributes:', err);
+setError(err);
+} finally {
+setLoading(false);
+}
+}
+
+fetchUserData();
+}, []);
 
   let name, listingCount;
   //getUserDetails();
