@@ -28,7 +28,20 @@ const client = generateClient({
 const user = getCurrentUser();
 
 
-let userEmail;
+
+
+async function getSpecificUserListings(){
+  //WIP
+  let listings = await client.models.Products.list();
+  //console.log(listings)
+  return listings;
+}
+
+
+
+function Profile() {
+
+  let userEmail;
 
 async function getUserDetails(){
   try {
@@ -46,17 +59,6 @@ async function getUserDetails(){
   }
 }
 getUserDetails();
-
-async function getSpecificUserListings(){
-  //WIP
-  let listings = await client.models.Products.list();
-  //console.log(listings)
-  return listings;
-}
-
-
-
-function Profile() {
 
   let name, listingCount;
   //getUserDetails();
