@@ -29,7 +29,7 @@ const user = getCurrentUser();
 
 async function getUserDetails(){
   try {
-    let attributes = await fetchUserAttributes();
+    let attributes = fetchUserAttributes();
     //name = attributes;
     var email = attributes.email;
     //console.log(email)
@@ -71,7 +71,7 @@ function Profile() {
   // Mock user data - replace with actual user data from your auth system
   const userData = {
     name:  "UserNameErr",
-    email: getUserDetails().toString(),
+    email: await getUserDetails(),
     joinDate: "April 2025",
     profileImage: Alex,
     listings: "Err",
