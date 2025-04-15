@@ -27,9 +27,8 @@ const client = generateClient({
 
 const user = await getCurrentUser();
 
-const userAttributes = await fetchUserAttributes();
-console.log("User attributes: ", userAttributes.email )
 
+let userEmail;
 
 async function getUserDetails(){
   try {
@@ -38,13 +37,15 @@ async function getUserDetails(){
     var email = attributes.email;
     //console.log(email)
     console.log("User Email: ", email)
+
     //Doesn't actually return the email oddly, need to fix - currently returns [object Promise]
-    return email;
+    userEmail = email;
   } catch (err) {
     console.error(err);
     // ... handle error ...
   }
 }
+getUserDetails();
 
 async function getSpecificUserListings(){
   //WIP
@@ -75,7 +76,7 @@ function Profile() {
   // Mock user data - replace with actual user data from your auth system
   const userData = {
     name:  "UserNameErr",
-    email: getUserDetails(),
+    email: userEmail,
     joinDate: "April 2025",
     profileImage: Alex,
     listings: "Err",
