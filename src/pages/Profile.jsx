@@ -75,6 +75,7 @@ const userAttributes = await currentAuthenticatedUser()
 
 // Now we can safely access the email
 setUserEmail(userAttributes.email);
+console.log(userAttributes.email, "Use state return")
 } catch (err) {
 console.error('Error fetching user attributes:', err);
 setError(err);
@@ -111,7 +112,7 @@ fetchUserData();
     sold: "0",
   };
 
-  console.log("Userdata: ", userData.email)
+ // console.log("Userdata: ", userData.email)
 
   const recentActivityData = [
     //{ id: 1, type: "sale", item: "Leather Jacket", date: "2 days ago", price: "$45.00" },
