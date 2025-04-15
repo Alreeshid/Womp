@@ -70,8 +70,8 @@ useEffect(() => {
     try {
       setLoading(true);
 
-const userAttributes = await Auth.currentAuthenticatedUser()
-.then(user => Auth.fetchUserAttributes(user));
+const userAttributes = await currentAuthenticatedUser()
+.then(user => fetchUserAttributes(user));
 
 // Now we can safely access the email
 setUserEmail(userAttributes.email);
