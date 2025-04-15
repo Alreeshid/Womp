@@ -25,7 +25,11 @@ const client = generateClient({
   authMode: "userPool"
 })
 
-const user = getCurrentUser();
+const user = await getCurrentUser();
+
+const userAttributes = await fetchUserAttributes();
+console.log("User attributes: ", userAttributes.email )
+
 
 async function getUserDetails(){
   try {
@@ -71,7 +75,7 @@ function Profile() {
   // Mock user data - replace with actual user data from your auth system
   const userData = {
     name:  "UserNameErr",
-    email: await getUserDetails(),
+    email: getUserDetails(),
     joinDate: "April 2025",
     profileImage: Alex,
     listings: "Err",
