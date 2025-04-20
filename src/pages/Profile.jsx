@@ -75,7 +75,7 @@ const userAttributes = await fetchUserAttributes()
 
 // Now we can safely access the email
 setUserEmail(userAttributes.email);
-console.log(userAttributes.email, "Use state return")
+//console.log(userAttributes.email, "Use state return")
 } catch (err) {
 console.error('Error fetching user attributes:', err);
 setError(err);
@@ -91,7 +91,7 @@ fetchUserData();
   //getUserDetails();
   let userProdList = getSpecificUserListings();
   //console.log("userProdList[0] - ", userProdList[0]);
-  console.log("This is the email pushed by the time function profile pushes: ", userEmail)
+  console.log("User Listings Object", userProdList)
 
 
   const navigate = useNavigate();
