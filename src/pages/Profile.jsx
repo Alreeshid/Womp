@@ -169,7 +169,7 @@ fetchUserData();
             />
             <Authenticator>
             <View>
-              <Heading level={2} marginBottom="xs" color="#460000"><strong>Welcome Back, {userData.email}!</strong></Heading>
+              <Heading level={2} marginBottom="xs" color="#460000"><strong>Welcome Back, {userEmail}!</strong></Heading>
               <Text fontSize="medium" color="gray">{userData.email}</Text>
               <Text fontSize="small" color="red.80">Member since {userData.joinDate}</Text>
               
