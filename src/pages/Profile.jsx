@@ -33,8 +33,10 @@ const user = getCurrentUser();
 
 async function getSpecificUserListings(){
   //WIP
+  
   let listings = await client.models.Products.list();
   //console.log(listings)
+  let userList = listings.filter()
   return listings;
 }
 
