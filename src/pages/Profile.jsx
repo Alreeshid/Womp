@@ -37,7 +37,7 @@ async function getSpecificUserListings(){
   let listings = await client.models.Products.list();
   let userList = [];
   //console.log(listings)
-  for(let x=0; x < listings.length(); x++){
+  for(let x=0; x < listings.length; x++){
       userList[x] = listings[x]
       console.log(userList[x], "Count: " +x+1)
   }
