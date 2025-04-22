@@ -36,7 +36,7 @@ async function getSpecificUserListings(){
   
   let listings = await client.models.Products.list();
   //let userList = JSON.stringify(listings);
-  let userList = listings.json
+  let userList = listings.json()
   //console.log(listings)
   for(let x=0; x < listings.length; x++){
       userList[x] = listings[x]
