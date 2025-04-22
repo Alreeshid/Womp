@@ -41,7 +41,7 @@ async function getSpecificUserListings(){
       userList[x] = listings[x]
       console.log(userList[x], "Count: " +x+1)
   }
-  return listings;
+  return userList;
 }
 
 
