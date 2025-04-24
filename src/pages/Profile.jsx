@@ -37,6 +37,7 @@ async function getSpecificUserListings() {
   let listings = await client.models.Products.list()
     .then(result => {
       console.log("Results! ", result)
+      return(result)
       //userList = JSON.stringify(listings);
     })
     //.catch()
@@ -49,7 +50,7 @@ async function getSpecificUserListings() {
       
   }
       */
-  return result;
+  return userList;
 }
 
 
