@@ -40,6 +40,7 @@ async function getSpecificUserListings(){
   })
   let userList = JSON.stringify(listings);
   //console.log(listings)
+
   for(let x=0; x < listings.length; x++){
       userList[x] = listings[x]
       console.log(userList[x], "Count: " +x+1)
@@ -100,7 +101,7 @@ fetchUserData();
   //getUserDetails();
   let userProdList = getSpecificUserListings();
   //console.log("userProdList[0] - ", userProdList[0]);
-  console.log("User Listings Object", userProdList)
+  console.log("User Listings Object after Conversion:", JSON.parse(userProdList))
 
 
   const navigate = useNavigate();
