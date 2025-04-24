@@ -40,11 +40,13 @@ async function getSpecificUserListings(){
   })
   let userList = JSON.stringify(listings);
   //console.log(listings)
-
+  /*
   for(let x=0; x < listings.length; x++){
       userList[x] = listings[x]
       console.log(userList[x], "Count: " +x+1)
+      
   }
+      */
   return userList;
 }
 
