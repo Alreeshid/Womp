@@ -103,10 +103,8 @@ function Profile() {
           //const tempUserProds = getSpecificUserListings();
         // Now we can safely access the email
         setUserEmail(userAttributes.email);
-        setUserId(userAttributes.username)
-        //console.log("Before parsing: ", tempUserProds);
-        //console.log("After Parsing: ", JSON.parse(tempUserProds))
-        //setUserProds(tempUserProds)
+        setUserId(userAttributes.Id)
+        
         //console.log(userAttributes.email, "Use state return")
       } catch (err) {
         console.error('Error fetching user attributes:', err);
