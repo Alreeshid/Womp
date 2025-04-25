@@ -81,6 +81,8 @@ function Profile() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const [userProds, setUserProds] = useState(null);
+
   useEffect(() => {
     async function fetchUserData() {
       try {
@@ -88,9 +90,12 @@ function Profile() {
 
         const userAttributes = await fetchUserAttributes()
         //.then(user => fetchUserAttributes(user));
-
+          const tempUserProds = getSpecificUserListings();
         // Now we can safely access the email
         setUserEmail(userAttributes.email);
+        console.log("Before parsing: ", tempUserProds);
+        console.log("After Parsing: ", JSON.parse(tempUserProds))
+        setUserProds(tempUserProds)
         //console.log(userAttributes.email, "Use state return")
       } catch (err) {
         console.error('Error fetching user attributes:', err);
@@ -105,9 +110,9 @@ function Profile() {
 
   let name, listingCount;
   //getUserDetails();
-  let userProdList = getSpecificUserListings();
+  //let userProdList = getSpecificUserListings();
   //console.log("userProdList[0] - ", userProdList[0]);
-  console.log("User Listings Object after Conversion:", userProdList)
+  //console.log("User Listings Object after Conversion:", userProdList)
 
 
   const navigate = useNavigate();
