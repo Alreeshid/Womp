@@ -103,7 +103,7 @@ function Profile() {
           //const tempUserProds = getSpecificUserListings();
         // Now we can safely access the email
         setUserEmail(userAttributes.email);
-        setUserId(userAttributes.userId)
+        setUserId(userAttributes.username)
         //console.log("Before parsing: ", tempUserProds);
         //console.log("After Parsing: ", JSON.parse(tempUserProds))
         //setUserProds(tempUserProds)
