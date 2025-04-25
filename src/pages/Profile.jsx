@@ -56,6 +56,10 @@ async function getSpecificUserListings() {
   }
       */
   //console.log("RIGHT BEFORE RETURNING: ", userList)
+  try{console.log(listings.length)}
+  catch(errors){
+    console.log("Wuh?")
+  }
   return listings;
 }
 
