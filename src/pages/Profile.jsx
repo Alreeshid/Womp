@@ -36,6 +36,7 @@ async function getSpecificUserListings() {
   var userList;
   let listings = await client.models.Products.list()
     .then(result => {
+      console.log(result.JSON, "HMMMMMM?")
       console.log("Results! ", result)
       userList = JSON.stringify(result)
       //userList = JSON.stringify(listings);
