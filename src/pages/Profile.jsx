@@ -231,7 +231,7 @@ function Profile() {
             <Flex direction="column" alignItems="center" textAlign="center" gap="small">
               <Text fontSize="x-large" fontWeight="bold" color="#B10F2E">📝</Text>
               <Text fontWeight="bold" color="#e84441">Create New Listing</Text>
-              <Text fontSize="small" color="#574c4b">List your items for sale: {userProds}</Text>
+              <Text fontSize="small" color="#574c4b">List your items for sale: {userProds[0]}</Text>
             </Flex>
           </Card>
 
