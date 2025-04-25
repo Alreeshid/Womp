@@ -94,7 +94,7 @@ function Profile() {
         // Now we can safely access the email
         setUserEmail(userAttributes.email);
         console.log("Before parsing: ", tempUserProds);
-        console.log("After Parsing: ", JSON.parse(tempUserProds))
+        //console.log("After Parsing: ", JSON.parse(tempUserProds))
         setUserProds(tempUserProds)
         //console.log(userAttributes.email, "Use state return")
       } catch (err) {
