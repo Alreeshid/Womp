@@ -33,7 +33,7 @@ const user = getCurrentUser();
 
 async function getSpecificUserListings() {
   //WIP
-  var userList;
+  let userList = [];
   let listings = await client.models.Products.list()
     .then(result => {
       console.log("Results! ", result)
@@ -41,6 +41,7 @@ async function getSpecificUserListings() {
       console.log("UserList Object Converted before returning: ", userList)
       //userList = JSON.stringify(listings);
     })
+    
     //.catch()
   
   //console.log(listings)
@@ -51,6 +52,7 @@ async function getSpecificUserListings() {
       
   }
       */
+  console.log("RIGHT BEFORE RETURNING: ", userList)
   return userList;
 }
 
