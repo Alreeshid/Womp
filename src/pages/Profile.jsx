@@ -104,7 +104,7 @@ function Profile() {
           //const tempUserProds = getSpecificUserListings();
         // Now we can safely access the email
         setUserEmail(userAttributes.email);
-        setUserId(userAttributes.Id)
+        setUserId(userAttributes.sub)
         
         //console.log(userAttributes.email, "Use state return")
       } catch (err) {
