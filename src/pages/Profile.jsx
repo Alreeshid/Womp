@@ -59,7 +59,7 @@ async function getSpecificUserListings() {
   catch(errors){
     console.log("Wuh?")
   }
-  console.log(userList.data[0].condition, "FUCK YESSSSSSS")
+  console.log(userList.data[0], "FUCK YESSSSSSS")
   return userList;
 }
 
@@ -87,6 +87,7 @@ function Profile() {
   getUserDetails();
   */
   const [userEmail, setUserEmail] = useState(null);
+  const [userId, setUserId] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -102,6 +103,7 @@ function Profile() {
           //const tempUserProds = getSpecificUserListings();
         // Now we can safely access the email
         setUserEmail(userAttributes.email);
+        setUserID(userAttributes.userId)
         //console.log("Before parsing: ", tempUserProds);
         //console.log("After Parsing: ", JSON.parse(tempUserProds))
         //setUserProds(tempUserProds)
@@ -138,7 +140,7 @@ function Profile() {
     email: userEmail,
     joinDate: "April 2025",
     profileImage: Alex,
-    listings: "Err",
+    listings: userId,
     sold: "0",
   };
 
