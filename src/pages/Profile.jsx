@@ -35,13 +35,16 @@ async function getSpecificUserListings() {
   //WIP
   let userList = [];
   let listings = await client.models.Products.list()
+  .then(result => JSON.stringify(result))
+  console.log("Courtesy of Stanly! :D - ", listings)
+  /*
     .then(result => {
       console.log("Results! ", result)
       userList = JSON.stringify(result)
       console.log("UserList Object Converted before returning: ", userList)
       //userList = JSON.stringify(listings);
     })
-    
+    */
     //.catch()
   
   //console.log(listings)
@@ -95,9 +98,9 @@ function Profile() {
           const tempUserProds = getSpecificUserListings();
         // Now we can safely access the email
         setUserEmail(userAttributes.email);
-        console.log("Before parsing: ", tempUserProds);
+        //console.log("Before parsing: ", tempUserProds);
         //console.log("After Parsing: ", JSON.parse(tempUserProds))
-        setUserProds(tempUserProds)
+        //setUserProds(tempUserProds)
         //console.log(userAttributes.email, "Use state return")
       } catch (err) {
         console.error('Error fetching user attributes:', err);
