@@ -115,9 +115,9 @@ function Profile() {
 
   let name, listingCount;
   //getUserDetails();
-  //let userProdList = getSpecificUserListings();
+  let userProdList = getSpecificUserListings();
   //console.log("userProdList[0] - ", userProdList[0]);
-  //console.log("User Listings Object after Conversion:", userProdList)
+  console.log("User Listings Object after Conversion:", userProdList)
 
 
   const navigate = useNavigate();
