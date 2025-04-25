@@ -99,7 +99,7 @@ function Profile() {
         setLoading(true);
 
         const userAttributes = await fetchUserAttributes()
-        console.log(userAttributes, "User details")
+        console.log(userAttributes.sub, "User details")
         
           //const tempUserProds = getSpecificUserListings();
         // Now we can safely access the email
