@@ -55,8 +55,8 @@ async function getSpecificUserListings() {
       
   }
       */
-  console.log("RIGHT BEFORE RETURNING: ", userList)
-  return userList;
+  //console.log("RIGHT BEFORE RETURNING: ", userList)
+  return listings;
 }
 
 
