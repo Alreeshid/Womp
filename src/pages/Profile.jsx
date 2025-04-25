@@ -30,7 +30,6 @@ const user = getCurrentUser();
 
 
 
-
 async function getSpecificUserListings() {
   //WIP
   let userList = [];
@@ -60,7 +59,7 @@ async function getSpecificUserListings() {
   catch(errors){
     console.log("Wuh?")
   }
-  console.log(userList[0], "Is it finally done...?")
+  console.log(userList.stringify, "FUCK")
   return userList;
 }
 
