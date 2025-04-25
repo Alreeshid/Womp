@@ -95,7 +95,7 @@ function Profile() {
 
         const userAttributes = await fetchUserAttributes()
         //.then(user => fetchUserAttributes(user));
-          const tempUserProds = getSpecificUserListings();
+          //const tempUserProds = getSpecificUserListings();
         // Now we can safely access the email
         setUserEmail(userAttributes.email);
         //console.log("Before parsing: ", tempUserProds);
@@ -236,7 +236,7 @@ function Profile() {
             <Flex direction="column" alignItems="center" textAlign="center" gap="small">
               <Text fontSize="x-large" fontWeight="bold" color="#B10F2E">📝</Text>
               <Text fontWeight="bold" color="#e84441">Create New Listing</Text>
-              <Text fontSize="small" color="#574c4b">List your items for sale: {userProds[0]}</Text>
+              <Text fontSize="small" color="#574c4b">List your items for sale</Text>
             </Flex>
           </Card>
 
