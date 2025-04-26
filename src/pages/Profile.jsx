@@ -59,7 +59,7 @@ async function getSpecificUserListings() {
   catch(errors){
     console.log("Wuh?")
   }
-  console.log(userList.data[0], "FUCK YESSSSSSS")
+  console.log(userList.data.length, "FUCK YESSSSSSS")
   return userList;
 }
 
