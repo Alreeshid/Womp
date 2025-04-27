@@ -359,23 +359,23 @@ const AdminPanel = () => {
         ];
         break;
       case 'listing':
-        title = `Product Details: ${data.name}`;
+        title = `Product Details: ${data.productName}`;
         sections = [
           {
             title: 'Product Information',
             fields: [
-              { label: 'Product Name', value: data.name },
-              { label: 'SKU', value: data.sku },
-              { label: 'Price', value: data.price },
-              { label: 'Inventory', value: data.inventory },
-              { label: 'Category', value: data.category }
+              { label: 'Product Name', value: data.productName },
+              { label: 'Product ID: ', value: data.id },
+              { label: 'Price', value: data.listPrice },
+              { label: 'Seller: ', value: data.sellerName },
+              { label: 'Description: ', value: data.description }
             ]
           },
           {
             title: 'Sales Information',
             fields: [
-              { label: 'Total Sold', value: data.totalSold },
-              { label: 'Average Rating', value: data.rating }
+              { label: 'Condition: ', value: data.condition },
+              { label: 'Featured? - ', value: data.isFeatured }
             ]
           }
         ];
