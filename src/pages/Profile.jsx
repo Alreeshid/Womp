@@ -106,7 +106,7 @@ function Profile() {
         console.log(tempUserProds)
         // Now we can safely access the email
         setUserEmail(userAttributes.email);
-        setUserId(userAttributes.sub)
+        //setUserId(userAttributes.sub)
 
         for (var x = 0; x < tempUserProds.length; x++) {
           //Grab user specific listings using the userAttributes.sub, which returns their user ID.
@@ -118,6 +118,7 @@ function Profile() {
           
         }
         console.log(userSpecificListings, "Completed User array of owned products")
+        setUserProds(userSpecificListings)
       } catch (err) {
         console.error('Error fetching user attributes:', err);
         setError(err);
@@ -150,7 +151,7 @@ function Profile() {
     email: userEmail,
     joinDate: "April 2025",
     profileImage: Alex,
-    listings: userId,
+    listings: userProds.length,
     sold: "0",
   };
 
