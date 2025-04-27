@@ -151,7 +151,7 @@ function Profile() {
     email: userEmail,
     joinDate: "April 2025",
     profileImage: Alex,
-    listings: userProds,
+    listings: JSON.stringify(userProds),
     sold: "0",
   };
 
