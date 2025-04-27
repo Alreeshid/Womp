@@ -91,7 +91,7 @@ function Profile() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const [userProds, setUserProds] = useState(null);
+  const [userProds, setUserProds] = useState([]);
 
   useEffect(() => {
     async function fetchUserData() {
