@@ -12,16 +12,18 @@ and "delete" any "Todo" records.
 const schema = a.schema({
   Products: a
     .model({
-      productID: a.id(),
-      sellerID: a.id(),
+      //productID: a.id(),
+      sellerName: a.string(),
       productName: a.string(),
       productDescription: a.string(),
-      //productImages: a.hasMany("image", "String"),
+      productImage: a.string(), //this will need to be an HREF
       purchasedPrice: a.float(),
       listPrice: a.float(),
       condition: a.string(),
       tags: a.string(),
-      listedAt: a.datetime()
+      listedAt: a.datetime(),
+      isFeatured: a.boolean(),
+      hasBeenSold: a.boolean()
     })
     .authorization((allow) => [allow.owner(), allow.guest()]), //added the guest portion
   Reviews: a
@@ -41,6 +43,12 @@ const schema = a.schema({
     ticketRating: a.integer(),
     ticketContent: a.string(),
     timestamp: a.datetime()
+  })
+  .authorization((allow) => [allow.guest()]),
+  Tags: a
+  .model({
+    text: a.string(),
+    isActive: a.boolean().default(true)
   })
   .authorization((allow) => [allow.guest()]),
 
