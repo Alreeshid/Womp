@@ -226,7 +226,7 @@ function CreateListing() {
               value={form.productImage}
               onChange={handleChange}
               required
-              rows={5}
+              rows={1}
               placeholder="Image URL Here"
             />
             </View>
