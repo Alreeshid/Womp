@@ -21,6 +21,7 @@ import { FileUploader } from '@aws-amplify/ui-react-storage';
 import '@aws-amplify/ui-react/styles.css';
 import { uploadData } from 'aws-amplify/storage';
 import { getCurrentUser } from 'aws-amplify/auth';
+import { fetchUserAttributes } from 'aws-amplify/auth';
 //import awsExports from './aws-exports';
 
 const client = generateClient({
@@ -36,6 +37,8 @@ console.log(user);
 
 
 async function addProduct(form){
+  const userAttributes = await fetchUserAttributes()
+
   //event.preventDefault();
   //console.log("This is the form the function gets:")
   
@@ -49,7 +52,7 @@ async function addProduct(form){
   try{
   await client.models.Products.create({
     productName: form.productName,//form.productName.value,
-    sellerID: (await user).userId,
+    sellerName: userAttributes.email,
     productDescription: form.productDescription,
     //productImages: "Test for now",
     purchasedPrice: form.purchasedForPrice,

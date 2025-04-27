@@ -22,8 +22,8 @@ const schema = a.schema({
       condition: a.string(),
       tags: a.string(),
       listedAt: a.datetime(),
-      isFeatured: a.boolean(),
-      hasBeenSold: a.boolean()
+      isFeatured: a.boolean().default(false),
+      hasBeenSold: a.boolean().default(false)
     })
     .authorization((allow) => [allow.owner(), allow.guest()]), //added the guest portion
   Reviews: a
