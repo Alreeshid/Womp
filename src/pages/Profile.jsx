@@ -337,7 +337,7 @@ function Profile() {
                     </Badge>
                     <View>
                       <Text fontWeight="bold" color="#e84441">{activity.productName}</Text>
-                      <Text fontSize="small" color="#574c4b">{new Date(activity.updatedAt,)}</Text>
+                      <Text fontSize="small" color="#574c4b">{new Date(activity.updatedAt)}</Text>
                     </View>
                   </Flex>
                   <Text fontWeight="bold" color="#B10F2E">{activity.listPrice}</Text>
