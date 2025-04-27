@@ -333,14 +333,14 @@ function Profile() {
                       borderRadius="full"
                     >
                       {activity.hasBeenSold === "True" ? "Sold" :
-                        activity.hasBeenSolde === "False" ? "Null" : "Listed"}
+                        activity.hasBeenSold === "False" ? "Null" : "Listed"}
                     </Badge>
                     <View>
-                      <Text fontWeight="bold" color="#e84441">{activity.item}</Text>
-                      <Text fontSize="small" color="#574c4b">{activity.date}</Text>
+                      <Text fontWeight="bold" color="#e84441">{activity.productName}</Text>
+                      <Text fontSize="small" color="#574c4b">{activity.updatedAt}</Text>
                     </View>
                   </Flex>
-                  <Text fontWeight="bold" color="#B10F2E">{activity.price}</Text>
+                  <Text fontWeight="bold" color="#B10F2E">{activity.listPrice}</Text>
                 </Flex>
                 {index < recentActivityData.length - 1 && <Divider marginY="xs" />}
               </React.Fragment>
