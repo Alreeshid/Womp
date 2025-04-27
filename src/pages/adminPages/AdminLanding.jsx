@@ -39,9 +39,20 @@ catch{
 Thsi query seems to go through, but the console errors prompted seme inconsistent
 */
 
-const fetchProducts = async() =>{
-    const {data2: Products, errors2} = await client.models.Products.list();
-};
+async function getAllProds() {
+    //WIP
+    let userList = [];
+    let listings = await client.models.Products.list()
+      .then(result => JSON.stringify(result))
+    //console.log("Courtesy of Stanly! :D - ", listings)
+    
+    try { userList = JSON.parse(listings) }
+    catch (errors) {
+      console.log("Wuh?")
+    }
+    console.log(userList.data.length, "We're so back it's not even funny")
+    return userList.data;
+  }
 
 const AdminPanel = () => {
     const [activeTab, setActiveTab] = useState('dashboard');
@@ -488,7 +499,7 @@ const AdminPanel = () => {
     }
   ];
   
-  const listingsData = [
+  const listingsData = getAllProds()/*[
     {
       id: 'prod1',
       name: 'Wireless Headphones',
@@ -530,7 +541,7 @@ const AdminPanel = () => {
       rating: '4.8/5'
     }
   ];
-  
+  */
   const ticketsData = [
     {
       id: 'ticket1',
