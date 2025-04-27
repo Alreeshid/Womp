@@ -92,6 +92,7 @@ function Profile() {
   const [error, setError] = useState(null);
 
   const [userProds, setUserProds] = useState([]);
+  const [userProfit, setUserProfit] = useState(0);
 
   useEffect(() => {
     async function fetchUserData() {
@@ -114,7 +115,11 @@ function Profile() {
             tempUserProds[x].owner == userAttributes.sub) {
             userSpecificListings[x] = tempUserProds[x];
             console.log("User product found - Count " + x, userSpecificListings[x])
+            if(tempUserProds[x].hasBeenSold){
+              setUserProfit(+tempUserProds.listPrice)
+            }
           }
+          
           
         }
         console.log(userSpecificListings, "Completed User array of owned products")
