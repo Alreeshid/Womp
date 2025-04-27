@@ -102,7 +102,7 @@ function Profile() {
         console.log(userAttributes.sub, "User details")
 
         const tempUserProds = await getSpecificUserListings();
-        let userSpecficListings = [];
+        let userSpecificListings = [];
         // Now we can safely access the email
         setUserEmail(userAttributes.email);
         setUserId(userAttributes.sub)
@@ -111,7 +111,7 @@ function Profile() {
           //Grab user specific listings using the userAttributes.sub, which returns their user ID.
           if (tempUserProds[x].sellerID == userAttributes.sub ||
             tempUserProds[x].owner == userAttributes.sub) {
-            userSpecficListings[x] == tempUserProds[x];
+            userSpecificListings[x] == tempUserProds[x];
           }
           
         }
