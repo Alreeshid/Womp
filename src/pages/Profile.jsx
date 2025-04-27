@@ -35,7 +35,7 @@ async function getSpecificUserListings() {
   let userList = [];
   let listings = await client.models.Products.list()
     .then(result => JSON.stringify(result))
-  console.log("Courtesy of Stanly! :D - ", listings)
+  //console.log("Courtesy of Stanly! :D - ", listings)
   /*
     .then(result => {
       console.log("Results! ", result)
@@ -99,10 +99,11 @@ function Profile() {
         setLoading(true);
 
         const userAttributes = await fetchUserAttributes()
-        console.log(userAttributes.sub, "User details")
+        console.log(userAttributes.sub, "User AWS ID")
 
         const tempUserProds = await getSpecificUserListings();
         let userSpecificListings = [];
+        console.log(tempUserProds)
         // Now we can safely access the email
         setUserEmail(userAttributes.email);
         setUserId(userAttributes.sub)
@@ -112,6 +113,7 @@ function Profile() {
           if (tempUserProds[x].sellerID == userAttributes.sub ||
             tempUserProds[x].owner == userAttributes.sub) {
             userSpecificListings[x] == tempUserProds[x];
+            console.log("User product found - Count " + x, userSpecificListings[x])
           }
           
         }
@@ -129,9 +131,9 @@ function Profile() {
 
   let name, listingCount;
   //getUserDetails();
-  let userProdList = getSpecificUserListings();
+  //let userProdList = getSpecificUserListings();
   //console.log("userProdList[0] - ", userProdList[0]);
-  console.log("User Listings Object after Conversion:", userProdList)
+  //console.log("User Listings Object after Conversion:", userProdList)
 
 
   const navigate = useNavigate();
