@@ -287,7 +287,7 @@ function Profile() {
           >
             <Flex direction="column" alignItems="center" textAlign="center" gap="small">
               <Text fontSize="x-large" fontWeight="bold" color="#B10F2E">❤️</Text>
-              <Text fontWeight="bold" color="#e84441">Saved Items</Text>
+              <Text fontWeight="bold" color="#e84441">Saved Items - INACTIVE</Text>
               <Text fontSize="small" color="#574c4b">View your wishlist</Text>
             </Flex>
           </Card>
@@ -297,8 +297,9 @@ function Profile() {
             padding="medium"
             backgroundColor="#232624"
             borderRadius="large"
-            style={{ flex: 1, cursor: 'pointer' }}
+            style={{ flex: 1, cursor: 'pointer', display: 'none'  }}
             onClick={goToTransactions}
+            
           >
             <Flex direction="column" alignItems="center" textAlign="center" gap="small">
               <Text fontSize="x-large" fontWeight="bold" color="#B10F2E">💰</Text>
