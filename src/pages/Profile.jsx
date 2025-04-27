@@ -34,7 +34,7 @@ async function getSpecificUserListings() {
   //WIP
   let userList = [];
   let listings = await client.models.Products.list()
-  .then(result => JSON.stringify(result))
+    .then(result => JSON.stringify(result))
   console.log("Courtesy of Stanly! :D - ", listings)
   /*
     .then(result => {
@@ -44,8 +44,8 @@ async function getSpecificUserListings() {
       //userList = JSON.stringify(listings);
     })
     */
-    //.catch()
-  
+  //.catch()
+
   //console.log(listings)
   /*
   for(let x=0; x < listings.length; x++){
@@ -55,12 +55,12 @@ async function getSpecificUserListings() {
   }
       */
   //console.log("RIGHT BEFORE RETURNING: ", userList)
-  try{userList = JSON.parse(listings)}
-  catch(errors){
+  try { userList = JSON.parse(listings) }
+  catch (errors) {
     console.log("Wuh?")
   }
-  console.log(userList.data.length, "FUCK YESSSSSSS")
-  return userList;
+  console.log(userList.data.length, "We're so back it's not even funny")
+  return userList.data;
 }
 
 
@@ -100,13 +100,22 @@ function Profile() {
 
         const userAttributes = await fetchUserAttributes()
         console.log(userAttributes.sub, "User details")
-        
-          //const tempUserProds = getSpecificUserListings();
+
+        const tempUserProds = await getSpecificUserListings();
+        let userSpecficListings = [];
         // Now we can safely access the email
         setUserEmail(userAttributes.email);
         setUserId(userAttributes.sub)
-        
-        //console.log(userAttributes.email, "Use state return")
+
+        for (x = 0; x < tempUserProds.length; x++) {
+          //Grab user specific listings using the userAttributes.sub, which returns their user ID.
+          if (tempUserProds[x].sellerID == userAttributes.sub ||
+            tempUserProds[x].owner == userAttributes.sub) {
+            userSpecficListings[x] == tempUserProds[x];
+          }
+          
+        }
+        console.log(userSpecificListings, "Completed User array of owned products")
       } catch (err) {
         console.error('Error fetching user attributes:', err);
         setError(err);
