@@ -10,7 +10,7 @@ import {
   Divider,
   Card,
   Text,
-
+  Image
 } from '@aws-amplify/ui-react';
 import { Authenticator } from '@aws-amplify/ui-react'; //this will prevent the form from loading unless user is signed in
 //import { FileUploader } from '@aws-amplify/ui-react-storage'; //used for images
