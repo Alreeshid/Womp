@@ -32,6 +32,21 @@ function Electronics() {
     navigate('/'); 
   };
 
+  async function getAllProds() {
+    //Needs to then push onto the frontend
+    let userList = [];
+    let listings = await client.models.Products.list()
+      .then(result => JSON.stringify(result))
+    //console.log("Courtesy of Stanly! :D - ", listings)
+    
+    try { userList = JSON.parse(listings) }
+    catch (errors) {
+      console.log("Wuh?")
+    }
+    console.log(userList.data.length, "We're so back it's not even funny")
+    return userList.data;
+  }
+
   const featuredProducts = [
     { 
       title: "Minecraft Water Bottle",
