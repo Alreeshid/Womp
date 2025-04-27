@@ -54,7 +54,7 @@ async function addProduct(form){
     productName: form.productName,//form.productName.value,
     sellerName: userAttributes.email,
     productDescription: form.productDescription,
-    //productImages: "Test for now",
+    productImage: form.productImage,
     purchasedPrice: form.purchasedForPrice,
     listPrice: form.listPrice,
     condition: form.condition,
@@ -96,7 +96,7 @@ function CreateListing() {
     listPrice: '',
     productDescription: '',
     condition: 'New',
-    productImages: [], 
+    productImage: '', 
     productTags: []
   });
   
@@ -218,16 +218,17 @@ function CreateListing() {
             
             
             <View>
-              <Text fontWeight="bold" marginBottom="xs">Product Images</Text>
-              <Button variation="primary" marginBottom="medium">Upload Images</Button>
-              <FileUploader
-                acceptedFileTypes={['image/*']}
-                path="public/"
-                autoUpload={false}
-                maxFileCount={1}
-                isResumable
-                
-              />
+              
+              <Button variation="primary" marginBottom="medium">Upload an Image for your product:</Button>
+              <TextAreaField
+              label="Please paste an image URL here"
+              name="productDescription"
+              value={form.productImage}
+              onChange={handleChange}
+              required
+              rows={5}
+              placeholder="Image URL Here"
+            />
             </View>
             
             <Divider />
