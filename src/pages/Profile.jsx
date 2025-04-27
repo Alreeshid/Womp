@@ -107,7 +107,7 @@ function Profile() {
         setUserEmail(userAttributes.email);
         setUserId(userAttributes.sub)
 
-        for (x = 0; x < tempUserProds.length; x++) {
+        for (var x = 0; x < tempUserProds.length; x++) {
           //Grab user specific listings using the userAttributes.sub, which returns their user ID.
           if (tempUserProds[x].sellerID == userAttributes.sub ||
             tempUserProds[x].owner == userAttributes.sub) {
