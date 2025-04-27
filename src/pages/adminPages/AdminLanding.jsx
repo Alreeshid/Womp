@@ -232,11 +232,11 @@ const AdminPanel = () => {
     const [searchQuery, setSearchQuery] = useState('');
     
     // Filter data based on search query
-    const filteredData = data.filter(item => 
+    ./*const filteredData = data.filter(item => 
       Object.values(item).some(
         value => String(value).toLowerCase().includes(searchQuery.toLowerCase())
       )
-    );
+    );*/
     
     return (
       <View className="grid-view">
