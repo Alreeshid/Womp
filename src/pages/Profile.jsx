@@ -162,7 +162,7 @@ function Profile() {
 
   // console.log("Userdata: ", userData.email)
 
-  const recentActivityData = [
+  const recentActivityData =[
     //{ id: 1, type: "sale", item: "Leather Jacket", date: "2 days ago", price: "$45.00" },
     //{ id: 2, type: "purchase", item: "Wireless Headphones", date: "1 week ago", price: "$29.99" },
     { id: 3, type: "listing", item: "Vintage Camera", date: "2 weeks ago", price: "$85.50" }
@@ -318,22 +318,22 @@ function Profile() {
           borderRadius="large"
           backgroundColor="#232624"
         >
-          {recentActivityData.length > 0 ? (
-            recentActivityData.map((activity, index) => (
+          {userProds.length > 0 ? (
+            userProds.map((activity, index) => (
               <React.Fragment key={activity.id}>
                 <Flex alignItems="center" justifyContent="space-between" padding="small">
                   <Flex alignItems="center" gap="medium">
                     <Badge
                       backgroundColor={
-                        activity.type === "sale" ? "#4CAF50" :
+                        activity.hasBeenSold === "False" ? "#4CAF50" :
                           activity.type === "purchase" ? "#2196F3" : "#DE7C5A"
                       }
                       color="white"
                       padding="xs small"
                       borderRadius="full"
                     >
-                      {activity.type === "sale" ? "Sold" :
-                        activity.type === "purchase" ? "Bought" : "Listed"}
+                      {activity.hasBeenSold === "True" ? "Sold" :
+                        activity.hasBeenSolde === "False" ? "Null" : "Listed"}
                     </Badge>
                     <View>
                       <Text fontWeight="bold" color="#e84441">{activity.item}</Text>
