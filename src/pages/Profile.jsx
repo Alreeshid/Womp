@@ -112,7 +112,7 @@ function Profile() {
           //Grab user specific listings using the userAttributes.sub, which returns their user ID.
           if (tempUserProds[x].sellerID == userAttributes.sub ||
             tempUserProds[x].owner == userAttributes.sub) {
-            userSpecificListings[x] == tempUserProds[x];
+            userSpecificListings[x] = tempUserProds[x];
             console.log("User product found - Count " + x, userSpecificListings[x])
           }
           
