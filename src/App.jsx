@@ -20,6 +20,10 @@ import { generateClient } from 'aws-amplify/data';
 
 function Electronics() {
   const navigate = useNavigate();
+
+  const client = generateClient({
+    authMode: "userPool"
+  })
   
  
   const isMobile = useBreakpointValue({
