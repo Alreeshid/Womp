@@ -230,7 +230,7 @@ function CheckoutPage() {
 
           <Flex direction="row" alignItems="center" marginBottom="16px">
             <View
-              backgroundColor="lightgray"
+              backgroundImage={localStorage.getItem("productImg")}
               width="80px"
               height="80px"
               borderRadius="8px"
