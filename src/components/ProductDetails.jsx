@@ -126,7 +126,9 @@ const ProductDetails = () => {
 
 
   const addToCart = () => {
-    alert(`${product.title} added to cart!`);
+    //alert(`${product.title} added to cart!`);
+    
+    localStorage.setItem("prodNAme", )
   };
 
   if (!product) {
@@ -209,13 +211,9 @@ const ProductDetails = () => {
 
 
           <Flex gap="0.5rem" wrap="wrap" marginTop="small">
-            {product.badges.map((badge, index) => (
+            {
               <Badge
-                key={`badge-${index}`}
-                backgroundColor={
-                  badge.toLowerCase().includes('used') ? '#E08D5F' :
-                    badge.toLowerCase().includes('$') ? '#B10F2E' : '#DE7C5A'
-                }
+                
                 color="#e84441"
                 style={{
                   padding: '0.25rem 0.5rem',
@@ -224,9 +222,9 @@ const ProductDetails = () => {
                   fontWeight: '500'
                 }}
               >
-                {badge}
+                {"$"+product.listPrice}
               </Badge>
-            ))}
+            }
           </Flex>
 
 
@@ -261,7 +259,7 @@ const ProductDetails = () => {
             size="large"
             marginTop="large"
           >
-            Add to Cart
+            Purchase
           </Button>
         </View>
       </Flex>
