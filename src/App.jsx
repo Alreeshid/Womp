@@ -73,7 +73,7 @@ function Electronics() {
             featuredListings[x] = tempUserProds[x];
             console.log("Featured product found - Count " + x, featuredListings[x])
           }
-          else if(tempUserProds[x].hasBeenSold){
+          else if(!tempUserProds[x].hasBeenSold){
             normProds[x] = tempUserProds[x];
           }
           else{
@@ -157,7 +157,45 @@ function Electronics() {
         >
           <h3>Featured</h3>
         </Heading>
-        
+        <View style={gridContainerStyle}>
+          {featured.length > 0 ? (
+          featured.map((product, index) => (
+            <ProductCard
+              key={`featured-${index}`}
+              id={product.id}
+              title={product.productName}
+              badges={"$"+[product.listPrice, product.condition]}
+              image={product.productImage}
+            />
+          ))):
+          (
+                      <Text textAlign="center" padding="large" color="gray.60">No recent activity</Text>
+                    )}
+        </View>
+
+        <Heading 
+          level={2} 
+          marginBottom="medium"
+          padding="medium"
+          color={'red.90'}
+        >
+          <h3>New Products:</h3>
+        </Heading>
+        <View style={gridContainerStyle}>
+          { prods.length > 0 ? (
+          prods.map((product, index) => (
+            <ProductCard
+              key={`featured-${index}`}
+              id={product.id}
+              title={product.productName}
+              badges={[product.listPrice, product.condition]}
+              image={product.productImage}
+            />
+          ))):
+          (
+                      <Text textAlign="center" padding="large" color="gray.60">No recent activity</Text>
+                    )}
+        </View>
       </View>
     </View>
   );
