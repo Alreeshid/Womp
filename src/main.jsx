@@ -15,7 +15,7 @@ import Jewelery from './pages/Jewelery.jsx'
 import Clothing from './pages/Clothing.jsx'
 import CreateListing from "./pages/CreateListing.jsx"
 import ProductDetails from './components/ProductDetails.jsx';
-import {CheckoutPage} from "./pages/CheckoutPage.jsx"
+import CheckoutPage from "./pages/CheckoutPage.jsx"
 
 
 import { generateClient } from 'aws-amplify/data';
