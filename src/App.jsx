@@ -55,7 +55,7 @@ function Electronics() {
 
   const allProducts = getAllProds();
   console.log(allProducts)
-}
+
   /*OLD ARRAY[
     { 
       title: "Minecraft Water Bottle",
