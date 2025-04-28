@@ -54,7 +54,7 @@ function Electronics() {
   }
 
   const allProducts = getAllProds();
-  const featuredProducts = allProducts.filter(listing =>{
+  const featuredProducts = allProducts.values.filter(listing =>{
     //logic code goes here, then use a return
     return listing.isFeatured == true;
   })
