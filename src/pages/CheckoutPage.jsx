@@ -16,12 +16,14 @@ import { generateClient } from 'aws-amplify/data';
 
 // Mock product data
 const product = {
-  name: "Premium Wireless Headphones",
-  price: 149.99,
+  name: localStorage.getItem("prodName"),
+  price: localStorage.getItem("prodPrice"),
   shipping: "TBD",
-  tax: 5.99
+  tax: calcTax()
 };
-
+function calcTax(){
+  return 5;
+}
 
 function CheckoutPage() {
   const [showNotification, setShowNotification] = useState(true);
@@ -267,7 +269,7 @@ function CheckoutPage() {
 
           <Flex direction="row" justifyContent="space-between" marginBottom="8px">
             <Text fontWeight="bold">Total</Text>
-            <Text fontWeight="bold">${(product.price + product.shipping + product.tax)}</Text>
+            <Text fontWeight="bold">${(product.price + product.tax)}</Text>
           </Flex>
 
           <Flex direction="row" alignItems="center" gap="8px" marginTop="24px">
