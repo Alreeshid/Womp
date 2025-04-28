@@ -113,6 +113,7 @@ const ProductDetails = () => {
     localStorage.setItem("prodName", product.productName)
     localStorage.setItem("prodPrice", product.listPrice)
     localStorage.setItem("prodSeller", product.sellerName)
+    navigate("/Checkout")
   };
 
   if (!product) {
