@@ -164,7 +164,7 @@ function Electronics() {
           featured.map((product, index) => (
             <ProductCard
               key={`featured-${index}`}
-              id={product.id}
+              //id={product.id}
               title={product.productName}
               badges={"$"+[product.listPrice, product.condition]}
               image={product.productImage}
@@ -188,8 +188,8 @@ function Electronics() {
            prods.length > 0 ? (
           prods.map((product, index) => (
             <ProductCard
-              key={`featured-${index}`}
-              id={product.id}
+              key={`norm-${index}`}
+              //id={product.id}
               title={product.productName}
               badges={[product.listPrice, product.condition]}
               image={product.productImage}
