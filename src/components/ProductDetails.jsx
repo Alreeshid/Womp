@@ -87,7 +87,7 @@ const ProductDetails = () => {
         console.log("Found product: ", prodArray[x]);
       }
       else{
-        cosole.log("Not this one! ", prodArray[x])      }
+        console.log("Not this one! ", prodArray[x], prodArray[x].id)      }
     }
 
     if (foundProduct) {
