@@ -73,12 +73,12 @@ function Electronics() {
             featuredListings.push(tempUserProds[x]);
             console.log("Featured product found - Count " + x, featuredListings[x])
           }
-          else if(!tempUserProds[x].hasBeenSold){
+          else if(tempUserProds[x].hasBeenSold==false){
             normProds.push(tempUserProds[x]);
           }
           else{
             console.log("No featured prods found, logic error?")
-            //normProds[x] = tempUserProds[x];
+            normProds.push(tempUserProds[x]);
           }
         }
         console.log(featuredListings, "Featured array")
