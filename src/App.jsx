@@ -118,7 +118,7 @@ function Electronics() {
           <h3>Featured</h3>
         </Heading>
         <View style={gridContainerStyle}>
-          {featuredProducts.map((product, index) => (
+          {featuredProducts.Products.map((product, index) => (
             <ProductCard
               key={`featured-${index}`}
               title={product.productName}
@@ -137,7 +137,7 @@ function Electronics() {
           <h3>New Products:</h3>
         </Heading>
         <View style={gridContainerStyle}>
-          {allProducts.map((product, index) => (
+          {allProducts.Products.map((product, index) => (
             <ProductCard
               key={`featured-${index}`}
               title={product.productName}
