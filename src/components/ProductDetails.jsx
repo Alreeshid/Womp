@@ -110,7 +110,9 @@ const ProductDetails = () => {
   const addToCart = () => {
     //alert(`${product.title} added to cart!`);
     
-    localStorage.setItem("prodNAme", )
+    localStorage.setItem("prodName", product.productName)
+    localStorage.setItem("prodPrice", product.listPrice)
+    localStorage.setItem("prodSeller", product.sellerName)
   };
 
   if (!product) {
@@ -211,7 +213,7 @@ const ProductDetails = () => {
 
 
           <Text marginTop="medium" fontSize="large" color="#e84441">
-            {product.description}
+            {product.productDescription}
           </Text>
 
 
@@ -220,7 +222,7 @@ const ProductDetails = () => {
           <Flex direction="column" gap="small">
             <Flex>
               <Text fontWeight="bold" width="120px" color="#e84441"></Text>
-              <Text color="#e84441">{product.productDescription}</Text>
+              <Text color="#e84441">{}</Text>
             </Flex>
             <Flex>
               <Text fontWeight="bold" color="#e84441" width="120px">Condition:</Text>
