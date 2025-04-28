@@ -82,7 +82,7 @@ const ProductDetails = () => {
     let foundProduct;
     console.log("Products to search: ", prodArray)
     for (let x = 0; x < prodArray.length; x++) {
-      if(allProducts[x].id == productId){
+      if(prodArray[x].id == prodArray){
         foundProduct = prodArray[x]
         console.log("Found product: ", prodArray[x]);
       }
@@ -96,7 +96,8 @@ const ProductDetails = () => {
       console.error(`Product with ID ${productId} not found`);
     }
   }
-  }, getSpecificProd());
+  getSpecificProd()
+  }, []);
 
 
   const goBack = () => {
