@@ -156,7 +156,7 @@ function Electronics() {
           padding="medium"
           color={'red.90'}
         >
-          <h3>Featured</h3>
+          <h3>Featured {console.log(featured, "Line 159")}</h3>
         </Heading>
         <View style={gridContainerStyle}>
           {featured.length > 0 ? (
@@ -180,7 +180,7 @@ function Electronics() {
           padding="medium"
           color={'red.90'}
         >
-          <h3>New Products: {console.log(prods)}</h3>
+          <h3>New Products: {console.log(prods, "Line 183")}</h3>
         </Heading>
         <View style={gridContainerStyle}>
           {
