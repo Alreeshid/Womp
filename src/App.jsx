@@ -28,6 +28,7 @@ function Electronics() {
   })
 
   const [prods, setProds] = useState([]);
+  const [featured, setFeatured] = useState([]);
   
  
   const isMobile = useBreakpointValue({
@@ -46,7 +47,7 @@ function Electronics() {
     //Needs to then push onto the frontend
     let userList = [];
     let listings = await client.models.Products.list()
-      .then(result => JSON.stringify(result)).then(p => setProds(p))
+      .then(result => JSON.stringify(result))
     //console.log("Courtesy of Stanly! :D - ", listings)
     
     try { userList = JSON.parse(listings) }
@@ -77,11 +78,12 @@ function Electronics() {
           }
         }
         console.log(featuredListings, "Featured array")
-        setProds(featuredListings)
+        setProds(tempUserProds)
+        setFeatured(featuredListings)
         console.log(prods, "Prods?")
       } catch (err) {
         console.error('Error fetching user attributes:', err);
-        setError(err);
+        //setError(err);
       }
     }
 
@@ -152,8 +154,8 @@ function Electronics() {
           <h3>Featured</h3>
         </Heading>
         <View style={gridContainerStyle}>
-          {prods.length > 0 ? (
-          featuredProducts.map((product, index) => (
+          {featured.length > 0 ? (
+          featured.map((product, index) => (
             <ProductCard
               key={`featured-${index}`}
               title={product.productName}
@@ -176,7 +178,7 @@ function Electronics() {
         </Heading>
         <View style={gridContainerStyle}>
           { prods.length > 0 ? (
-          allProducts.map((product, index) => (
+          prods.map((product, index) => (
             <ProductCard
               key={`featured-${index}`}
               title={product.productName}
