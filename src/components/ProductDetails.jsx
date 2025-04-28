@@ -115,6 +115,7 @@ const ProductDetails = () => {
       localStorage.setItem("prodName", product.productName)
     localStorage.setItem("prodPrice", product.listPrice)
     localStorage.setItem("prodSeller", product.sellerName)
+    localStorage.setItem("prodImg", product.productImage)
     } else {
       //txt = "You pressed Cancel!";
       navigate("/Checkout")
@@ -124,6 +125,7 @@ const ProductDetails = () => {
     localStorage.setItem("prodName", product.productName)
     localStorage.setItem("prodPrice", product.listPrice)
     localStorage.setItem("prodSeller", product.sellerName)
+    localStorage.setItem("prodImg", product.productImage)
     navigate("/Checkout")
   }
   };
@@ -139,7 +141,7 @@ const ProductDetails = () => {
         </Button>
         <NavigationBar />
         <View padding="large" textAlign="center">
-          <Heading level={3}>Product not found</Heading>
+          <Heading level={3}>Product not found{location.reload()}</Heading>
           <Button
             onClick={goBack}
             variation="primary"
