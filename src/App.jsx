@@ -116,9 +116,9 @@ function Electronics() {
           {allProducts.map((product, index) => (
             <ProductCard
               key={`featured-${index}`}
-              title={product.title}
-              badges={product.badges}
-              image={product.image}
+              title={product.productName}
+              badges={[product.listPrice, product.condition]}
+              image={product.productImage}
             />
           ))}
         </View>
@@ -135,9 +135,9 @@ function Electronics() {
           {allProducts.map((product, index) => (
             <ProductCard
               key={`featured-${index}`}
-              title={product.title}
-              badges={product.badges}
-              image={product.image}
+              title={product.productName}
+              badges={[product.listPrice, product.condition]}
+              image={product.productImage}
             />
           ))}
         </View>
