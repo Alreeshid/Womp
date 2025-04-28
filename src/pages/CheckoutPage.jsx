@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
-import { 
-  Card, 
-  Heading, 
-  Flex, 
-  View, 
-  TextField, 
-  SelectField, 
-  Button, 
+import {
+  Card,
+  Heading,
+  Flex,
+  View,
+  TextField,
+  SelectField,
+  Button,
   Text,
   Divider,
   Badge,
   Alert
 } from '@aws-amplify/ui-react';
+import { generateClient } from 'aws-amplify/data';
 
 // Mock product data
 const product = {
@@ -27,13 +28,17 @@ function CheckoutPage() {
   const [processing, setProcessing] = useState(false);
   const [prod, setProd] = useState({})
 
+  const client = generateClient({
+    authMode: "userPool"
+  })
+
   async function getAllProds() {
     //Needs to then push onto the frontend
     let userList = [];
     let listings = await client.models.Products.list()
       .then(result => JSON.stringify(result))
     //console.log("Courtesy of Stanly! :D - ", listings)
-    
+
     try { userList = JSON.parse(listings) }
     catch (errors) {
       console.log("Wuh?")
@@ -41,7 +46,7 @@ function CheckoutPage() {
     console.log(userList.data, "We're so back it's not even funny")
     return userList.data;
   }
-  
+
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -52,7 +57,7 @@ function CheckoutPage() {
       alert("This is a mock transaction! Moving to next steps...");
     }, 1500);
   };
-  
+
   return (
     <Flex direction="column" maxWidth="1200px" margin="0 auto" padding="20px">
       {/* Notification Banner */}
@@ -67,15 +72,15 @@ function CheckoutPage() {
           This is a mock payment page. No actual payment information will be stored or processed.
         </Alert>
       )}
-      
+
       <Heading level={3} marginBottom="16px">Checkout</Heading>
-      
+
       <Flex direction={{ base: 'column', large: 'row' }} gap="24px">
         {/* Left Column - Payment Form */}
         <Card variation="elevated" flex="3" padding="24px">
           <form onSubmit={handleSubmit}>
             <Heading level={5} marginBottom="16px">Shipping Information</Heading>
-            
+
             <Flex direction="row" gap="16px" marginBottom="16px">
               <TextField
                 label="First Name"
@@ -94,7 +99,7 @@ function CheckoutPage() {
                 flex="1"
               />
             </Flex>
-            
+
             <TextField
               label="Address Line 1"
               name="address1"
@@ -103,7 +108,7 @@ function CheckoutPage() {
               isRequired
               marginBottom="16px"
             />
-            
+
             <TextField
               label="Address Line 2"
               name="address2"
@@ -111,7 +116,7 @@ function CheckoutPage() {
               defaultValue="Apt 4B"
               marginBottom="16px"
             />
-            
+
             <Flex direction="row" gap="16px" marginBottom="16px">
               <TextField
                 label="City"
@@ -142,11 +147,11 @@ function CheckoutPage() {
                 flex="1"
               />
             </Flex>
-            
+
             <Divider marginBottom="24px" marginTop="24px" />
-            
+
             <Heading level={5} marginBottom="16px">Payment Information</Heading>
-            
+
             <TextField
               label="Card Number"
               name="cardNumber"
@@ -155,7 +160,7 @@ function CheckoutPage() {
               isRequired
               marginBottom="16px"
             />
-            
+
             <Flex direction="row" gap="16px" marginBottom="16px">
               <TextField
                 label="Cardholder Name"
@@ -183,11 +188,11 @@ function CheckoutPage() {
                 flex="1"
               />
             </Flex>
-            
+
             <Divider marginBottom="24px" marginTop="24px" />
-            
+
             <Heading level={5} marginBottom="16px">Contact Information</Heading>
-            
+
             <TextField
               label="Email"
               name="email"
@@ -196,7 +201,7 @@ function CheckoutPage() {
               isRequired
               marginBottom="16px"
             />
-            
+
             <TextField
               label="Phone Number"
               name="phone"
@@ -204,7 +209,7 @@ function CheckoutPage() {
               defaultValue="(555) 123-4567"
               marginBottom="24px"
             />
-            
+
             <Button
               type="submit"
               variation="primary"
@@ -216,11 +221,11 @@ function CheckoutPage() {
             </Button>
           </form>
         </Card>
-        
+
         {/* Right Column - Order Summary */}
         <Card variation="elevated" flex="1" padding="24px">
           <Heading level={5} marginBottom="16px">Order Summary</Heading>
-          
+
           <Flex direction="row" alignItems="center" marginBottom="16px">
             <View
               backgroundColor="lightgray"
@@ -240,31 +245,31 @@ function CheckoutPage() {
               <Text fontSize="small" color="gray">#SKU12345</Text>
             </Flex>
           </Flex>
-          
+
           <Divider marginBottom="16px" />
-          
+
           <Flex direction="row" justifyContent="space-between" marginBottom="8px">
             <Text>Subtotal</Text>
             <Text>${product.price}</Text>
           </Flex>
-          
+
           <Flex direction="row" justifyContent="space-between" marginBottom="8px">
             <Text>Shipping</Text>
             <Text>${product.shipping}</Text>
           </Flex>
-          
+
           <Flex direction="row" justifyContent="space-between" marginBottom="16px">
             <Text>Tax</Text>
             <Text>${product.tax}</Text>
           </Flex>
-          
+
           <Divider marginBottom="16px" />
-          
+
           <Flex direction="row" justifyContent="space-between" marginBottom="8px">
             <Text fontWeight="bold">Total</Text>
-            <Text fontWeight="bold">${(product.price + product.shipping + product.tax).toFixed(2)}</Text>
+            <Text fontWeight="bold">${(product.price + product.shipping + product.tax)}</Text>
           </Flex>
-          
+
           <Flex direction="row" alignItems="center" gap="8px" marginTop="24px">
             <Badge variation="success">SECURE</Badge>
             <Text fontSize="small" color="gray">Your information is protected</Text>
