@@ -116,6 +116,7 @@ const ProductDetails = () => {
     localStorage.setItem("prodPrice", product.listPrice)
     localStorage.setItem("prodSeller", product.sellerName)
     localStorage.setItem("prodImg", product.productImage)
+    navigate("/Checkout")
     } else {
       //txt = "You pressed Cancel!";
       navigate("/Checkout")
