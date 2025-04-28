@@ -30,7 +30,7 @@ const ProductCard = ({id, title, badges, image }) => { //Id is the unique produc
 
   
   const handleCardClick = () => {
-    const productId = id.toString();
+    const productId = "Test!"//id.toString();
     navigate(`/product/${productId}`);
   };
 
