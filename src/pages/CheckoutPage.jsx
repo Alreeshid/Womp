@@ -17,13 +17,30 @@ import {
 const product = {
   name: "Premium Wireless Headphones",
   price: 149.99,
-  shipping: 4.99,
-  tax: 12.75
+  shipping: "TBD",
+  tax: price/100
 };
+
 
 function CheckoutPage() {
   const [showNotification, setShowNotification] = useState(true);
   const [processing, setProcessing] = useState(false);
+  const [prod, setProd] = useState({})
+
+  async function getAllProds() {
+    //Needs to then push onto the frontend
+    let userList = [];
+    let listings = await client.models.Products.list()
+      .then(result => JSON.stringify(result))
+    //console.log("Courtesy of Stanly! :D - ", listings)
+    
+    try { userList = JSON.parse(listings) }
+    catch (errors) {
+      console.log("Wuh?")
+    }
+    console.log(userList.data, "We're so back it's not even funny")
+    return userList.data;
+  }
   
   // Handle form submission
   const handleSubmit = (e) => {

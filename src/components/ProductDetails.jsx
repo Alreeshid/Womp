@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { 
-  View, 
-  Heading, 
-  Text, 
-  Image, 
-  Flex, 
-  Badge, 
+import {
+  View,
+  Heading,
+  Text,
+  Image,
+  Flex,
+  Badge,
   Button,
   Divider,
   useBreakpointValue
@@ -46,9 +46,9 @@ const ProductDetails = () => {
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const client = generateClient({
-      authMode: "userPool"
-    })
-  
+    authMode: "userPool"
+  })
+
   const isMobile = useBreakpointValue({
     base: true,
     small: true,
@@ -63,7 +63,7 @@ const ProductDetails = () => {
     let listings = await client.models.Products.list()
       .then(result => JSON.stringify(result))
     //console.log("Courtesy of Stanly! :D - ", listings)
-    
+
     try { userList = JSON.parse(listings) }
     catch (errors) {
       console.log("Wuh?")
@@ -97,19 +97,19 @@ const ProductDetails = () => {
     },
 ]
   */
-  
-  
+
+
   useEffect(() => {
     console.log("Looking for product with ID:", productId);
-    
-    const foundProduct = [];
 
-    allProducts.forEach(element => {
-      console.log(element.id)
-        if(element.id == productId)
-          foundProduct = element
-    });
-    
+    const foundProduct = {};
+
+    for (let x = 0; x < allProducts.length; x++) {
+      if(allProducts[x].id == productId){
+        foundProduct = allProducts[x]
+      }
+    }
+
     if (foundProduct) {
       console.log("Found product:", foundProduct);
       setProduct(foundProduct);
@@ -118,21 +118,21 @@ const ProductDetails = () => {
       console.error(`Product with ID ${productId} not found`);
     }
   }, [productId]);
-  
-  
+
+
   const goBack = () => {
     navigate(-1);
   };
-  
-  
+
+
   const addToCart = () => {
     alert(`${product.title} added to cart!`);
   };
-  
+
   if (!product) {
     return (
       <View padding="medium">
-        <Button 
+        <Button
           variation="link"
           onClick={() => navigate('/')}
         >
@@ -141,7 +141,7 @@ const ProductDetails = () => {
         <NavigationBar />
         <View padding="large" textAlign="center">
           <Heading level={3}>Product not found</Heading>
-          <Button 
+          <Button
             onClick={goBack}
             variation="primary"
             backgroundColor="#B10F2E"
@@ -153,22 +153,22 @@ const ProductDetails = () => {
       </View>
     );
   }
-  
+
   return (
     <View padding="medium">
-      
-      <Button 
+
+      <Button
         variation="link"
         onClick={() => navigate('/')}
       >
         <h1>Womper</h1>
       </Button>
-      
-      
+
+
       <NavigationBar />
-      
-      
-      <Button 
+
+
+      <Button
         onClick={goBack}
         variation="link"
         color="#B10F2E"
@@ -176,15 +176,15 @@ const ProductDetails = () => {
       >
         ← Back
       </Button>
-      
-     
-      <Flex 
+
+
+      <Flex
         direction={isMobile ? "column" : "row"}
         padding="large"
         gap="large"
       >
-        
-        <View 
+
+        <View
           width={isMobile ? "100%" : "40%"}
           backgroundColor="#f8f8f8"
           padding="medium"
@@ -202,22 +202,22 @@ const ProductDetails = () => {
             }}
           />
         </View>
-        
-        
+
+
         <View width={isMobile ? "100%" : "60%"}>
           <Heading color="#e84441" level={2}>{product.title}</Heading>
-          
-          
+
+
           <Flex gap="0.5rem" wrap="wrap" marginTop="small">
             {product.badges.map((badge, index) => (
               <Badge
                 key={`badge-${index}`}
                 backgroundColor={
-                  badge.toLowerCase().includes('used') ? '#E08D5F' : 
-                  badge.toLowerCase().includes('$') ? '#B10F2E' : '#DE7C5A'
+                  badge.toLowerCase().includes('used') ? '#E08D5F' :
+                    badge.toLowerCase().includes('$') ? '#B10F2E' : '#DE7C5A'
                 }
                 color="#e84441"
-                style={{ 
+                style={{
                   padding: '0.25rem 0.5rem',
                   borderRadius: '1rem',
                   fontSize: '0.8rem',
@@ -228,15 +228,15 @@ const ProductDetails = () => {
               </Badge>
             ))}
           </Flex>
-          
-          
+
+
           <Text marginTop="medium" fontSize="large" color="#e84441">
             {product.description}
           </Text>
-          
-         
+
+
           <Divider marginTop="large" marginBottom="large" />
-          
+
           <Flex direction="column" gap="small">
             <Flex>
               <Text fontWeight="bold" width="120px" color="#e84441">Category:</Text>
@@ -251,9 +251,9 @@ const ProductDetails = () => {
               <Text color="#e84441">{product.seller}</Text>
             </Flex>
           </Flex>
-          
-          
-          <Button 
+
+
+          <Button
             onClick={addToCart}
             variation="primary"
             backgroundColor="#B10F2E"
