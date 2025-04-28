@@ -70,15 +70,15 @@ function Electronics() {
         for (var x = 0; x < tempUserProds.length; x++) {
           //Grab user specific listings using the userAttributes.sub, which returns their user ID.
           if (tempUserProds[x].isFeatured && tempUserProds[x].hasBeenSold===false) {
-            featuredListings[x] = tempUserProds[x];
+            featuredListings.push(tempUserProds[x]);
             console.log("Featured product found - Count " + x, featuredListings[x])
           }
           else if(!tempUserProds[x].hasBeenSold){
-            normProds[x] = tempUserProds[x];
+            normProds.push(tempUserProds[x]);
           }
           else{
             console.log("No featured prods found, logic error?")
-            normProds[x] = tempUserProds[x];
+            //normProds[x] = tempUserProds[x];
           }
         }
         console.log(featuredListings, "Featured array")
