@@ -25,7 +25,7 @@ const ProductCard = ({ title, badges, image }) => {
 
  
   const getProductId = (productTitle) => {
-    return productTitle.toLowerCase().replace(/\s+/g, '-');
+    return productTitle//.toLowerCase().replace(/\s+/g, '-');
   };
 
   
