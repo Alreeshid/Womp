@@ -50,7 +50,7 @@ async function getAllProds() {
     catch (errors) {
       console.log("Wuh?")
     }
-    console.log(userList.data.length, "We're so back it's not even funny")
+    console.log(userList.data, "We're so back it's even better on the admin page")
     return userList.data;
   }
 
@@ -254,7 +254,7 @@ const AdminPanel = () => {
           />
         </Flex>
         
-        {filteredData.length === 0 ? (
+        {filteredData.length == 0 ? (
           <View style={{ padding: '20px', textAlign: 'center' }}>
             No {title.toLowerCase()} found matching your search.
           </View>
