@@ -94,7 +94,7 @@ function Electronics() {
     fetchUserData();
   }, []);
   const allProducts = getAllProds();
-  console.log(allProducts)
+  console.log(allProducts, "All products found by initial search")
   //const featuredProducts = [];
 
   /*OLD ARRAY[

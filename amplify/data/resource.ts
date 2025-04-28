@@ -25,7 +25,7 @@ const schema = a.schema({
       isFeatured: a.boolean().default(false),
       hasBeenSold: a.boolean().default(false)
     })
-    .authorization((allow) => [allow.owner(), allow.guest()]), //added the guest portion
+    .authorization((allow) => [allow.owner(), allow.guest(), allow.authenticated()]), //added the guest portion
   Reviews: a
   .model({
     userID: a.id(),
