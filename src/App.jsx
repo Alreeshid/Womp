@@ -170,7 +170,7 @@ function Electronics() {
               key={`norm-${index}`}
               id={product.id}
               title={product.productName}
-              badges={[product.listPrice, product.condition]}
+              badges={["$" + product.listPrice, product.condition]}
               image={product.productImage}
             />
           ))):
