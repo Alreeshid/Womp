@@ -147,14 +147,18 @@ function Electronics() {
           <h3>Featured</h3>
         </Heading>
         <View style={gridContainerStyle}>
-          {/*featuredProducts.Products.map((product, index) => (
+          {allProds.length > 0 ? (
+          featuredProducts.map((product, index) => (
             <ProductCard
               key={`featured-${index}`}
               title={product.productName}
               badges={[product.listPrice, product.condition]}
               image={product.productImage}
             />
-          ))*/}
+          ))):
+          (
+                      <Text textAlign="center" padding="large" color="gray.60">No recent activity</Text>
+                    )}
         </View>
 
         <Heading 
@@ -166,14 +170,18 @@ function Electronics() {
           <h3>New Products:</h3>
         </Heading>
         <View style={gridContainerStyle}>
-          {/*allProducts.map((product, index) => (
+          { allProds.length > 0 ? (
+          allProducts.map((product, index) => (
             <ProductCard
               key={`featured-${index}`}
               title={product.productName}
               badges={[product.listPrice, product.condition]}
               image={product.productImage}
             />
-          ))*/}
+          ))):
+          (
+                      <Text textAlign="center" padding="large" color="gray.60">No recent activity</Text>
+                    )}
         </View>
       </View>
     </View>
