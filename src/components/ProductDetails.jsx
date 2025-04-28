@@ -342,6 +342,7 @@ const ProductDetails = () => {
     const foundProduct = [];
 
     allProducts.data.array.forEach(element => {
+      console.log(element.productName)
         if(element.productName == productId)
           foundProduct = element
     });
