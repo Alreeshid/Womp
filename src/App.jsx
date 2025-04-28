@@ -180,10 +180,11 @@ function Electronics() {
           padding="medium"
           color={'red.90'}
         >
-          <h3>New Products:</h3>
+          <h3>New Products: {console.log(prods)}</h3>
         </Heading>
         <View style={gridContainerStyle}>
-          { prods.length > 0 ? (
+          {
+           prods.length > 0 ? (
           prods.map((product, index) => (
             <ProductCard
               key={`featured-${index}`}
