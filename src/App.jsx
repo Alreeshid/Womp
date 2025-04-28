@@ -46,7 +46,7 @@ function Electronics() {
     //Needs to then push onto the frontend
     let userList = [];
     let listings = await client.models.Products.list()
-      .then(result => JSON.stringify(result))
+      .then(result => JSON.stringify(result)).then(p => setProds(p))
     //console.log("Courtesy of Stanly! :D - ", listings)
     
     try { userList = JSON.parse(listings) }
