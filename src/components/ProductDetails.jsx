@@ -53,8 +53,23 @@ const ProductDetails = () => {
     xl: false
   });
 
+  async function getAllProds() {
+    //Needs to then push onto the frontend
+    let userList = [];
+    let listings = await client.models.Products.list()
+      .then(result => JSON.stringify(result))
+    //console.log("Courtesy of Stanly! :D - ", listings)
+    
+    try { userList = JSON.parse(listings) }
+    catch (errors) {
+      console.log("Wuh?")
+    }
+    console.log(userList.data, "We're so back it's not even funny")
+    return userList.data;
+  }
+
   // Product database
-  const allProducts = [
+  const allProducts = getAllProds() /*[
 
     {
       id: 'jewelery-women-necklace',
@@ -314,12 +329,13 @@ const ProductDetails = () => {
             
             
   ];
+  */
   
   
   useEffect(() => {
     console.log("Looking for product with ID:", productId);
     
-    const foundProduct = allProducts.find(p => p.id === productId);
+    const foundProduct = allProducts.find(p => p.productName === productId);
     
     if (foundProduct) {
       console.log("Found product:", foundProduct);
