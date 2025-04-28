@@ -64,7 +64,7 @@ function Electronics() {
         const tempUserProds = await getAllProds();
         let normProds = [];
         let featuredListings = [];
-        console.log(tempUserProds)
+        console.log(tempUserProds[0].hasBeenSold)
 
 
         for (var x = 0; x < tempUserProds.length; x++) {
