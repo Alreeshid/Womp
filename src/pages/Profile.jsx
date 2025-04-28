@@ -55,7 +55,11 @@ async function getSpecificUserListings() {
   }
       */
   //console.log("RIGHT BEFORE RETURNING: ", userList)
-  try { userList = JSON.parse(listings) }
+  try { 
+  //listings.forEach(element => {
+  //    if(element.owner)
+  //});
+  userList = JSON.parse(listings) }
   catch (errors) {
     console.log("Wuh?")
   }

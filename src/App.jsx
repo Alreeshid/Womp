@@ -168,7 +168,7 @@ function Electronics() {
           prods.map((product, index) => (
             <ProductCard
               key={`norm-${index}`}
-              //id={product.id}
+              id={product.id}
               title={product.productName}
               badges={[product.listPrice, product.condition]}
               image={product.productImage}
