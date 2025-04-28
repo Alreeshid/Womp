@@ -62,23 +62,26 @@ function Electronics() {
       try {
 
         const tempUserProds = await getAllProds();
+        let normProds = [];
         let featuredListings = [];
         console.log(tempUserProds)
 
 
         for (var x = 0; x < tempUserProds.length; x++) {
           //Grab user specific listings using the userAttributes.sub, which returns their user ID.
-          if (tempUserProds[x].isFeatured) {
+          if (tempUserProds[x].isFeatured && !tempUserProds[x].hasBeenSold) {
             featuredListings[x] = tempUserProds[x];
             console.log("Featured product found - Count " + x, featuredListings[x])
-            
+          }
+          else if(!tempUserProds[x].hasBeenSold){
+            normProds[x] = tempUserProds[x];
           }
           else{
             console.log("No featured prods found, logic error?")
           }
         }
         console.log(featuredListings, "Featured array")
-        setProds(tempUserProds)
+        setProds(normProds)
         setFeatured(featuredListings)
         console.log(prods, "Prods?")
       } catch (err) {
