@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react';
 import { 
   View,
   Button,
@@ -148,7 +148,7 @@ function Electronics() {
           <h3>Featured</h3>
         </Heading>
         <View style={gridContainerStyle}>
-          {allProds.length > 0 ? (
+          {prods.length > 0 ? (
           featuredProducts.map((product, index) => (
             <ProductCard
               key={`featured-${index}`}
@@ -171,7 +171,7 @@ function Electronics() {
           <h3>New Products:</h3>
         </Heading>
         <View style={gridContainerStyle}>
-          { allProds.length > 0 ? (
+          { prods.length > 0 ? (
           allProducts.map((product, index) => (
             <ProductCard
               key={`featured-${index}`}
