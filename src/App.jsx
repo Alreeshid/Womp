@@ -132,7 +132,7 @@ function Electronics() {
           <h3>New Products:</h3>
         </Heading>
         <View style={gridContainerStyle}>
-          {featuredProducts.map((product, index) => (
+          {allProducts.map((product, index) => (
             <ProductCard
               key={`featured-${index}`}
               title={product.title}
