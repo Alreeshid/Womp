@@ -222,7 +222,7 @@ const ProductDetails = () => {
                   fontWeight: '500'
                 }}
               >
-                {"$"+product.listPrice.toString()}
+                {"$"+product.listPrice}
               </Badge>
             }
           </Flex>
