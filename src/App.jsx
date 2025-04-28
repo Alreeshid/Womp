@@ -83,7 +83,7 @@ function Electronics() {
           }
         }
         console.log(featuredListings, "Featured array")
-        setProds(normProds)
+        setProds(tempUserProds)
         setFeatured(featuredListings)
         console.log(prods, "Prods?")
       } catch (err) {
