@@ -97,12 +97,12 @@ const ProductDetails = () => {
     },
 ]
   */
-
+let foundProduct;
 
   useEffect(() => {
     console.log("Looking for product with ID:", productId);
 
-    let foundProduct;
+    
 
     for (let x = 0; x < allProducts.length; x++) {
       if(allProducts[x].id == productId){
