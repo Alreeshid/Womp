@@ -10,7 +10,8 @@ import {
   Text,
   Divider,
   Badge,
-  Alert
+  Alert,
+  Image
 } from '@aws-amplify/ui-react';
 import { generateClient } from 'aws-amplify/data';
 
@@ -49,9 +50,14 @@ function CheckoutPage() {
     return userList.data;
   }
 
+  const editedProd = {
+    hasBeenSold: true,
+  }
+
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
+    //const { data: editedProd, errors } = client.models.Products;
     setProcessing(true);
     // Simulate processing
     setTimeout(() => {
@@ -229,8 +235,8 @@ function CheckoutPage() {
           <Heading level={5} marginBottom="16px">Order Summary</Heading>
 
           <Flex direction="row" alignItems="center" marginBottom="16px">
-            <View
-              backgroundImage={localStorage.getItem("productImg")}
+            <Image
+              src={localStorage.getItem("productImg")}
               width="80px"
               height="80px"
               borderRadius="8px"
@@ -239,8 +245,8 @@ function CheckoutPage() {
               alignItems="center"
               justifyContent="center"
             >
-              <Text>Product</Text>
-            </View>
+              
+            </Image>
             <Flex direction="column">
               <Text fontWeight="bold">{product.name}</Text>
               <Text>Qty: 1</Text>
