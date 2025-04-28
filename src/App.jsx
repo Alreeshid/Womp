@@ -4,7 +4,8 @@ import {
   View,
   Button,
   Heading,
-  useBreakpointValue
+  useBreakpointValue,
+  Text
 } from '@aws-amplify/ui-react';
 import NavigationBar from './components/Navbar';
 import { useNavigate } from 'react-router-dom';
