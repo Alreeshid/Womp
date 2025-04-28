@@ -71,7 +71,7 @@ function Electronics() {
           //Grab user specific listings using the userAttributes.sub, which returns their user ID.
           console.log("Loop #"+(x+1))
           if (tempUserProds[x].isFeatured) {
-            featuredListings.push(tempUserProds[x]);
+            //featuredListings.push(tempUserProds[x]);
             console.log("Featured product found - Count " + x, featuredListings[x])
           }
           //else if(tempUserProds[x].hasBeenSold==false){
@@ -79,13 +79,14 @@ function Electronics() {
           //}
           else{
             console.log("No featured prods found, logic error?")
-            normProds.push(tempUserProds[x]);
+            //normProds.push(tempUserProds[x]);
           }
+          normProds.push(tempUserProds[x]);
         }
         console.log(featuredListings, "Featured array")
-        console.log("Norm Prods List: ", normProds)
+        console.log("Norm Prods List: ", normProds.values)
         setProds(normProds)
-        setFeatured(featuredListings)
+        //setFeatured(featuredListings)
         //console.log(prods.length, "Prods?")
       } catch (err) {
         console.error('Error fetching products for the Landing page', err);
