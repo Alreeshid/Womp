@@ -11,6 +11,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 import NavigationBar from '../components/Navbar';
 import '../index.css';
+import { generateClient } from 'aws-amplify/data';
 
 function Support() {
   const navigate = useNavigate();

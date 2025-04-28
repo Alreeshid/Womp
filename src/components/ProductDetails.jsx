@@ -15,31 +15,7 @@ import NavigationBar from "../components/Navbar.jsx";
 import { generateClient } from 'aws-amplify/data';
 
 // Import all product images
-import Camera from "../images/Camera.png";
-import minecraftBottle from '../images/MinecraftWaterBottle.jpg';
-import lipBalm from '../images/VanillaLipBalm.png';
-import Flowershirt from "../images/Flowershirt.png";
-import MotorKeychain from "../images/Motorchain.jpg";
-import Nightlight from "../images/Nightlight.png";
-import Adidas from "../images/Adidas.png";
-import Socks from '../images/Socks.png';
-import WinterBeanie from "../images/WinterBeanie.png";
-import WinterBreak from "../images/Nike.png";
-import Shoes from "../images/Shoes.png";
-import Tanktop from "../images/Goldfish tanktop.png";
-import Jacket from "../images/Spidermanjacket.png";
-import Jeans from "../images/Jeans.png";
-import Cookie from "../images/PokemonCookie.png";
-import LongCoat from "../images/LongCoat.png";
-import GreyCoat from "../images/GreyCoat.png";
-import Puma from "../images/TealPuma.png";
-import SasShirt from "../images/SasShirt.png";
-import WomenSocks from "../images/WomenSocks.png";
-import Phenix from "../images/Pheinox.png";
-import Cherries from "../images/Cherries.jpg";
-import Little from "../images/LittleThings.jpg";
-import DD from "../images/DD.png";
-import Chain from "../images/Chain.jpg";
+
 
 const ProductDetails = () => {
   const { productId } = useParams();
@@ -101,13 +77,14 @@ const ProductDetails = () => {
 
   useEffect(() => {
     console.log("Looking for product with ID:", productId);
-
+    async function getSpecificProd(){
+    let prodArray = await getAllProds();
     let foundProduct;
-    console.log("Products to search: ", allProducts)
-    for (let x = 0; x < allProducts.length; x++) {
+    console.log("Products to search: ", prodArray)
+    for (let x = 0; x < prodArray.length; x++) {
       if(allProducts[x].id == productId){
-        foundProduct = allProducts[x]
-        console.log("Found product: ", allProducts[x]);
+        foundProduct = prodArray[x]
+        console.log("Found product: ", prodArray[x]);
       }
     }
 
@@ -118,7 +95,8 @@ const ProductDetails = () => {
     } else {
       console.error(`Product with ID ${productId} not found`);
     }
-  }, [productId]);
+  }
+  }, getSpecificProd());
 
 
   const goBack = () => {
