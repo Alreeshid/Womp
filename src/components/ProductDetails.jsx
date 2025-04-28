@@ -107,11 +107,12 @@ const ProductDetails = () => {
     for (let x = 0; x < allProducts.length; x++) {
       if(allProducts[x].id == productId){
         foundProduct = allProducts[x]
+        console.log("Found product: ", foundProduct);
       }
     }
 
     if (foundProduct) {
-      console.log("Found product: ", foundProduct);
+      
       setProduct(foundProduct);
       document.title = `Womper - ${foundProduct.title}`;
     } else {
