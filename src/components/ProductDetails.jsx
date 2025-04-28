@@ -194,8 +194,8 @@ const ProductDetails = () => {
           borderRadius="medium"
         >
           <Image
-            src={product.image}
-            alt={product.title}
+            src={product.productImage}
+            alt={product.productName}
             style={{
               width: '100%',
               height: 'auto',
@@ -207,7 +207,7 @@ const ProductDetails = () => {
 
 
         <View width={isMobile ? "100%" : "60%"}>
-          <Heading color="#e84441" level={2}>{product.title}</Heading>
+          <Heading color="#e84441" level={2}>{product.productName}</Heading>
 
 
           <Flex gap="0.5rem" wrap="wrap" marginTop="small">
@@ -222,7 +222,7 @@ const ProductDetails = () => {
                   fontWeight: '500'
                 }}
               >
-                {"$"+product.listPrice}
+                {"$"+product.listPrice.toString()}
               </Badge>
             }
           </Flex>
@@ -237,8 +237,8 @@ const ProductDetails = () => {
 
           <Flex direction="column" gap="small">
             <Flex>
-              <Text fontWeight="bold" width="120px" color="#e84441">Category:</Text>
-              <Text color="#e84441">{product.category}</Text>
+              <Text fontWeight="bold" width="120px" color="#e84441"></Text>
+              <Text color="#e84441">{product.productDescription}</Text>
             </Flex>
             <Flex>
               <Text fontWeight="bold" color="#e84441" width="120px">Condition:</Text>
@@ -246,7 +246,7 @@ const ProductDetails = () => {
             </Flex>
             <Flex>
               <Text color="#e84441" fontWeight="bold" width="120px">Seller:</Text>
-              <Text color="#e84441">{product.seller}</Text>
+              <Text color="#e84441">{product.sellerName}</Text>
             </Flex>
           </Flex>
 
