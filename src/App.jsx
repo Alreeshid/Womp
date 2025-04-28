@@ -71,7 +71,7 @@ function Electronics() {
           //Grab user specific listings using the userAttributes.sub, which returns their user ID.
           if (tempUserProds[x].isFeatured) {
             featuredListings.push(tempUserProds[x]);
-            console.log("Featured product found - Count " + x, featuredListings[x])
+            console.log("Featured product found - Count " + x, featuredListings[x].data)
           }
           else if(tempUserProds[x].hasBeenSold==false){
             normProds.push(tempUserProds[x]);
