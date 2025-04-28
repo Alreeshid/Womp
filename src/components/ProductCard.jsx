@@ -25,7 +25,7 @@ const ProductCard = ({ title, badges, image }) => {
 
  
   const getProductId = (productTitle) => {
-    return productTitle//.toLowerCase().replace(/\s+/g, '-');
+    return productTitle.toString().toLowerCase().replace(/\s+/g, '-');
   };
 
   
@@ -80,8 +80,8 @@ const ProductCard = ({ title, badges, image }) => {
             <Badge
               key={`${badge}-${index}`}
               backgroundColor={
-                badge.toLowerCase().includes('used') ? '#E08D5F' : 
-                badge.toLowerCase().includes('$') ? '#B10F2E' : '#DE7C5A'
+                badge.toString().toLowerCase().includes('used') ? '#E08D5F' : 
+                badge.toString().toLowerCase().includes('$') ? '#B10F2E' : '#DE7C5A'
               }
               color="#FFFFFF"
               style={{ 
