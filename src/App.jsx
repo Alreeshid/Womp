@@ -181,21 +181,7 @@ function Electronics() {
         >
           <h3>New Products:</h3>
         </Heading>
-        <View style={gridContainerStyle}>
-          { prods.length > 0 ? (
-          prods.map((product, index) => (
-            <ProductCard
-              key={`featured-${index}`}
-              id={product.id}
-              title={product.productName}
-              badges={[product.listPrice, product.condition]}
-              image={product.productImage}
-            />
-          ))):
-          (
-                      <Text textAlign="center" padding="large" color="gray.60">No recent activity</Text>
-                    )}
-        </View>
+        
       </View>
     </View>
   );
