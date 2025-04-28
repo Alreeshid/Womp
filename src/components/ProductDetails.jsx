@@ -105,7 +105,7 @@ const ProductDetails = () => {
     const foundProduct = [];
 
     allProducts.data.array.forEach(element => {
-      console.log(element.productName)
+      console.log(element.productName.toString().toLowerCase().replace(/\s+/g, '-'))
         if(element.productName.toString().toLowerCase().replace(/\s+/g, '-') == productId)
           foundProduct = element
     });
