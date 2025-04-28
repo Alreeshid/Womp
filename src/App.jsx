@@ -24,6 +24,8 @@ function Electronics() {
   const client = generateClient({
     authMode: "userPool"
   })
+
+  const [prods, setProds] = useState([]);
   
  
   const isMobile = useBreakpointValue({
@@ -52,7 +54,34 @@ function Electronics() {
     console.log(userList.data, "We're so back it's not even funny")
     return userList.data;
   }
+  useEffect(() => {
+    async function fetchUserData() {
+      try {
 
+        const tempUserProds = await getAllProds();
+        let featuredListings = [];
+        console.log(tempUserProds)
+
+
+        for (var x = 0; x < tempUserProds.length; x++) {
+          //Grab user specific listings using the userAttributes.sub, which returns their user ID.
+          if (tempUserProds[x].isFeatured == 'true') {
+            featuredListings[x] = tempUserProds[x];
+            console.log("Featured product found - Count " + x, featuredListings[x])
+            
+          }
+          
+        }
+        console.log(featuredListings, "Featured array")
+        setProds(featuredListings)
+      } catch (err) {
+        console.error('Error fetching user attributes:', err);
+        setError(err);
+      }
+    }
+
+    fetchUserData();
+  }, []);
   const allProducts = getAllProds();
   console.log(allProducts)
   const featuredProducts = [];
@@ -118,14 +147,14 @@ function Electronics() {
           <h3>Featured</h3>
         </Heading>
         <View style={gridContainerStyle}>
-          {featuredProducts.Products.map((product, index) => (
+          {/*featuredProducts.Products.map((product, index) => (
             <ProductCard
               key={`featured-${index}`}
               title={product.productName}
               badges={[product.listPrice, product.condition]}
               image={product.productImage}
             />
-          ))}
+          ))*/}
         </View>
 
         <Heading 
@@ -137,14 +166,14 @@ function Electronics() {
           <h3>New Products:</h3>
         </Heading>
         <View style={gridContainerStyle}>
-          {allProducts.map((product, index) => (
+          {/*allProducts.map((product, index) => (
             <ProductCard
               key={`featured-${index}`}
               title={product.productName}
               badges={[product.listPrice, product.condition]}
               image={product.productImage}
             />
-          ))}
+          ))*/}
         </View>
       </View>
     </View>
