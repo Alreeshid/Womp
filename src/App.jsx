@@ -85,7 +85,7 @@ function Electronics() {
         console.log(featuredListings, "Featured array")
         setProds(tempUserProds[0], tempUserProds[1])
         setFeatured(featuredListings)
-        console.log(prods, "Prods?")
+        console.log(prods.isArray(), "Prods?")
       } catch (err) {
         console.error('Error fetching products for the Landing page', err);
         //setError(err);
