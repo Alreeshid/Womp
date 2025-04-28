@@ -152,29 +152,7 @@ function Electronics() {
       <NavigationBar />
       {/* Featured Products Section */}
       <View marginBottom="3rem">
-        <Heading 
-          level={2} 
-          marginBottom="medium"
-          padding="medium"
-          color={'red.90'}
-        >
-          <h3>Featured {console.log(featured, "Line 159")}</h3>
-        </Heading>
-        <View style={gridContainerStyle}>
-          {featured.length > 0 ? (
-          featured.map((product, index) => (
-            <ProductCard
-              key={`featured-${index}`}
-              //id={product.id}
-              title={product.productName}
-              badges={"$"+[product.listPrice, product.condition]}
-              image={product.productImage}
-            />
-          ))):
-          (
-                      <Text textAlign="center" padding="large" color="gray.60">No Featured Products Found</Text>
-                    )}
-        </View>
+        
 
         <Heading 
           level={2} 

@@ -15,6 +15,7 @@ import Jewelery from './pages/Jewelery.jsx'
 import Clothing from './pages/Clothing.jsx'
 import CreateListing from "./pages/CreateListing.jsx"
 import ProductDetails from './components/ProductDetails.jsx';
+import {CheckoutPage} from "./pages/CheckoutPage.jsx"
 
 
 import { generateClient } from 'aws-amplify/data';
@@ -57,7 +58,8 @@ createRoot(document.getElementById('root')).render(
           <Route path= "Electronics" element={<Electronics />} />
           <Route path= "Jewelery" element={<Jewelery />} />
           <Route path= "CreateListing" element={<CreateListing />} />
-          <Route path="/product/:productId" element={<ProductDetails />} />
+          <Route path= "Checkout" element={<CreateListing />} />
+          <Route path="/product/:productId" element={<CheckoutPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
