@@ -235,8 +235,8 @@ function CreateListing() {
                   objectFit="initial"
                   objectPosition="50% 50%"
                   backgroundColor="initial"
-                  height="75%"
-                  width="75%"
+                  height="50px"
+                  width="50px"
                   opacity="100%"
                   onClick={() => alert('📸 Say cheese!')}
                 />
