@@ -47,7 +47,12 @@ function Electronics() {
     return userList.data;
   }
 
-  const featuredProducts = [
+  const allProducts = getAllProds();
+  const featuredProducts = allProducts.filter(listing =>{
+    //logic code goes here, then use a return
+    return listing.isFeatured == true;
+  })
+  /*OLD ARRAY[
     { 
       title: "Minecraft Water Bottle",
       badges: ['$10', 'Used-Like new'],
@@ -79,7 +84,7 @@ function Electronics() {
       image: Camera 
     }
   ];
-  
+  */
   
   const gridContainerStyle = {
     display: 'grid',
@@ -106,6 +111,25 @@ function Electronics() {
           color={'red.90'}
         >
           <h3>Featured</h3>
+        </Heading>
+        <View style={gridContainerStyle}>
+          {allProducts.map((product, index) => (
+            <ProductCard
+              key={`featured-${index}`}
+              title={product.title}
+              badges={product.badges}
+              image={product.image}
+            />
+          ))}
+        </View>
+
+        <Heading 
+          level={2} 
+          marginBottom="medium"
+          padding="medium"
+          color={'red.90'}
+        >
+          <h3>New Products:</h3>
         </Heading>
         <View style={gridContainerStyle}>
           {featuredProducts.map((product, index) => (
