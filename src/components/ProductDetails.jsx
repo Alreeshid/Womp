@@ -102,7 +102,7 @@ const ProductDetails = () => {
   useEffect(() => {
     console.log("Looking for product with ID:", productId);
 
-    let foundProduct = {};
+    let foundProduct;
 
     for (let x = 0; x < allProducts.length; x++) {
       if(allProducts[x].id == productId){
@@ -111,7 +111,7 @@ const ProductDetails = () => {
     }
 
     if (foundProduct) {
-      console.log("Found product:", foundProduct);
+      console.log("Found product: ", foundProduct);
       setProduct(foundProduct);
       document.title = `Womper - ${foundProduct.title}`;
     } else {
