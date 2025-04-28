@@ -81,7 +81,7 @@ function CheckoutPage() {
         </Alert>
       )}
 
-      <Heading level={3} marginBottom="16px">Checkout</Heading>
+      <Heading level={3} marginBottom="16px" style={color="white"}>Checkout</Heading>
 
       <Flex direction={{ base: 'column', large: 'row' }} gap="24px">
         {/* Left Column - Payment Form */}
