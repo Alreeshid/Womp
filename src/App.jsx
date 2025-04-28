@@ -83,7 +83,7 @@ function Electronics() {
           }
         }
         console.log(featuredListings, "Featured array")
-        setProds(tempUserProds[0])
+        setProds(tempUserProds[0], tempUserProds[1])
         setFeatured(featuredListings)
         console.log(prods, "Prods?")
       } catch (err) {
