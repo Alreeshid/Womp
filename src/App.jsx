@@ -49,7 +49,7 @@ function Electronics() {
     catch (errors) {
       console.log("Wuh?")
     }
-    console.log(userList.data.length, "We're so back it's not even funny")
+    console.log(userList.data, "We're so back it's not even funny")
     return userList.data;
   }
 
@@ -137,7 +137,7 @@ function Electronics() {
           <h3>New Products:</h3>
         </Heading>
         <View style={gridContainerStyle}>
-          {allProducts.Products.map((product, index) => (
+          {allProducts.map((product, index) => (
             <ProductCard
               key={`featured-${index}`}
               title={product.productName}
