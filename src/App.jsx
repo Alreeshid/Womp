@@ -72,7 +72,7 @@ function Electronics() {
           console.log("Loop #"+x+1)
           if (tempUserProds[x].isFeatured) {
             featuredListings.push(tempUserProds[x]);
-            console.log("Featured product found - Count " + x, featuredListings[x].data)
+            console.log("Featured product found - Count " + x, featuredListings[x])
           }
           else if(tempUserProds[x].hasBeenSold==false){
             normProds.push(tempUserProds[x]);
