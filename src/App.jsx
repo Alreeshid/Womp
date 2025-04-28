@@ -69,6 +69,7 @@ function Electronics() {
 
         for (var x = 0; x < tempUserProds.length; x++) {
           //Grab user specific listings using the userAttributes.sub, which returns their user ID.
+          console.log("Loop #"+x+1)
           if (tempUserProds[x].isFeatured) {
             featuredListings.push(tempUserProds[x]);
             console.log("Featured product found - Count " + x, featuredListings[x].data)
