@@ -233,10 +233,10 @@ function CreateListing() {
                   alt="Image Preview"
                   src={form.productImage}
                   objectFit="initial"
-                  objectPosition="50% 50%"
+                  objectPosition="75% 50%"
                   backgroundColor="initial"
-                  height="50px"
-                  width="50px"
+                  height="20%"
+                  width="20%"
                   opacity="100%"
                   onClick={() => alert('📸 Say cheese!')}
                 />
