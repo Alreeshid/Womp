@@ -54,10 +54,7 @@ function Electronics() {
   }
 
   const allProducts = getAllProds();
-  if(allProducts){
-  const featuredProducts = allProducts.array.forEach(element => {
-    console.log(element)
-  });
+  console.log(allProducts)
 }
   /*OLD ARRAY[
     { 
