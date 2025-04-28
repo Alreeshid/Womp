@@ -109,7 +109,7 @@ const ProductDetails = () => {
 
   const addToCart = () => {
     //alert(`${product.title} added to cart!`);
-    if(localStorage.getItem("prodName")){
+    if(localStorage.getItem("prodName") && localStorage.getItem("prodName") != product.productImage){
     if (confirm("Warning, you already have a transaction in progress. Hit 'Ok' if you'd like to continue with your new transaction, or cancel to instead return to your original transaction:")) {
       //txt = "You pressed OK!";
       localStorage.setItem("prodName", product.productName)
