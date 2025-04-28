@@ -73,7 +73,7 @@ function Electronics() {
             featuredListings[x] = tempUserProds[x];
             console.log("Featured product found - Count " + x, featuredListings[x])
           }
-          else if(!tempUserProds[x].hasBeenSold){
+          else if(tempUserProds[x].hasBeenSold === false){
             normProds[x] = tempUserProds[x];
           }
           else{
