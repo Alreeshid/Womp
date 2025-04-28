@@ -55,6 +55,7 @@ function Electronics() {
 
   const allProducts = getAllProds();
   console.log(allProducts)
+  const featuredProducts = [];
 
   /*OLD ARRAY[
     { 
