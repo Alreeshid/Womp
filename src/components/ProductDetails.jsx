@@ -97,17 +97,17 @@ const ProductDetails = () => {
     },
 ]
   */
-let foundProduct;
+
 
   useEffect(() => {
     console.log("Looking for product with ID:", productId);
 
-    
+    let foundProduct;
 
     for (let x = 0; x < allProducts.length; x++) {
       if(allProducts[x].id == productId){
         foundProduct = allProducts[x]
-        console.log("Found product: ", foundProduct);
+        console.log("Found product: ", allProducts[x]);
       }
     }
 
