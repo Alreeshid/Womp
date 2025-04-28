@@ -54,9 +54,11 @@ function Electronics() {
   }
 
   const allProducts = getAllProds();
+  if(allProducts){
   const featuredProducts = allProducts.array.forEach(element => {
     console.log(element)
   });
+}
   /*OLD ARRAY[
     { 
       title: "Minecraft Water Bottle",
