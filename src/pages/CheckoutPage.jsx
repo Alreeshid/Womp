@@ -21,7 +21,7 @@ const product = {
   tax: 12.75
 };
 
-export default function CheckoutPage() {
+function CheckoutPage() {
   const [showNotification, setShowNotification] = useState(true);
   const [processing, setProcessing] = useState(false);
   
@@ -257,3 +257,4 @@ export default function CheckoutPage() {
     </Flex>
   );
 }
+export default CheckoutPage;
