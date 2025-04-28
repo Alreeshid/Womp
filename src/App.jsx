@@ -86,15 +86,15 @@ function Electronics() {
         setFeatured(featuredListings)
         console.log(prods, "Prods?")
       } catch (err) {
-        console.error('Error fetching user attributes:', err);
+        console.error('Error fetching products for the Landing page', err);
         //setError(err);
       }
     }
 
     fetchUserData();
   }, []);
-  const allProducts = getAllProds();
-  console.log(allProducts, "All products found by initial search")
+  //const allProducts = getAllProds();
+ // console.log(allProducts, "All products found by initial search")
   //const featuredProducts = [];
 
   /*OLD ARRAY[
@@ -157,45 +157,7 @@ function Electronics() {
         >
           <h3>Featured</h3>
         </Heading>
-        <View style={gridContainerStyle}>
-          {featured.length > 0 ? (
-          featured.map((product, index) => (
-            <ProductCard
-              key={`featured-${index}`}
-              id={product.id}
-              title={product.productName}
-              badges={"$"+[product.listPrice, product.condition]}
-              image={product.productImage}
-            />
-          ))):
-          (
-                      <Text textAlign="center" padding="large" color="gray.60">No recent activity</Text>
-                    )}
-        </View>
-
-        <Heading 
-          level={2} 
-          marginBottom="medium"
-          padding="medium"
-          color={'red.90'}
-        >
-          <h3>New Products:</h3>
-        </Heading>
-        <View style={gridContainerStyle}>
-          { prods.length > 0 ? (
-          prods.map((product, index) => (
-            <ProductCard
-              key={`featured-${index}`}
-              id={product.id}
-              title={product.productName}
-              badges={[product.listPrice, product.condition]}
-              image={product.productImage}
-            />
-          ))):
-          (
-                      <Text textAlign="center" padding="large" color="gray.60">No recent activity</Text>
-                    )}
-        </View>
+        
       </View>
     </View>
   );

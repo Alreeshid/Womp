@@ -53,6 +53,7 @@ function Electronics() {
           {clothingProducts.map((product, index) => (
             <ProductCard
               key={`clothing-${index}`}
+              id={product.id}
               title={product.title}
               badges={product.badges}
               image={product.image}
