@@ -103,7 +103,7 @@ const ProductDetails = () => {
     console.log("Looking for product with ID:", productId);
 
     let foundProduct;
-
+    console.log("Products to search: ", allProducts)
     for (let x = 0; x < allProducts.length; x++) {
       if(allProducts[x].id == productId){
         foundProduct = allProducts[x]
