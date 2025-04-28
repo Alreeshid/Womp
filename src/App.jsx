@@ -83,7 +83,7 @@ function Electronics() {
           }
         }
         console.log(featuredListings, "Featured array")
-        setProds(tempUserProds)
+        setProds(tempUserProds[0])
         setFeatured(featuredListings)
         console.log(prods, "Prods?")
       } catch (err) {
@@ -170,7 +170,7 @@ function Electronics() {
             />
           ))):
           (
-                      <Text textAlign="center" padding="large" color="gray.60">No recent activity</Text>
+                      <Text textAlign="center" padding="large" color="gray.60">No Featured Products Found</Text>
                     )}
         </View>
 
@@ -194,7 +194,7 @@ function Electronics() {
             />
           ))):
           (
-                      <Text textAlign="center" padding="large" color="gray.60">No recent activity</Text>
+                      <Text textAlign="center" padding="large" color="gray.60">No Standard Products found</Text>
                     )}
         </View>
       </View>
