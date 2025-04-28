@@ -18,7 +18,7 @@ const product = {
   name: "Premium Wireless Headphones",
   price: 149.99,
   shipping: "TBD",
-  tax: this.price/100
+  tax: 5.99
 };
 
 
