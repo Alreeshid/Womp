@@ -15,6 +15,8 @@ import Flowershirt from "./images/Flowershirt.png";
 import MotorKeychain from "./images/Motorchain.jpg";
 import Nightlight from "./images/Nightlight.png";
 import ProductCard from './components/ProductCard.jsx';
+import { generateClient } from 'aws-amplify/data';
+
 
 function Electronics() {
   const navigate = useNavigate();
@@ -113,7 +115,7 @@ function Electronics() {
           <h3>Featured</h3>
         </Heading>
         <View style={gridContainerStyle}>
-          {allProducts.map((product, index) => (
+          {featuredProducts.map((product, index) => (
             <ProductCard
               key={`featured-${index}`}
               title={product.productName}
