@@ -72,10 +72,13 @@ function Electronics() {
             console.log("Featured product found - Count " + x, featuredListings[x])
             
           }
-          
+          else{
+            console.log("No featured prods found, logic error?")
+          }
         }
         console.log(featuredListings, "Featured array")
         setProds(featuredListings)
+        console.log(prods, "Prods?")
       } catch (err) {
         console.error('Error fetching user attributes:', err);
         setError(err);
