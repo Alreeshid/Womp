@@ -96,7 +96,7 @@ const AdminPanel = () => {
         case 'listings':
           return <GridView 
             title="Products" 
-            data={listingsData} 
+            data={listingsData.data} 
             type="listing"
             onViewDetail={openDetailView} 
           />;
