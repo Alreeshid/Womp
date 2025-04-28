@@ -12,6 +12,7 @@ import {
 } from '@aws-amplify/ui-react';
 import { useParams, useNavigate } from 'react-router-dom';
 import NavigationBar from "../components/Navbar.jsx";
+import { generateClient } from 'aws-amplify/data';
 
 // Import all product images
 import Camera from "../images/Camera.png";
@@ -44,6 +45,9 @@ const ProductDetails = () => {
   const { productId } = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
+  const client = generateClient({
+      authMode: "userPool"
+    })
   
   const isMobile = useBreakpointValue({
     base: true,
