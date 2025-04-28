@@ -245,17 +245,17 @@ function CheckoutPage() {
           
           <Flex direction="row" justifyContent="space-between" marginBottom="8px">
             <Text>Subtotal</Text>
-            <Text>${product.price.toFixed(2)}</Text>
+            <Text>${product.price}</Text>
           </Flex>
           
           <Flex direction="row" justifyContent="space-between" marginBottom="8px">
             <Text>Shipping</Text>
-            <Text>${product.shipping.toFixed(2)}</Text>
+            <Text>${product.shipping}</Text>
           </Flex>
           
           <Flex direction="row" justifyContent="space-between" marginBottom="16px">
             <Text>Tax</Text>
-            <Text>${product.tax.toFixed(2)}</Text>
+            <Text>${product.tax}</Text>
           </Flex>
           
           <Divider marginBottom="16px" />
