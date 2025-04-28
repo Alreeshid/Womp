@@ -58,8 +58,8 @@ createRoot(document.getElementById('root')).render(
           <Route path= "Electronics" element={<Electronics />} />
           <Route path= "Jewelery" element={<Jewelery />} />
           <Route path= "CreateListing" element={<CreateListing />} />
-          <Route path= "Checkout" element={<CreateListing />} />
-          <Route path="/product/:productId" element={<CheckoutPage />} />
+          <Route path= "Checkout" element={<CheckoutPage />} />
+          <Route path="/product/:productId" element={<ProductDetails />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
