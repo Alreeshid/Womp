@@ -25,12 +25,12 @@ const ProductCard = ({id, title, badges, image }) => { //Id is the unique produc
 
  
   const getProductId = (productTitle) => {
-    return productTitle.toString().toLowerCase().replace(/\s+/g, '-');
+    return productTitle.toString();
   };
 
   
   const handleCardClick = () => {
-    const productId = getProductId(id);
+    const productId = id;
     navigate(`/product/${productId}`);
   };
 
