@@ -109,11 +109,23 @@ const ProductDetails = () => {
 
   const addToCart = () => {
     //alert(`${product.title} added to cart!`);
-    
+    if(localStorage.getItem("prodName")){
+    if (confirm("Warning, you already have a transaction in progress. Hit 'Ok' if you'd like to continue with your new transaction, or cancel to instead return to your original transaction:")) {
+      //txt = "You pressed OK!";
+      localStorage.setItem("prodName", product.productName)
+    localStorage.setItem("prodPrice", product.listPrice)
+    localStorage.setItem("prodSeller", product.sellerName)
+    } else {
+      //txt = "You pressed Cancel!";
+      navigate("/Checkout")
+    }
+  }
+  else{
     localStorage.setItem("prodName", product.productName)
     localStorage.setItem("prodPrice", product.listPrice)
     localStorage.setItem("prodSeller", product.sellerName)
     navigate("/Checkout")
+  }
   };
 
   if (!product) {
