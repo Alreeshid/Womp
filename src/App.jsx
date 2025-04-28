@@ -54,10 +54,9 @@ function Electronics() {
   }
 
   const allProducts = getAllProds();
-  const featuredProducts = allProducts.values.filter(listing =>{
-    //logic code goes here, then use a return
-    return listing.isFeatured == true;
-  })
+  const featuredProducts = allProducts.array.forEach(element => {
+    console.log(element)
+  });
   /*OLD ARRAY[
     { 
       title: "Minecraft Water Bottle",
