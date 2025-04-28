@@ -339,7 +339,7 @@ const ProductDetails = () => {
   useEffect(() => {
     console.log("Looking for product with ID:", productId);
     
-    const foundProduct = allProducts.find(p => p.productName === productId);
+    const foundProduct = allProducts.productName.find(p => p.productName === productId);
     
     if (foundProduct) {
       console.log("Found product:", foundProduct);
