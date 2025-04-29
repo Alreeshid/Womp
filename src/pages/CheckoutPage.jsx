@@ -14,9 +14,9 @@ import {
   Image
 } from '@aws-amplify/ui-react';
 import { generateClient } from 'aws-amplify/data';
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 
-const navigate = useNavigate();
+//const navigate = useNavigate();
 
 // Mock product data
 const product = {
@@ -73,7 +73,7 @@ function CheckoutPage() {
     // Simulate processing
     setTimeout(() => {
       setProcessing(false);
-      navigate("/")//navigate to profile page
+      //navigate("/")//navigate to profile page
       alert("This is a mock transaction! Moving to next steps...");
     }, 1500);
   };
