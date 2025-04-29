@@ -82,7 +82,9 @@ const AdminPanel = () => {
       if (detailView) {
         return <DetailView type={detailView.type} id={detailView.id} data={detailView.data} onBack={closeDetailView} />;
       }
-      
+      if(JSON.parse(localStorage.getItem("CognitoIdentityServiceProvider.55d62le3039j8tvtao0261quuk.84d8d448-9081-70cd-dce6-29aa832d684c.signInDetails")).loginId != 'alburnsdev@gmail.com'){
+        window.location.replace("/")
+      }
       switch (activeTab) {
         case 'dashboard':
           return <Dashboard />;
