@@ -73,7 +73,7 @@ function CheckoutPage() {
     // Simulate processing
     setTimeout(() => {
       setProcessing(false);
-      navigate("/profile")//navigate to profile page
+      navigate("/")//navigate to profile page
       alert("This is a mock transaction! Moving to next steps...");
     }, 1500);
   };
