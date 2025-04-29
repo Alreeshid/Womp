@@ -77,28 +77,29 @@ const ProductDetails = () => {
 
   useEffect(() => {
     console.log("Looking for product with ID:", productId);
-    async function getSpecificProd(){
-    let prodArray = await getAllProds();
-    let foundProduct;
-    console.log("Products to search: ", prodArray)
-    for (let x = 0; x < prodArray.length; x++) {
-      if(prodArray[x].id == productId){
-        foundProduct = prodArray[x]
-        console.log("Found product: ", prodArray[x]);
+    async function getSpecificProd() {
+      let prodArray = await getAllProds();
+      let foundProduct;
+      console.log("Products to search: ", prodArray)
+      for (let x = 0; x < prodArray.length; x++) {
+        if (prodArray[x].id == productId) {
+          foundProduct = prodArray[x]
+          console.log("Found product: ", prodArray[x]);
+        }
+        else {
+          console.log("Not this one! ", prodArray[x], prodArray[x].id)
+        }
       }
-      else{
-        console.log("Not this one! ", prodArray[x], prodArray[x].id)      }
-    }
 
-    if (foundProduct) {
-      
-      setProduct(foundProduct);
-      document.title = `Womper - ${foundProduct.title}`;
-    } else {
-      console.error(`Product with ID ${productId} not found`);
+      if (foundProduct) {
+
+        setProduct(foundProduct);
+        document.title = `Womper - ${foundProduct.title}`;
+      } else {
+        console.error(`Product with ID ${productId} not found`);
+      }
     }
-  }
-  getSpecificProd()
+    getSpecificProd()
   }, []);
 
 
@@ -109,26 +110,28 @@ const ProductDetails = () => {
 
   const addToCart = () => {
     //alert(`${product.title} added to cart!`);
-    if(localStorage.getItem("prodName") && localStorage.getItem("prodName") != product.productImage){
-    if (confirm("Warning, you already have a transaction in progress. Hit 'Ok' if you'd like to continue with your new transaction, or cancel to instead return to your original transaction:")) {
-      //txt = "You pressed OK!";
+    if (localStorage.getItem("prodName") && localStorage.getItem("prodName") != product.productImage) {
+      if (confirm("Warning, you already have a transaction in progress. Hit 'Ok' if you'd like to continue with your new transaction, or cancel to instead return to your original transaction:")) {
+        //txt = "You pressed OK!";
+        localStorage.setItem("prodName", product.productName)
+        localStorage.setItem("prodPrice", product.listPrice)
+        localStorage.setItem("prodSeller", product.sellerName)
+        localStorage.setItem("prodImg", product.productImage)
+        localStorage.setItem("prodId", product.id)
+        navigate("/Checkout")
+      } else {
+        //txt = "You pressed Cancel!";
+        navigate("/Checkout")
+      }
+    }
+    else {
       localStorage.setItem("prodName", product.productName)
-    localStorage.setItem("prodPrice", product.listPrice)
-    localStorage.setItem("prodSeller", product.sellerName)
-    localStorage.setItem("prodImg", product.productImage)
-    navigate("/Checkout")
-    } else {
-      //txt = "You pressed Cancel!";
+      localStorage.setItem("prodId", product.id)
+      localStorage.setItem("prodPrice", product.listPrice)
+      localStorage.setItem("prodSeller", product.sellerName)
+      localStorage.setItem("prodImg", product.productImage)
       navigate("/Checkout")
     }
-  }
-  else{
-    localStorage.setItem("prodName", product.productName)
-    localStorage.setItem("prodPrice", product.listPrice)
-    localStorage.setItem("prodSeller", product.sellerName)
-    localStorage.setItem("prodImg", product.productImage)
-    navigate("/Checkout")
-  }
   };
 
   if (!product) {
@@ -213,7 +216,7 @@ const ProductDetails = () => {
           <Flex gap="0.5rem" wrap="wrap" marginTop="small">
             {
               <Badge
-                
+
                 color="#e84441"
                 style={{
                   padding: '0.25rem 0.5rem',
@@ -222,7 +225,7 @@ const ProductDetails = () => {
                   fontWeight: '500'
                 }}
               >
-                {"$"+product.listPrice}
+                {"$" + product.listPrice}
               </Badge>
             }
           </Flex>
@@ -238,7 +241,7 @@ const ProductDetails = () => {
           <Flex direction="column" gap="small">
             <Flex>
               <Text fontWeight="bold" width="120px" color="#e84441"></Text>
-              <Text color="#e84441">{}</Text>
+              <Text color="#e84441">{ }</Text>
             </Flex>
             <Flex>
               <Text fontWeight="bold" color="#e84441" width="120px">Condition:</Text>

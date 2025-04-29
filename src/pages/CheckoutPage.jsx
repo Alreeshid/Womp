@@ -47,17 +47,24 @@ function CheckoutPage() {
       console.log("Wuh?")
     }
     console.log(userList.data, "We're so back it's not even funny")
-    return userList.data;
+    let prodToRemove;
+    for(let x=0; x<userList.Data.length; x++){
+      if(x<userList.Data[x].id == localStorage.getItem("prodId")){
+        prodToRemove = userList.Data[x].id;
+      }
+    }
+    return prodToRemove;
   }
 
   const editedProd = {
+    id: localStorage.getItem("prodId"),
     hasBeenSold: true,
   }
 
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    //const { data: editedProd, errors } = client.models.Products;
+    client.models.Products.update(editedProd);
     setProcessing(true);
     // Simulate processing
     setTimeout(() => {
