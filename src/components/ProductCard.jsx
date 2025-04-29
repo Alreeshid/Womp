@@ -11,7 +11,7 @@ import {
 } from '@aws-amplify/ui-react';
 import { useNavigate } from 'react-router-dom';
 
-const ProductCard = ({id, title, badges, image }) => { //Id is the unique product id from aws,
+const ProductCard = ({id, title, badges, image, isSold }) => { //Id is the unique product id from aws,
   const navigate = useNavigate();
   
   // Use Amplify UI's responsive hook to detect screen size
@@ -22,6 +22,10 @@ const ProductCard = ({id, title, badges, image }) => { //Id is the unique produc
     large: false,
     xl: false
   });
+  let willDisplay = 'flex';
+  if(isSold){
+    willDisplay = 'none';
+  }
 
  
   const getProductId = (productTitle) => {
@@ -40,7 +44,8 @@ const ProductCard = ({id, title, badges, image }) => { //Id is the unique produc
       variation="elevated"
       onClick={handleCardClick}
       style={{ 
-        display: 'flex', 
+        
+        display: willDisplay, 
         flexDirection: 'column',
         height: '100%',
         width: '100%',
