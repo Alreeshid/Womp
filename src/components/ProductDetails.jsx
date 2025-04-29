@@ -142,7 +142,7 @@ const ProductDetails = () => {
         </Button>
         <NavigationBar />
         <View padding="large" textAlign="center">
-          <Heading level={3}>Product not found{location.reload()}</Heading>
+          <Heading level={3}>Product not found</Heading>
           <Button
             onClick={goBack}
             variation="primary"
