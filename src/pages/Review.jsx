@@ -146,7 +146,7 @@ function ReviewPage() {
           borderRadius="large"
           backgroundColor="white"
         >
-          <iframe src="https://magic-8ball.com/embed_widget/" scrolling="no" style="width:100%;border:none;overflow:hidden;height:750px"></iframe>></iframe>
+          
           <Heading level={3} marginBottom="medium" color="#B10F2E">Share Your Experience</Heading>
           
           {successMessage && (
