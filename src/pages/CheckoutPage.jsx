@@ -282,7 +282,7 @@ function CheckoutPage() {
 
           <Flex direction="row" justifyContent="space-between" marginBottom="8px">
             <Text fontWeight="bold">Total</Text>
-            <Text fontWeight="bold">${(product.price + product.tax)}</Text>
+            <Text fontWeight="bold">${(+product.price + +product.tax)}</Text>
           </Flex>
 
           <Flex direction="row" alignItems="center" gap="8px" marginTop="24px">
