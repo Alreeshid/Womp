@@ -117,7 +117,6 @@ function ReviewPage() {
       return review;
     });
     
-    
     setReviews(updatedReviews);
     localStorage.setItem('userReviews', JSON.stringify(updatedReviews));
   };
@@ -146,7 +145,7 @@ function ReviewPage() {
           borderRadius="large"
           backgroundColor="white"
         >
-          
+
           <Heading level={3} marginBottom="medium" color="#B10F2E">Share Your Experience</Heading>
           
           {successMessage && (
