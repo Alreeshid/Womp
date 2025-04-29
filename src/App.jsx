@@ -165,12 +165,13 @@ function Electronics() {
         <View style={gridContainerStyle}>
           {
            prods.length > 0 ? (
-          prods.map((product, index) => (
+          prods.map((product, index) =>(
+            
             <ProductCard
               key={`norm-${index}`}
               id={product.id}
               title={product.productName}
-              badges={["$" + product.listPrice, product.condition]}
+              badges={["$" +product.listPrice, product.condition]}
               image={product.productImage}
             />
           ))):
