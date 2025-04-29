@@ -63,8 +63,8 @@ function CheckoutPage() {
 
   // Handle form submission
   const handleSubmit = (e) => {
-    e.preventDefault(localStorage.getItem("prodId"), "Product Id");
-    console.log()
+    e.preventDefault();
+    console.log(localStorage.getItem("prodId"), "Product Id")
     client.models.Products.update(editedProd);
     setProcessing(true);
     // Simulate processing
