@@ -1,8 +1,8 @@
-# React + Vite
+# Womper ECommerce by Eric Garcia and Alec Burns
+Use the following to reproduce our repository:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. https://aws.amazon.com/getting-started/hands-on/build-react-app-amplify-graphql/ - Use the following tutorial. When prompted to clone a git repository use the repository link for Womper instead.
 
-Currently, two official plugins are available:
+2. Create an AWS account, follow the tutorial, and configure permissions in the AWS console as needed.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+3. That's it! Check for console errors if needed, but the site should work out of the box with your own database. Review AWS documentation as needed.
